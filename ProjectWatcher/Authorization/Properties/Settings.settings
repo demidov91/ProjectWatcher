@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Authorization.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Administrators" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">ХП\Dmitry</Value>
+    </Setting>
+    <Setting Name="KnownUsers" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">ХП\Дмитрий,ХП\Dmitry</Value>
+    </Setting>
+    <Setting Name="Roles" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">administrator,knownUser</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="a709ef5d-b9b2-455f-81ca-8485d3ca194c" name="Dmitry@ХП 2012-01-20 19:41:27" runUser="ХП\Dmitry" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="744b2588-026e-462a-817a-acbe96aacba9">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="Dmitry_ХП 2012-01-20 19_41_27">
+      <DeploymentItem filename="E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\packages\EntityFramework.4.1.10331.0\lib\EntityFramework.dll" />
+      <DeploymentItem filename="E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\DAL\bin\Debug\DAL.dll" />
+      <DeploymentItem filename="E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\TestProject\bin\Debug\anrControls.Markdown.NET.dll" />
+      <DeploymentItem filename="E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\ExternalLibs\NMock2.dll" />
+      <DeploymentItem filename="E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\Validation\bin\Debug\Validation.dll" />
+      <DeploymentItem filename="E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\ProjectWatcher\bin\ProjectWatcher.dll" />
+      <DeploymentItem filename="E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\Authorization\bin\Debug\Authorization.dll" />
+      <DeploymentItem filename="E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\ExternalLibs\Rhino.Mocks.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-01-20T19:41:27.0525361+02:00" queuing="2012-01-20T19:41:28.6495503+02:00" start="2012-01-20T19:41:28.8045517+02:00" finish="2012-01-20T19:41:32.7285866+02:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="19" executed="19" passed="17" error="0" failed="2" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="DeleteFunctionsTest" storage="e:\информация\проекты\поиск работы\itransition\projectswatcher\projectwatcher\testproject\bin\debug\testproject.dll" id="19af2c87-2e28-0ae7-52ee-e6e5a46fbe1b">
+      <Execution id="3eb6d840-24d2-4379-9b95-398fcf4f8e98" />
+      <TestMethod codeBase="E:/информация/Проекты/поиск работы/itransition/ProjectsWatcher/ProjectWatcher/TestProject/bin/Debug/TestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject.ProjectsHelperTest, TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="DeleteFunctionsTest" />
+    </UnitTest>
+    <UnitTest name="RequestBuilderTest" storage="e:\информация\проекты\поиск работы\itransition\projectswatcher\projectwatcher\testproject\bin\debug\testproject.dll" id="ef00f901-fd6a-b75c-5f01-f2fa43dfda91">
+      <Execution id="6704e446-eb8d-493d-8343-d6d9553b4792" />
+      <TestMethod codeBase="E:/информация/Проекты/поиск работы/itransition/ProjectsWatcher/ProjectWatcher/TestProject/bin/Debug/TestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject.ProjectsHelperTest, TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="RequestBuilderTest" />
+    </UnitTest>
+    <UnitTest name="CreateFooterModelTest" storage="e:\информация\проекты\поиск работы\itransition\projectswatcher\projectwatcher\testproject\bin\debug\testproject.dll" id="b7f7d50f-7580-9f38-5947-a3a34adaf952">
+      <Execution id="50181fcb-5139-461c-bbf1-7e82ac75ec6e" />
+      <TestMethod codeBase="E:/информация/Проекты/поиск работы/itransition/ProjectsWatcher/ProjectWatcher/TestProject/bin/Debug/TestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject.ProjectsHelperTest, TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="CreateFooterModelTest" />
+    </UnitTest>
+    <UnitTest name="CreateNewPropertyTest2" storage="e:\информация\проекты\поиск работы\itransition\projectswatcher\projectwatcher\testproject\bin\debug\testproject.dll" id="c6bcfdc2-241a-5176-35fd-177c19f841f3">
+      <Execution id="e8ac9ca6-72a6-47ed-ab2f-c538f5343d0f" />
+      <TestMethod codeBase="E:/информация/Проекты/поиск работы/itransition/ProjectsWatcher/ProjectWatcher/TestProject/bin/Debug/TestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject.ProjectsReaderTest, TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="CreateNewPropertyTest2" />
+    </UnitTest>
+    <UnitTest name="StringToColumnTest" storage="e:\информация\проекты\поиск работы\itransition\projectswatcher\projectwatcher\testproject\bin\debug\testproject.dll" id="5e6eb382-3c25-c34d-109c-e268ac443ad8">
+      <Execution id="d0c08b5c-3e5b-4a39-a903-c27977eab123" />
+      <TestMethod codeBase="E:/информация/Проекты/поиск работы/itransition/ProjectsWatcher/ProjectWatcher/TestProject/bin/Debug/TestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject.ProjectsHelperTest, TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="StringToColumnTest" />
+    </UnitTest>
+    <UnitTest name="GetPropertiesDefinitionsTest" storage="e:\информация\проекты\поиск работы\itransition\projectswatcher\projectwatcher\testproject\bin\debug\testproject.dll" id="3fadbe7c-8122-8645-3fe8-e0598248f416">
+      <Execution id="65777e64-7599-49c7-b14f-9a1c205db825" />
+      <TestMethod codeBase="E:/информация/Проекты/поиск работы/itransition/ProjectsWatcher/ProjectWatcher/TestProject/bin/Debug/TestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject.ProjectsReaderTest, TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetPropertiesDefinitionsTest" />
+    </UnitTest>
+    <UnitTest name="CreateFilterModelTest" storage="e:\информация\проекты\поиск работы\itransition\projectswatcher\projectwatcher\testproject\bin\debug\testproject.dll" id="3bf54a8a-3985-7233-1816-155c4f3016be">
+      <Execution id="97574297-1e1d-4be2-8166-c8d99f113dcb" />
+      <TestMethod codeBase="E:/информация/Проекты/поиск работы/itransition/ProjectsWatcher/ProjectWatcher/TestProject/bin/Debug/TestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject.ProjectsHelperTest, TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="CreateFilterModelTest" />
+    </UnitTest>
+    <UnitTest name="GetFuncAndVarTest" storage="e:\информация\проекты\поиск работы\itransition\projectswatcher\projectwatcher\testproject\bin\debug\testproject.dll" id="e4ee5135-d52c-e831-1731-99027035f03a">
+      <Execution id="9327d1d1-2e12-4f75-a9a1-79dabf2e3935" />
+      <TestMethod codeBase="E:/информация/Проекты/поиск работы/itransition/ProjectsWatcher/ProjectWatcher/TestProject/bin/Debug/TestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject.ProjectsHelperTest, TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetFuncAndVarTest" />
+    </UnitTest>
+    <UnitTest name="FormCSVFileTest" storage="e:\информация\проекты\поиск работы\itransition\projectswatcher\projectwatcher\testproject\bin\debug\testproject.dll" id="c073fbef-a541-181b-a5d4-d06f138e9cab">
+      <Execution id="54f514a4-50ab-4983-8b21-5dd32f876563" />
+      <TestMethod codeBase="E:/информация/Проекты/поиск работы/itransition/ProjectsWatcher/ProjectWatcher/TestProject/bin/Debug/TestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject.ProjectsHelperTest, TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="FormCSVFileTest" />
+    </UnitTest>
+    <UnitTest name="GetFunctionsTest" storage="e:\информация\проекты\поиск работы\itransition\projectswatcher\projectwatcher\testproject\bin\debug\testproject.dll" id="067bc254-eb01-e54b-b1b0-617ef6ab44e1">
+      <Execution id="acad3ef8-d7f2-4f28-b117-06451d0f479d" />
+      <TestMethod codeBase="E:/информация/Проекты/поиск работы/itransition/ProjectsWatcher/ProjectWatcher/TestProject/bin/Debug/TestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject.ProjectsHelperTest, TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetFunctionsTest" />
+    </UnitTest>
+    <UnitTest name="SetValuesIntoFormulasTest" storage="e:\информация\проекты\поиск работы\itransition\projectswatcher\projectwatcher\testproject\bin\debug\testproject.dll" id="15097f91-037d-e8d1-b5f3-56560dcfdece">
+      <Execution id="a9c906b2-8b66-4579-b0a1-a7b8e7cdccf6" />
+      <TestMethod codeBase="E:/информация/Проекты/поиск работы/itransition/ProjectsWatcher/ProjectWatcher/TestProject/bin/Debug/TestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject.ProjectsHelperTest, TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="SetValuesIntoFormulasTest" />
+    </UnitTest>
+    <UnitTest name="GetVariablesTest" storage="e:\информация\проекты\поиск работы\itransition\projectswatcher\projectwatcher\testproject\bin\debug\testproject.dll" id="41a1eb7c-2590-e013-66f1-5e5b6213345a">
+      <Execution id="1a5eb451-dc7a-4f6f-b9af-6f8694f4cd5e" />
+      <TestMethod codeBase="E:/информация/Проекты/поиск работы/itransition/ProjectsWatcher/ProjectWatcher/TestProject/bin/Debug/TestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject.ProjectsHelperTest, TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetVariablesTest" />
+    </UnitTest>
+    <UnitTest name="CreateNewPropertyTest3" storage="e:\информация\проекты\поиск работы\itransition\projectswatcher\projectwatcher\testproject\bin\debug\testproject.dll" id="c7536d31-0bc6-a379-5d57-b2fcc3ad9f2c">
+      <Execution id="3db2afd5-9976-40df-bd1f-e9f7a7cdc8af" />
+      <TestMethod codeBase="E:/информация/Проекты/поиск работы/itransition/ProjectsWatcher/ProjectWatcher/TestProject/bin/Debug/TestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject.ProjectsReaderTest, TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="CreateNewPropertyTest3" />
+    </UnitTest>
+    <UnitTest name="GetRequestBuilderTest" storage="e:\информация\проекты\поиск работы\itransition\projectswatcher\projectwatcher\testproject\bin\debug\testproject.dll" id="1e142c3d-c55c-6d86-e41b-fc3cedd943ea">
+      <Execution id="0f3861d1-5cac-475f-94d3-43414634f9ac" />
+      <TestMethod codeBase="E:/информация/Проекты/поиск работы/itransition/ProjectsWatcher/ProjectWatcher/TestProject/bin/Debug/TestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject.ProjectsHelperTest, TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetRequestBuilderTest" />
+    </UnitTest>
+    <UnitTest name="StringToColumnExceptionTest" storage="e:\информация\проекты\поиск работы\itransition\projectswatcher\projectwatcher\testproject\bin\debug\testproject.dll" id="f9ef6d41-1239-8f52-3dfb-a0a832532c16">
+      <Execution id="6e6a578b-6f8a-4b19-adb6-be86257abb33" />
+      <TestMethod codeBase="E:/информация/Проекты/поиск работы/itransition/ProjectsWatcher/ProjectWatcher/TestProject/bin/Debug/TestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject.ProjectsHelperTest, TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="StringToColumnExceptionTest" />
+    </UnitTest>
+    <UnitTest name="GetFunctionsAndVariablesTest" storage="e:\информация\проекты\поиск работы\itransition\projectswatcher\projectwatcher\testproject\bin\debug\testproject.dll" id="6b322db4-52bb-b761-35a2-88784156fad4">
+      <Execution id="be76a928-e330-4167-9ea0-2e7deea056d9" />
+      <TestMethod codeBase="E:/информация/Проекты/поиск работы/itransition/ProjectsWatcher/ProjectWatcher/TestProject/bin/Debug/TestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject.ProjectsHelperTest, TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetFunctionsAndVariablesTest" />
+    </UnitTest>
+    <UnitTest name="CreateNewPropertyTest1" storage="e:\информация\проекты\поиск работы\itransition\projectswatcher\projectwatcher\testproject\bin\debug\testproject.dll" id="7695b576-139d-70b4-ee1c-475101dc4178">
+      <Execution id="d7f09db8-1a99-4fe5-b1b0-75a668e43fc7" />
+      <TestMethod codeBase="E:/информация/Проекты/поиск работы/itransition/ProjectsWatcher/ProjectWatcher/TestProject/bin/Debug/TestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject.ProjectsReaderTest, TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="CreateNewPropertyTest1" />
+    </UnitTest>
+    <UnitTest name="CreateExportDataTest" storage="e:\информация\проекты\поиск работы\itransition\projectswatcher\projectwatcher\testproject\bin\debug\testproject.dll" id="4cca512c-3df2-ed2f-b893-3ab183a0f8a1">
+      <Execution id="15106285-aba4-410a-a08c-65d896bd33f4" />
+      <TestMethod codeBase="E:/информация/Проекты/поиск работы/itransition/ProjectsWatcher/ProjectWatcher/TestProject/bin/Debug/TestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject.ProjectsHelperTest, TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="CreateExportDataTest" />
+    </UnitTest>
+    <UnitTest name="GetProjectTest" storage="e:\информация\проекты\поиск работы\itransition\projectswatcher\projectwatcher\testproject\bin\debug\testproject.dll" id="3cc554ee-dc1d-1d98-3159-a14f45ff35c7">
+      <Execution id="eb8a1209-5c1d-4c0d-a0f1-2c48fe6aee57" />
+      <TestMethod codeBase="E:/информация/Проекты/поиск работы/itransition/ProjectsWatcher/ProjectWatcher/TestProject/bin/Debug/TestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject.ProjectsReaderTest, TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetProjectTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="f9ef6d41-1239-8f52-3dfb-a0a832532c16" executionId="6e6a578b-6f8a-4b19-adb6-be86257abb33" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e4ee5135-d52c-e831-1731-99027035f03a" executionId="9327d1d1-2e12-4f75-a9a1-79dabf2e3935" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ef00f901-fd6a-b75c-5f01-f2fa43dfda91" executionId="6704e446-eb8d-493d-8343-d6d9553b4792" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3bf54a8a-3985-7233-1816-155c4f3016be" executionId="97574297-1e1d-4be2-8166-c8d99f113dcb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b7f7d50f-7580-9f38-5947-a3a34adaf952" executionId="50181fcb-5139-461c-bbf1-7e82ac75ec6e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="19af2c87-2e28-0ae7-52ee-e6e5a46fbe1b" executionId="3eb6d840-24d2-4379-9b95-398fcf4f8e98" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="067bc254-eb01-e54b-b1b0-617ef6ab44e1" executionId="acad3ef8-d7f2-4f28-b117-06451d0f479d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6b322db4-52bb-b761-35a2-88784156fad4" executionId="be76a928-e330-4167-9ea0-2e7deea056d9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1e142c3d-c55c-6d86-e41b-fc3cedd943ea" executionId="0f3861d1-5cac-475f-94d3-43414634f9ac" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="41a1eb7c-2590-e013-66f1-5e5b6213345a" executionId="1a5eb451-dc7a-4f6f-b9af-6f8694f4cd5e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="15097f91-037d-e8d1-b5f3-56560dcfdece" executionId="a9c906b2-8b66-4579-b0a1-a7b8e7cdccf6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5e6eb382-3c25-c34d-109c-e268ac443ad8" executionId="d0c08b5c-3e5b-4a39-a903-c27977eab123" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4cca512c-3df2-ed2f-b893-3ab183a0f8a1" executionId="15106285-aba4-410a-a08c-65d896bd33f4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c073fbef-a541-181b-a5d4-d06f138e9cab" executionId="54f514a4-50ab-4983-8b21-5dd32f876563" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3fadbe7c-8122-8645-3fe8-e0598248f416" executionId="65777e64-7599-49c7-b14f-9a1c205db825" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7695b576-139d-70b4-ee1c-475101dc4178" executionId="d7f09db8-1a99-4fe5-b1b0-75a668e43fc7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c6bcfdc2-241a-5176-35fd-177c19f841f3" executionId="e8ac9ca6-72a6-47ed-ab2f-c538f5343d0f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c7536d31-0bc6-a379-5d57-b2fcc3ad9f2c" executionId="3db2afd5-9976-40df-bd1f-e9f7a7cdc8af" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3cc554ee-dc1d-1d98-3159-a14f45ff35c7" executionId="eb8a1209-5c1d-4c0d-a0f1-2c48fe6aee57" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="6e6a578b-6f8a-4b19-adb6-be86257abb33" testId="f9ef6d41-1239-8f52-3dfb-a0a832532c16" testName="StringToColumnExceptionTest" computerName="ХП" duration="00:00:00.0453430" startTime="2012-01-20T19:41:28.8995525+02:00" endTime="2012-01-20T19:41:29.6075588+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6e6a578b-6f8a-4b19-adb6-be86257abb33">
+    </UnitTestResult>
+    <UnitTestResult executionId="9327d1d1-2e12-4f75-a9a1-79dabf2e3935" testId="e4ee5135-d52c-e831-1731-99027035f03a" testName="GetFuncAndVarTest" computerName="ХП" duration="00:00:00.0027508" startTime="2012-01-20T19:41:29.6145589+02:00" endTime="2012-01-20T19:41:29.6345591+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9327d1d1-2e12-4f75-a9a1-79dabf2e3935">
+    </UnitTestResult>
+    <UnitTestResult executionId="6704e446-eb8d-493d-8343-d6d9553b4792" testId="ef00f901-fd6a-b75c-5f01-f2fa43dfda91" testName="RequestBuilderTest" computerName="ХП" duration="00:00:00.0082616" startTime="2012-01-20T19:41:29.6395591+02:00" endTime="2012-01-20T19:41:29.6615593+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6704e446-eb8d-493d-8343-d6d9553b4792">
+    </UnitTestResult>
+    <UnitTestResult executionId="97574297-1e1d-4be2-8166-c8d99f113dcb" testId="3bf54a8a-3985-7233-1816-155c4f3016be" testName="CreateFilterModelTest" computerName="ХП" duration="00:00:00.0129712" startTime="2012-01-20T19:41:29.6655593+02:00" endTime="2012-01-20T19:41:29.6925596+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="97574297-1e1d-4be2-8166-c8d99f113dcb">
+    </UnitTestResult>
+    <UnitTestResult executionId="50181fcb-5139-461c-bbf1-7e82ac75ec6e" testId="b7f7d50f-7580-9f38-5947-a3a34adaf952" testName="CreateFooterModelTest" computerName="ХП" duration="00:00:00.0018947" startTime="2012-01-20T19:41:29.6985596+02:00" endTime="2012-01-20T19:41:29.7085597+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="50181fcb-5139-461c-bbf1-7e82ac75ec6e">
+    </UnitTestResult>
+    <UnitTestResult executionId="3eb6d840-24d2-4379-9b95-398fcf4f8e98" testId="19af2c87-2e28-0ae7-52ee-e6e5a46fbe1b" testName="DeleteFunctionsTest" computerName="ХП" duration="00:00:00.0019895" startTime="2012-01-20T19:41:29.7145598+02:00" endTime="2012-01-20T19:41:29.7245599+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3eb6d840-24d2-4379-9b95-398fcf4f8e98">
+    </UnitTestResult>
+    <UnitTestResult executionId="acad3ef8-d7f2-4f28-b117-06451d0f479d" testId="067bc254-eb01-e54b-b1b0-617ef6ab44e1" testName="GetFunctionsTest" computerName="ХП" duration="00:00:00.0010807" startTime="2012-01-20T19:41:29.7295599+02:00" endTime="2012-01-20T19:41:29.7385600+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="acad3ef8-d7f2-4f28-b117-06451d0f479d">
+    </UnitTestResult>
+    <UnitTestResult executionId="be76a928-e330-4167-9ea0-2e7deea056d9" testId="6b322db4-52bb-b761-35a2-88784156fad4" testName="GetFunctionsAndVariablesTest" computerName="ХП" duration="00:00:00.0007208" startTime="2012-01-20T19:41:29.7445600+02:00" endTime="2012-01-20T19:41:29.7535601+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="be76a928-e330-4167-9ea0-2e7deea056d9">
+    </UnitTestResult>
+    <UnitTestResult executionId="0f3861d1-5cac-475f-94d3-43414634f9ac" testId="1e142c3d-c55c-6d86-e41b-fc3cedd943ea" testName="GetRequestBuilderTest" computerName="ХП" duration="00:00:00.0375063" startTime="2012-01-20T19:41:29.7585602+02:00" endTime="2012-01-20T19:41:29.8035606+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0f3861d1-5cac-475f-94d3-43414634f9ac">
+    </UnitTestResult>
+    <UnitTestResult executionId="1a5eb451-dc7a-4f6f-b9af-6f8694f4cd5e" testId="41a1eb7c-2590-e013-66f1-5e5b6213345a" testName="GetVariablesTest" computerName="ХП" duration="00:00:00.0010485" startTime="2012-01-20T19:41:29.8105606+02:00" endTime="2012-01-20T19:41:29.8185607+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1a5eb451-dc7a-4f6f-b9af-6f8694f4cd5e">
+    </UnitTestResult>
+    <UnitTestResult executionId="a9c906b2-8b66-4579-b0a1-a7b8e7cdccf6" testId="15097f91-037d-e8d1-b5f3-56560dcfdece" testName="SetValuesIntoFormulasTest" computerName="ХП" duration="00:00:00.0084285" startTime="2012-01-20T19:41:29.8245607+02:00" endTime="2012-01-20T19:41:29.8395609+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a9c906b2-8b66-4579-b0a1-a7b8e7cdccf6">
+    </UnitTestResult>
+    <UnitTestResult executionId="d0c08b5c-3e5b-4a39-a903-c27977eab123" testId="5e6eb382-3c25-c34d-109c-e268ac443ad8" testName="StringToColumnTest" computerName="ХП" duration="00:00:00.0023105" startTime="2012-01-20T19:41:29.8455609+02:00" endTime="2012-01-20T19:41:29.8555610+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d0c08b5c-3e5b-4a39-a903-c27977eab123">
+    </UnitTestResult>
+    <UnitTestResult executionId="15106285-aba4-410a-a08c-65d896bd33f4" testId="4cca512c-3df2-ed2f-b893-3ab183a0f8a1" testName="CreateExportDataTest" computerName="ХП" duration="00:00:00.0068404" startTime="2012-01-20T19:41:29.8635611+02:00" endTime="2012-01-20T19:41:29.8825613+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="15106285-aba4-410a-a08c-65d896bd33f4">
+    </UnitTestResult>
+    <UnitTestResult executionId="54f514a4-50ab-4983-8b21-5dd32f876563" testId="c073fbef-a541-181b-a5d4-d06f138e9cab" testName="FormCSVFileTest" computerName="ХП" duration="00:00:00.0013428" startTime="2012-01-20T19:41:29.8925613+02:00" endTime="2012-01-20T19:41:29.9065615+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="54f514a4-50ab-4983-8b21-5dd32f876563">
+    </UnitTestResult>
+    <UnitTestResult executionId="65777e64-7599-49c7-b14f-9a1c205db825" testId="3fadbe7c-8122-8645-3fe8-e0598248f416" testName="GetPropertiesDefinitionsTest" computerName="ХП" duration="00:00:00.0017534" startTime="2012-01-20T19:41:29.9165616+02:00" endTime="2012-01-20T19:41:32.3105829+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="65777e64-7599-49c7-b14f-9a1c205db825">
+    </UnitTestResult>
+    <UnitTestResult executionId="d7f09db8-1a99-4fe5-b1b0-75a668e43fc7" testId="7695b576-139d-70b4-ee1c-475101dc4178" testName="CreateNewPropertyTest1" computerName="ХП" duration="00:00:00.1984864" startTime="2012-01-20T19:41:32.3175829+02:00" endTime="2012-01-20T19:41:32.5285848+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d7f09db8-1a99-4fe5-b1b0-75a668e43fc7">
+      <Output>
+        <StdOut>NHibernate: INSERT INTO Properties (SystemName, DisplayName, Type) VALUES (@p0, @p1, @p2);@p0 = 'latin_only' [Type: String (4000)], @p1 = 'Можно даже кирилическое название' [Type: String (4000)], @p2 = 'Percentage' [Type: String (4000)]
+NHibernate: select @@IDENTITY</StdOut>
+        <ErrorInfo>
+          <Message>Test method TestProject.ProjectsReaderTest.CreateNewPropertyTest1 threw exception: 
+DAL.BadSystemNameException: Выдано исключение типа "DAL.BadSystemNameException".</Message>
+          <StackTrace>    в DAL.ProjectsReader.CreateNewProperty(String name, String systemName, String type, String[] availableValues) в E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\DAL\ProjectsReader.cs:строка 109
+   в TestProject.ProjectsReaderTest.CreateNewPropertyTest1() в E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\TestProject\ProjectsReaderTest.cs:строка 95
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="e8ac9ca6-72a6-47ed-ab2f-c538f5343d0f" testId="c6bcfdc2-241a-5176-35fd-177c19f841f3" testName="CreateNewPropertyTest2" computerName="ХП" duration="00:00:00.0005687" startTime="2012-01-20T19:41:32.5345849+02:00" endTime="2012-01-20T19:41:32.5515850+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e8ac9ca6-72a6-47ed-ab2f-c538f5343d0f">
+    </UnitTestResult>
+    <UnitTestResult executionId="3db2afd5-9976-40df-bd1f-e9f7a7cdc8af" testId="c7536d31-0bc6-a379-5d57-b2fcc3ad9f2c" testName="CreateNewPropertyTest3" computerName="ХП" duration="00:00:00.0015568" startTime="2012-01-20T19:41:32.5545850+02:00" endTime="2012-01-20T19:41:32.5785853+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3db2afd5-9976-40df-bd1f-e9f7a7cdc8af">
+    </UnitTestResult>
+    <UnitTestResult executionId="eb8a1209-5c1d-4c0d-a0f1-2c48fe6aee57" testId="3cc554ee-dc1d-1d98-3159-a14f45ff35c7" testName="GetProjectTest" computerName="ХП" duration="00:00:00.0275608" startTime="2012-01-20T19:41:32.5875853+02:00" endTime="2012-01-20T19:41:32.6325857+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="eb8a1209-5c1d-4c0d-a0f1-2c48fe6aee57">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.IsNotNull failed. </Message>
+          <StackTrace>   в TestProject.ProjectsReaderTest.GetProjectTest() в E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\TestProject\ProjectsReaderTest.cs:строка 145
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

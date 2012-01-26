@@ -1,0 +1,18 @@
+E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\Authorization\obj\Debug\ResolveAssemblyReference.cache
+E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\Authorization\bin\Debug\Authorization.dll.config
+E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\Authorization\bin\Debug\Authorization.dll
+E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\Authorization\bin\Debug\Authorization.pdb
+E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\Authorization\obj\Debug\Authorization.dll
+E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\Authorization\obj\Debug\Authorization.pdb
+D:\work\demidov\ProjectWatcher\Authorization\bin\Debug\Authorization.dll.config
+D:\work\demidov\ProjectWatcher\Authorization\bin\Debug\Authorization.dll
+D:\work\demidov\ProjectWatcher\Authorization\bin\Debug\Authorization.pdb
+D:\work\demidov\ProjectWatcher\Authorization\obj\Debug\ResolveAssemblyReference.cache
+D:\work\demidov\ProjectWatcher\Authorization\obj\Debug\Authorization.dll
+D:\work\demidov\ProjectWatcher\Authorization\obj\Debug\Authorization.pdb
+D:\work\demidov\ProjectWatcher_19_01_2012_2137_Demidov\ProjectWatcher\Authorization\bin\Debug\Authorization.dll.config
+D:\work\demidov\ProjectWatcher_19_01_2012_2137_Demidov\ProjectWatcher\Authorization\bin\Debug\Authorization.dll
+D:\work\demidov\ProjectWatcher_19_01_2012_2137_Demidov\ProjectWatcher\Authorization\bin\Debug\Authorization.pdb
+D:\work\demidov\ProjectWatcher_19_01_2012_2137_Demidov\ProjectWatcher\Authorization\obj\Debug\ResolveAssemblyReference.cache
+D:\work\demidov\ProjectWatcher_19_01_2012_2137_Demidov\ProjectWatcher\Authorization\obj\Debug\Authorization.dll
+D:\work\demidov\ProjectWatcher_19_01_2012_2137_Demidov\ProjectWatcher\Authorization\obj\Debug\Authorization.pdb

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="DAL"
+                   namespace="DAL">
+
+  <class name="AvailableValue" table="AvailableValues">
+    <id name="Id">
+      <generator class="native"/>
+    </id>
+    <many-to-one name="Property" column="Property" cascade="all"/>
+    <property name="Value" />    
+  </class>
+
+
+</hibernate-mapping>

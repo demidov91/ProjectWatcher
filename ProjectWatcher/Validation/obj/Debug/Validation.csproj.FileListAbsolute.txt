@@ -1,0 +1,6 @@
+E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\Validation\bin\Debug\Validation.dll.config
+E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\Validation\bin\Debug\Validation.dll
+E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\Validation\bin\Debug\Validation.pdb
+E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\Validation\obj\Debug\ResolveAssemblyReference.cache
+E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\Validation\obj\Debug\Validation.dll
+E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\Validation\obj\Debug\Validation.pdb

@@ -1,0 +1,122 @@
+﻿
+
+.leftButtomAlignCell{
+    text-align:left;
+    vertical-align:bottom;    
+}
+    
+.rightButtomAlignCell{
+    text-align:right;
+    vertical-align:bottom;    
+}
+    
+.centerCell{
+    text-align:center;
+}
+    
+.centerDiv{}
+    
+.okCancelButton{
+    float:right;
+}
+    
+.tableLayoutLeftSide{
+    text-align:right;    
+}
+    
+.tableLayoutRightSide{
+    text-align:left;    
+}
+
+.leftSide{
+    float:left;    
+}
+    
+.rightSide{
+    float:right;
+}
+    
+.upAndLeft{
+    text-align:left;
+    vertical-align:top;
+}
+
+
+/*================================*/
+/*filter.ascx*/
+#editFilterBlock
+{
+    clear:left;    
+    }
+    
+/*filter.ascx*/
+/*===========================*/
+
+
+
+
+/*=================================*/
+/*table.aspx*/
+
+#projectsTable
+{
+    float:left;
+    clear:left;
+    width:90%;   
+    }
+    
+#tableHeader
+{
+    text-align:center;
+    }
+    
+
+#editTableBlock
+{
+    clear:left;
+    }
+    
+#labelTableBlock
+{
+    clear:left;
+    }
+    
+#editForTableDefinitionWrapper
+{
+    width:90%;
+    }
+    
+#editForTableDefinition
+{
+    width:100%;
+    height:300px;
+    }
+#projectsEverything
+{
+    margin-left:30px;
+    }
+
+/*table.aspx*/
+/*=================================*/
+
+/*================================*/
+/*footer.ascx*/
+#visibleFooter
+{
+    width:90%;  
+    }
+#submitUpload
+{
+    float:left;
+    }
+    
+#errorUploadMessage
+{
+    clear:left;
+    font-family:Arial;
+    font-style:italic;    
+    }
+
+    
+/*footer.ascx*/
+/*===========================*/

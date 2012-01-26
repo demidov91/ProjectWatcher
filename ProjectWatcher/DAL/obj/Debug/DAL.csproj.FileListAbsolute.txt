@@ -1,0 +1,40 @@
+E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\DAL\obj\Debug\ResolveAssemblyReference.cache
+E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\DAL\bin\Debug\DAL.dll
+E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\DAL\bin\Debug\DAL.pdb
+E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\DAL\obj\Debug\DAL.dll
+E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\DAL\obj\Debug\DAL.pdb
+D:\work\demidov\ProjectWatcher\DAL\bin\Debug\DAL.dll
+D:\work\demidov\ProjectWatcher\DAL\bin\Debug\DAL.pdb
+D:\work\demidov\ProjectWatcher\DAL\obj\Debug\ResolveAssemblyReference.cache
+D:\work\demidov\ProjectWatcher\DAL\obj\Debug\DAL.dll
+D:\work\demidov\ProjectWatcher\DAL\obj\Debug\DAL.pdb
+D:\work\demidov\ProjectWatcher\DAL\bin\Debug\hibernate.cfg.xml.xml
+D:\work\demidov\ProjectWatcher\DAL\bin\Debug\NHibernate.dll
+D:\work\demidov\ProjectWatcher\DAL\bin\Debug\Iesi.Collections.dll
+D:\work\demidov\ProjectWatcher\DAL\bin\Debug\NHibernate.pdb
+D:\work\demidov\ProjectWatcher\DAL\bin\Debug\NHibernate.xml
+D:\work\demidov\ProjectWatcher\DAL\bin\Debug\Iesi.Collections.pdb
+D:\work\demidov\ProjectWatcher\DAL\bin\Debug\Iesi.Collections.xml
+D:\work\demidov\ProjectWatcher_19_01_2012_2137_Demidov\ProjectWatcher\DAL\bin\Debug\hibernate.cfg.xml
+D:\work\demidov\ProjectWatcher_19_01_2012_2137_Demidov\ProjectWatcher\DAL\bin\Debug\DAL.dll
+D:\work\demidov\ProjectWatcher_19_01_2012_2137_Demidov\ProjectWatcher\DAL\bin\Debug\DAL.pdb
+D:\work\demidov\ProjectWatcher_19_01_2012_2137_Demidov\ProjectWatcher\DAL\bin\Debug\NHibernate.dll
+D:\work\demidov\ProjectWatcher_19_01_2012_2137_Demidov\ProjectWatcher\DAL\bin\Debug\Iesi.Collections.dll
+D:\work\demidov\ProjectWatcher_19_01_2012_2137_Demidov\ProjectWatcher\DAL\bin\Debug\NHibernate.pdb
+D:\work\demidov\ProjectWatcher_19_01_2012_2137_Demidov\ProjectWatcher\DAL\bin\Debug\NHibernate.xml
+D:\work\demidov\ProjectWatcher_19_01_2012_2137_Demidov\ProjectWatcher\DAL\bin\Debug\Iesi.Collections.pdb
+D:\work\demidov\ProjectWatcher_19_01_2012_2137_Demidov\ProjectWatcher\DAL\bin\Debug\Iesi.Collections.xml
+D:\work\demidov\ProjectWatcher_19_01_2012_2137_Demidov\ProjectWatcher\DAL\obj\Debug\ResolveAssemblyReference.cache
+D:\work\demidov\ProjectWatcher_19_01_2012_2137_Demidov\ProjectWatcher\DAL\obj\Debug\DAL.dll
+D:\work\demidov\ProjectWatcher_19_01_2012_2137_Demidov\ProjectWatcher\DAL\obj\Debug\DAL.pdb
+D:\work\demidov\ProjectWatcher_19_01_2012_2137_Demidov\ProjectWatcher\DAL\bin\Debug\System.Data.SqlServerCe.dll
+E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\DAL\bin\Debug\hibernate.cfg.xml
+E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\DAL\bin\Debug\NHibernate.dll
+E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\DAL\bin\Debug\System.Data.SqlServerCe.dll
+E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\DAL\bin\Debug\Iesi.Collections.dll
+E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\DAL\bin\Debug\NHibernate.pdb
+E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\DAL\bin\Debug\NHibernate.xml
+E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\DAL\bin\Debug\Iesi.Collections.pdb
+E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\DAL\bin\Debug\Iesi.Collections.xml
+E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\DAL\bin\Debug\Validation.dll
+E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\DAL\bin\Debug\Validation.pdb

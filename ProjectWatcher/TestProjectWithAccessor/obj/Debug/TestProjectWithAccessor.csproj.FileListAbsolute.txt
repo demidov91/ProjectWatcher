@@ -1,0 +1,16 @@
+E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\TestProjectWithAccessor\bin\Debug\TestProjectWithAccessor.dll
+E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\TestProjectWithAccessor\bin\Debug\TestProjectWithAccessor.pdb
+E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\TestProjectWithAccessor\bin\Debug\anrControls.Markdown.NET.dll
+E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\TestProjectWithAccessor\bin\Debug\Authorization.dll
+E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\TestProjectWithAccessor\bin\Debug\DAL.dll
+E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\TestProjectWithAccessor\bin\Debug\EntityFramework.dll
+E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\TestProjectWithAccessor\bin\Debug\ProjectWatcher.dll
+E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\TestProjectWithAccessor\bin\Debug\Authorization.pdb
+E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\TestProjectWithAccessor\bin\Debug\DAL.pdb
+E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\TestProjectWithAccessor\bin\Debug\ProjectWatcher.pdb
+E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\TestProjectWithAccessor\bin\Debug\EntityFramework.xml
+E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\TestProjectWithAccessor\bin\Debug\ProjectWatcher_Accessor.dll
+E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\TestProjectWithAccessor\bin\Debug\ProjectWatcher_Accessor.pdb
+E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\TestProjectWithAccessor\obj\Debug\ResolveAssemblyReference.cache
+E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\TestProjectWithAccessor\obj\Debug\TestProjectWithAccessor.dll
+E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\TestProjectWithAccessor\obj\Debug\TestProjectWithAccessor.pdb

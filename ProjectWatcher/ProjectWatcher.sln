@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectWatcher", "ProjectWatcher\ProjectWatcher.csproj", "{2D2E596F-E640-4480-9903-CEB77F80E637}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Authorization", "Authorization\Authorization.csproj", "{C8136077-37A5-46B4-B3B5-1BF17A986257}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{7D3D09B7-D61A-4554-ACDE-1FD8691AC5E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "TestProject\TestProject.csproj", "{FD99454C-B17B-4D57-BB4F-E5742728F940}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{91CB14FE-B563-435F-9850-0E2B0DB3A718}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		ProjectWatcher.vsmdi = ProjectWatcher.vsmdi
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Validation", "Validation\Validation.csproj", "{A8E85134-955D-4A2A-AF44-D0E7BEF7C9A2}"
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = ProjectWatcher.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2D2E596F-E640-4480-9903-CEB77F80E637}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D2E596F-E640-4480-9903-CEB77F80E637}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D2E596F-E640-4480-9903-CEB77F80E637}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D2E596F-E640-4480-9903-CEB77F80E637}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8136077-37A5-46B4-B3B5-1BF17A986257}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8136077-37A5-46B4-B3B5-1BF17A986257}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8136077-37A5-46B4-B3B5-1BF17A986257}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8136077-37A5-46B4-B3B5-1BF17A986257}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D3D09B7-D61A-4554-ACDE-1FD8691AC5E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D3D09B7-D61A-4554-ACDE-1FD8691AC5E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D3D09B7-D61A-4554-ACDE-1FD8691AC5E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D3D09B7-D61A-4554-ACDE-1FD8691AC5E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD99454C-B17B-4D57-BB4F-E5742728F940}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD99454C-B17B-4D57-BB4F-E5742728F940}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD99454C-B17B-4D57-BB4F-E5742728F940}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD99454C-B17B-4D57-BB4F-E5742728F940}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8E85134-955D-4A2A-AF44-D0E7BEF7C9A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8E85134-955D-4A2A-AF44-D0E7BEF7C9A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8E85134-955D-4A2A-AF44-D0E7BEF7C9A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8E85134-955D-4A2A-AF44-D0E7BEF7C9A2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
