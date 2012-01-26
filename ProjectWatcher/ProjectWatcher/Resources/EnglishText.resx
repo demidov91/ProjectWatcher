@@ -123,17 +123,23 @@
   <data name="AddProject" xml:space="preserve">
     <value>Add project</value>
   </data>
+  <data name="Admin" xml:space="preserve">
+    <value>Last User</value>
+  </data>
   <data name="AvailableProperties" xml:space="preserve">
     <value>Available properties</value>
   </data>
   <data name="BackToProjectView" xml:space="preserve">
-    <value>Submit</value>
+    <value>Back to project</value>
   </data>
   <data name="BadColumnDefinition" xml:space="preserve">
     <value>Bad column definition</value>
   </data>
   <data name="CreateProperty" xml:space="preserve">
     <value>Create new property</value>
+  </data>
+  <data name="date" xml:space="preserve">
+    <value>Last Update</value>
   </data>
   <data name="DownloadFail" xml:space="preserve">
     <value>Error in file</value>
@@ -162,6 +168,9 @@
   <data name="SystemName" xml:space="preserve">
     <value>System name</value>
   </data>
+  <data name="TheProject1" xml:space="preserve">
+    <value>Project Name</value>
+  </data>
   <data name="Type" xml:space="preserve">
     <value>Type</value>
   </data>
@@ -173,5 +182,29 @@
   </data>
   <data name="WrongTableDefinition" xml:space="preserve">
     <value>Wrong table definition</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="PropertyInfo" xml:space="preserve">
+    <value>Property Info</value>
+  </data>
+  <data name="IsImportant" xml:space="preserve">
+    <value>Is important</value>
+  </data>
+  <data name="BadDisplayType" xml:space="preserve">
+    <value>Invalid property caption</value>
+  </data>
+  <data name="BadPropertySystemName" xml:space="preserve">
+    <value>Invalid property programname</value>
+  </data>
+  <data name="BadPropertyType" xml:space="preserve">
+    <value>Invalid type of the property</value>
+  </data>
+  <data name="ConnectionError" xml:space="preserve">
+    <value>Error while connecting to the database</value>
+  </data>
+  <data name="NotEnoughRights" xml:space="preserve">
+    <value>Not enough rights</value>
   </data>
 </root>

@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using NHibernate;
+using SystemSettings;
 using DAL.Helpers;
-using Validation;
 
 namespace DAL
 {
@@ -13,45 +12,44 @@ namespace DAL
     /// </summary>
     public class ProjectsReader
     {
-        ///to implement
         public Property[] GetPropertiesDefinitions(int projectId)
         {
-            Property example = new Property();
-            example.Name = "Property1";
-            example.SystemName = "prop";
-            example.Type = "String";
-            Property[] toReturn = new Property[1];
-            toReturn[0] = example;
-            return toReturn;
+            Project project = ConnectionHelper.GetProject(projectId);
+            if (project == null)
+            {
+                return null;
+            }
+            return project.Values.Select(x => x.Property).ToArray();            
+        }
+
+        /// <summary>
+        /// Gets definitions for visible properties of the project.
+        /// </summary>
+        /// <param name="projectId">Id of the project to get properties from.</param>
+        /// <returns>Array of definitions of visible properties.</returns>
+        public Property[] GetVisiblePropertiesDefinitions(int projectId)
+        {
+            Project project = ConnectionHelper.GetProject(projectId);
+            if (project == null)
+            {
+                return null;
+            }
+            return project.Values.Where(x => x.Visible).Select(x => x.Property).ToArray();
         }
         
         /// <summary>
         /// Reads all existing properties in the system.
-        /// TODO: Find out what exceptions can be thrown inside of method.
         /// </summary>
         /// <returns>Array of property-entities.</returns>
         /// <exception cref="ConnectionException" />
         public Property[] GetPropertiesDefinitions()
         {
-            Property[] toReturn = null;
-            try
-            {
-                using (ISession session = ConnectionHelper.OpenSession())
-                {
-                    toReturn = session.QueryOver<Property>().List<Property>().ToArray();
-                    NHibernateUtil.Initialize(toReturn);
-                }
-            }
-            catch (Exception e)
-            {
-                throw new ConnectionException(e);
-            }
-            return toReturn;
+            return ConnectionHelper.GetProperties();
         }
 
         public Project GetProject(int projectId)
         {
-            return new Project(); 
+            return ConnectionHelper.GetProject(projectId);
         }
 
         /// <summary>
@@ -64,9 +62,15 @@ namespace DAL
         /// <exception cref="ConnectionException" />
         /// <exception cref="BadSystemNameException" />
         /// <exception cref="BadPropertyTypeException" />
-        /// <exception cref="BadDisplayTypeException" />
+        /// <exception cref="BadDisplayTypeNameException" />
         public void CreateNewProperty(String name, String systemName, String type, String[] availableValues)
         {
+            if(name == null)
+            {
+                throw new BadSystemNameException();
+            }
+            name = name.CutWhitespaces();
+            systemName = systemName.CutWhitespaces();
             if(!TypeValidationHelper.IsValidSystemName(systemName))
             {
                 throw new BadSystemNameException();
@@ -81,48 +85,33 @@ namespace DAL
             {
                 throw new BadDisplayTypeNameException();
             }
-
             Property creating = new Property();
-            creating.Name = name;
+            creating.DisplayName = name;
             creating.SystemName = systemName;
             creating.Type = type;
-            
+
+            if (!ConnectionHelper.CreateProperty(creating))
+            {
+                throw new BadSystemNameException();
+            }
             if (TypeValidationHelper.IsSelectable(type))
-            {
-                creating.AvailableValues = availableValues;
+            {                
+                ConnectionHelper.AddAvailableValues(availableValues.Where(x => TypeValidationHelper.IsValidValue(x)), creating);
             }
-            ISession session;
-            try
-            {
-                session = ConnectionHelper.OpenSession();
-            }
-            catch(Exception e)
-            {
-                throw new ConnectionException(e);
-            }
-            try
-            {
-                using (ITransaction transaction = session.BeginTransaction())
-                {
-                    session.Save(creating);
-                    transaction.Commit();
-                }
-            }
-            catch (Exception e)
-            {
-                session.Close();
-                throw new BadSystemNameException(); 
-            }
-            session.Close(); 
+            
         }
 
         /// <summary>
         /// Creates new project in DB.
         /// </summary>
+        /// <param name="owner">Name of owner of new project.</param>
         /// <returns>Id of created project.</returns>
-        public int CreateNewProject()
+        public int CreateNewProject(String owner)
         {
-            return 1;
+            return ConnectionHelper.CreateProject(owner, DateTime.Now);
         }
+
+
+
     }
 }

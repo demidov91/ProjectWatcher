@@ -30,7 +30,7 @@ namespace Authorization
             }
             if(users.Contains(userName))
                 return;
-            context.Response.Redirect(redirectUrl);                        
+            filterContext.Result = new RedirectResult(redirectUrl);
         }
     }
 }

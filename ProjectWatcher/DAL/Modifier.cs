@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
+using System.Data.Objects.DataClasses;
+using DAL.Helpers;
+
 
 namespace DAL
 {
@@ -21,6 +24,21 @@ namespace DAL
             return true;                         
         }
 
-        
+
+        public bool Modify(EntityObject entity)
+        {
+            if(entity is Value)
+            {
+                return ConnectionHelper.ModifyWithHistory((Value)entity);
+            }
+            else
+            {
+                return ConnectionHelper.Modify(entity);
+            }
+        }
+
+
+
+
     }
 }

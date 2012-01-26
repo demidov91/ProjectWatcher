@@ -38,3 +38,43 @@ E:\информация\Проекты\поиск работы\itransition\Proje
 E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\DAL\bin\Debug\Iesi.Collections.xml
 E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\DAL\bin\Debug\Validation.dll
 E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\DAL\bin\Debug\Validation.pdb
+D:\work\demidov\ProjectWatcher_21_01_2012_Demidov\ProjectWatcher\DAL\obj\Debug\ResolveAssemblyReference.cache
+D:\work\demidov\ProjectWatcher_21_01_2012_Demidov\ProjectWatcher\DAL\obj\Debug\DAL.dll
+D:\work\demidov\ProjectWatcher_21_01_2012_Demidov\ProjectWatcher\DAL\obj\Debug\DAL.pdb
+D:\work\demidov\ProjectWatcher_21_01_2012_Demidov\ProjectWatcher\DAL\bin\Debug\DAL.dll
+D:\work\demidov\ProjectWatcher_21_01_2012_Demidov\ProjectWatcher\DAL\bin\Debug\DAL.pdb
+D:\work\demidov\ProjectWatcher_21_01_2012_Demidov\ProjectWatcher\DAL\bin\Debug\SystemSettings.dll
+D:\work\demidov\ProjectWatcher_21_01_2012_Demidov\ProjectWatcher\DAL\bin\Debug\SystemSettings.pdb
+D:\work\demidov\ProjectWatcher_21_01_2012_Demidov\ProjectWatcher\DAL\bin\Debug\DAL.dll.config
+D:\ProjectWatcher\DAL\bin\Debug\DAL.dll.config
+D:\ProjectWatcher\DAL\bin\Debug\DAL.dll
+D:\ProjectWatcher\DAL\bin\Debug\DAL.pdb
+D:\ProjectWatcher\DAL\bin\Debug\SystemSettings.dll
+D:\ProjectWatcher\DAL\bin\Debug\SystemSettings.pdb
+D:\ProjectWatcher\DAL\obj\Debug\ResolveAssemblyReference.cache
+D:\ProjectWatcher\DAL\obj\Debug\DAL.dll
+D:\ProjectWatcher\DAL\obj\Debug\DAL.pdb
+D:\work\Demidov\ProjectWatcher_25_samsonov\ProjectWatcher_25_samsonov\DAL\bin\Debug\DAL.dll.config
+D:\work\Demidov\ProjectWatcher_25_samsonov\ProjectWatcher_25_samsonov\DAL\bin\Debug\DAL.dll
+D:\work\Demidov\ProjectWatcher_25_samsonov\ProjectWatcher_25_samsonov\DAL\bin\Debug\DAL.pdb
+D:\work\Demidov\ProjectWatcher_25_samsonov\ProjectWatcher_25_samsonov\DAL\bin\Debug\SystemSettings.dll
+D:\work\Demidov\ProjectWatcher_25_samsonov\ProjectWatcher_25_samsonov\DAL\bin\Debug\SystemSettings.pdb
+D:\work\Demidov\ProjectWatcher_25_samsonov\ProjectWatcher_25_samsonov\DAL\obj\Debug\ResolveAssemblyReference.cache
+D:\work\Demidov\ProjectWatcher_25_samsonov\ProjectWatcher_25_samsonov\DAL\obj\Debug\DAL.dll
+D:\work\Demidov\ProjectWatcher_25_samsonov\ProjectWatcher_25_samsonov\DAL\obj\Debug\DAL.pdb
+D:\work\Demidov\ProjectWatcher_25_samsonov\ProjectWatcher\DAL\bin\Debug\DAL.dll.config
+D:\work\Demidov\ProjectWatcher_25_samsonov\ProjectWatcher\DAL\bin\Debug\DAL.dll
+D:\work\Demidov\ProjectWatcher_25_samsonov\ProjectWatcher\DAL\bin\Debug\DAL.pdb
+D:\work\Demidov\ProjectWatcher_25_samsonov\ProjectWatcher\DAL\bin\Debug\SystemSettings.dll
+D:\work\Demidov\ProjectWatcher_25_samsonov\ProjectWatcher\DAL\bin\Debug\SystemSettings.pdb
+D:\work\Demidov\ProjectWatcher_25_samsonov\ProjectWatcher\DAL\obj\Debug\ResolveAssemblyReference.cache
+D:\work\Demidov\ProjectWatcher_25_samsonov\ProjectWatcher\DAL\obj\Debug\DAL.dll
+D:\work\Demidov\ProjectWatcher_25_samsonov\ProjectWatcher\DAL\obj\Debug\DAL.pdb
+E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\DAL\bin\Debug\DAL.dll.config
+E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\DAL\bin\Debug\DAL.dll
+E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\DAL\bin\Debug\DAL.pdb
+E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\DAL\bin\Debug\SystemSettings.dll
+E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\DAL\bin\Debug\SystemSettings.pdb
+E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\DAL\obj\Debug\ResolveAssemblyReference.cache
+E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\DAL\obj\Debug\DAL.dll
+E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\DAL\obj\Debug\DAL.pdb

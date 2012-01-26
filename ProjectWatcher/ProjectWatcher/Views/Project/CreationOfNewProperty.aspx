@@ -10,10 +10,8 @@
 <body>
 <div class="centerDiv">
     <form  method="post" action="<%=Html.AttributeEncode(Url.Action("CreationOfNewPropertyClick", new{projectId = ViewData["projectId"]})) %>">
+    <div style="padding-left:30%; padding-right:30%;">
     <table>
-    <tr>
-    <td>
-    <table style="width:100%">
         <tr>
             <td class="tableLayoutLeftSide">
             <%=ViewData["nameTitle"] %>
@@ -38,7 +36,7 @@
                 <%:Html.DropDownListFor(m => m.Type, new SelectList((SelectListItem[])ViewData["availableTypes"], "Value", "Text")) %>
             </td>
         </tr>
-        <tr>
+       <tr>
             <td class="tableLayoutLeftSide">
                 <%=ViewData["availableValuesTitle"]%>
             </td>
@@ -46,16 +44,21 @@
                 <%:Html.TextAreaFor(m => m.AvailableValues) %>
             </td>
         </tr>
+        <tr>
+            <td>
+                <%:Html.Encode(TempData["errorMessage"]) %>
+            </td>
+            <td style="text-align: right;">
+                <input  name="accept" type="image" src="../../Resources/AcceptButton.png" />
+                <input  name="reject" type="image" src="../../Resources/RejectButton.png" />
+                
+                
+            </td>
+        </tr>
     </table>
-    </td>
-    </tr>
-    <tr>
-        <td>
-            <input class="okCancelButton" name="reject" type="image" src="../../Resources/RejectButton.png" />
-            <input class="okCancelButton" name="accept" type="image" src="../../Resources/AcceptButton.png" />
-        </td>
-    </tr>
-    </table>
+    </div>
+    
+    
     </form>
    </div>
 </body>

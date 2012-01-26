@@ -21,8 +21,8 @@ namespace ProjectWatcher
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-            routes.MapRoute("EditProjectProperties", "Project/{action}", new {controller="Project" });
-            routes.MapRoute("EditProjectValues", "Project/{projectId}", new { controller="Project", action = "Index" });
+            routes.MapRoute("ForProjects", "Projects/{action}", new {controller = "Projects", action = "Index"});
+            routes.MapRoute("EditProjectProperties", "Project{projectId}/{action}", new {controller="Project", action="Index" });
             routes.MapRoute("Default", "{controller}/{action}", new { controller = "Projects", action = "Index" });
 
         }
@@ -36,8 +36,9 @@ namespace ProjectWatcher
 
             Authorization.AuthorizationHelper.LoadUserRoles();
             Helpers.ResourcesHelper.LoadResourses();
-            //DAL.Helpers.ConnectionHelper.LoadORM();
-            Validation.TypeValidationHelper.LoadTypes();
+            DAL.Helpers.ConnectionHelper.LoadORM();
+            SystemSettings.TypeValidationHelper.LoadTypes();
+            SystemSettings.DBDefinitionsHelper.Load();
         }
 
         public void WindowsAuthentication_OnAuthenticate(Object Source, WindowsAuthenticationEventArgs e)

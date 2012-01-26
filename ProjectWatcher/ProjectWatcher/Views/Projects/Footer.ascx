@@ -2,9 +2,12 @@
 <%@ Import Namespace="ProjectWatcher.Models.Projects" %>
 
 <div id="visibleFooter">
-<form action="<%=Html.AttributeEncode(Url.Action("NewProject")) %>">
-    <input class="leftSide" type="submit" value="<%=Model.AddProjectTitle%>" />
+    <% if (Model.IsAdmin)
+       {%>
+<form action="<%= Html.AttributeEncode(Url.Action("NewProject")) %>" method="post">
+    <input class="leftSide" type="submit" value="<%= Model.AddProjectTitle %>" />
 </form>
+<% }%> 
 
 <form action="<%=Html.AttributeEncode(Url.Action("Export", new{headers=((TableModel)ViewData["tableModel"]).Headers, values=((TableModel)ViewData["tableModel"]).AllValues})) %>" method="post">
     <input class="rightSide" type="submit" value="<%=Model.ExportTitle %>" />

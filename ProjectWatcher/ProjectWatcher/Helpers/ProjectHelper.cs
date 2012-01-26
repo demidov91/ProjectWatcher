@@ -22,6 +22,27 @@ namespace ProjectWatcher.Helpers
         }
 
 
+        internal static PropertyModel[] GetVisibleProperties(ProjectsReader dal, int projectId)
+        {
+            Project project = dal.GetProject(projectId);
+            if(project == null)
+            {
+                return null;
+            }
+            List<PropertyModel> outputProperties = new List<PropertyModel>();
+            foreach (Value value in project.Values)
+            {
+                if (!value.Visible)
+                {
+                    continue;
+                }
+                PropertyModel property = new PropertyModel(value.Property);
+                property.IsImportant = value.Important;
+                outputProperties.Add(property);
+            }
+            return outputProperties.ToArray();
+        }
+
         public static PropertyModel[] ExcludeProperties(ProjectsReader dal, PropertyModel[] propertiesFromProject)
         {
             Property[] propertiesFromDAL = dal.GetPropertiesDefinitions();
@@ -45,5 +66,7 @@ namespace ProjectWatcher.Helpers
             return toReturn;
         }
 
+
+        
     }
 }

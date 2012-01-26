@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace Validation
+
+namespace SystemSettings
 {
     public static class TypeValidationHelper
     {
         private static readonly String SystemNamePattern = @"\A[A-Za-z_]{1,50}\z";
 
-        private static readonly String DisplayNamePattern = @"\A\w[\w\s]{1,100}\w\z";
+        private static readonly String DisplayNamePattern = @"\A\w[^$]{0,100}(?<=\w)\z";
 
         private static String[] programTypes;
 
@@ -37,6 +38,11 @@ namespace Validation
         public static bool IsValidDisplayName(string name)
         {
             return Regex.IsMatch(name, DisplayNamePattern);
+        }
+
+        public static bool IsValidValue(String value)
+        {
+            return value != null && value.Length > 0;
         }
 
         public static bool IsSelectable(string type)

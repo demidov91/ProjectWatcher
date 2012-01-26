@@ -1,4 +1,5 @@
-﻿using ProjectWatcher.Helpers;
+﻿using NMock2.Actions;
+using ProjectWatcher.Helpers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting.Web;
@@ -6,8 +7,7 @@ using ProjectWatcher.Models.Projects;
 using System.Collections.Generic;
 using DAL;
 using System.Security.Principal;
-using System.IO;
-using Rhino.Mocks;
+using NMock2;
 using System.Web;
 
 namespace TestProject
@@ -155,10 +155,16 @@ Header2,    $if(%ut_coverage% > 50\, %ut_coverage%, %false%), Enumeration, 20";
         [TestMethod()]
         public void CreateFooterModelTest()
         {
+            Mockery mockery = new NMock2.Mockery();
+            HttpContextWarker mockContext = mockery.NewMock<HttpContextWarker>();
+            IPrincipal mockUser = mockery.NewMock<IPrincipal>();
+            NMock2.Expect.Once.On(mockUser).Method(new NMock2.Matchers.MethodNameMatcher("IsInRole")).With(new String[] { "administrator" }).Will(NMock2.Return.Value(true));
+            NMock2.Expect.AtLeast(0).On(mockContext).GetProperty("User").Will(new ReturnAction(mockUser));
+            NMock2.Expect.AtLeast(0).On(mockContext).Method("GetCulture").Will(new ReturnAction("en-EN"));
             string culture = engCulture;
             String filter = "";
             String tableDefinition = "";
-            FooterModel actual = ProjectsHelper.CreateFooterModel(filter, tableDefinition, null, engCulture);
+            FooterModel actual = ProjectsHelper.CreateFooterModel(filter, tableDefinition, null, mockContext);
             Assert.IsNotNull(actual);
         }
 

@@ -1,0 +1,7 @@
+<Modules>
+  <Module PersistentId="A8E85134-955D-4A2A-AF44-D0E7BEF7C9A2" ModuleId="SystemSettings" />
+  <Module PersistentId="2D2E596F-E640-4480-9903-CEB77F80E637" ModuleId="ProjectWatcher" />
+  <Module PersistentId="7D3D09B7-D61A-4554-ACDE-1FD8691AC5E3" ModuleId="DAL" />
+  <Module PersistentId="FD99454C-B17B-4D57-BB4F-E5742728F940" ModuleId="TestProject" />
+  <Module PersistentId="C8136077-37A5-46B4-B3B5-1BF17A986257" ModuleId="Authorization" />
+</Modules>

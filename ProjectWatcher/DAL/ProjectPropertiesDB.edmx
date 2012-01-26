@@ -1,0 +1,374 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ProjectPropertiesModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="ProjectPropertiesModelStoreContainer">
+          <EntitySet Name="AvailableValues" EntityType="ProjectPropertiesModel.Store.AvailableValues" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="History" EntityType="ProjectPropertiesModel.Store.History" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Projects" EntityType="ProjectPropertiesModel.Store.Projects" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Properties" EntityType="ProjectPropertiesModel.Store.Properties" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="ProjectPropertiesModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Values" EntityType="ProjectPropertiesModel.Store.Values" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_AvailableValues_Properties" Association="ProjectPropertiesModel.Store.FK_AvailableValues_Properties">
+            <End Role="Properties" EntitySet="Properties" />
+            <End Role="AvailableValues" EntitySet="AvailableValues" />
+          </AssociationSet>
+          <AssociationSet Name="FK_History_Values" Association="ProjectPropertiesModel.Store.FK_History_Values">
+            <End Role="Values" EntitySet="Values" />
+            <End Role="History" EntitySet="History" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Values_Projects" Association="ProjectPropertiesModel.Store.FK_Values_Projects">
+            <End Role="Projects" EntitySet="Projects" />
+            <End Role="Values" EntitySet="Values" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Values_Properties" Association="ProjectPropertiesModel.Store.FK_Values_Properties">
+            <End Role="Properties" EntitySet="Properties" />
+            <End Role="Values" EntitySet="Values" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AvailableValues">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Property" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Value" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="History">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="ValueId" Type="int" Nullable="false" />
+          <Property Name="Time" Type="datetime" Nullable="false" />
+          <Property Name="Value" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="Author" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="Projects">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="LastChanged" Type="datetime" Nullable="false" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Properties">
+          <Key>
+            <PropertyRef Name="SystemName" />
+          </Key>
+          <Property Name="SystemName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="DisplayName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Type" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Values">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="SystemName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Value" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="ProjectId" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Visible" Type="bit" Nullable="false" />
+          <Property Name="Important" Type="bit" Nullable="false" />
+          <Property Name="Author" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="Time" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_AvailableValues_Properties">
+          <End Role="Properties" Type="ProjectPropertiesModel.Store.Properties" Multiplicity="1" />
+          <End Role="AvailableValues" Type="ProjectPropertiesModel.Store.AvailableValues" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Properties">
+              <PropertyRef Name="SystemName" />
+            </Principal>
+            <Dependent Role="AvailableValues">
+              <PropertyRef Name="Property" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_History_Values">
+          <End Role="Values" Type="ProjectPropertiesModel.Store.Values" Multiplicity="1" />
+          <End Role="History" Type="ProjectPropertiesModel.Store.History" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Values">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="History">
+              <PropertyRef Name="ValueId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Values_Projects">
+          <End Role="Projects" Type="ProjectPropertiesModel.Store.Projects" Multiplicity="1" />
+          <End Role="Values" Type="ProjectPropertiesModel.Store.Values" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Projects">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Values">
+              <PropertyRef Name="ProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Values_Properties">
+          <End Role="Properties" Type="ProjectPropertiesModel.Store.Properties" Multiplicity="1" />
+          <End Role="Values" Type="ProjectPropertiesModel.Store.Values" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Properties">
+              <PropertyRef Name="SystemName" />
+            </Principal>
+            <Dependent Role="Values">
+              <PropertyRef Name="SystemName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ProjectPropertiesModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="ProjectPropertiesEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AvailableValues" EntityType="ProjectPropertiesModel.AvailableValue" />
+          <EntitySet Name="Histories" EntityType="ProjectPropertiesModel.History" />
+          <EntitySet Name="Projects" EntityType="ProjectPropertiesModel.Project" />
+          <EntitySet Name="Properties" EntityType="ProjectPropertiesModel.Property" />
+          <EntitySet Name="sysdiagrams" EntityType="ProjectPropertiesModel.sysdiagram" />
+          <EntitySet Name="Values" EntityType="ProjectPropertiesModel.Value" />
+          <AssociationSet Name="FK_AvailableValues_Properties" Association="ProjectPropertiesModel.FK_AvailableValues_Properties">
+            <End Role="Properties" EntitySet="Properties" />
+            <End Role="AvailableValues" EntitySet="AvailableValues" />
+          </AssociationSet>
+          <AssociationSet Name="FK_History_Values" Association="ProjectPropertiesModel.FK_History_Values">
+            <End Role="Values" EntitySet="Values" />
+            <End Role="History" EntitySet="Histories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Values_Projects" Association="ProjectPropertiesModel.FK_Values_Projects">
+            <End Role="Projects" EntitySet="Projects" />
+            <End Role="Values" EntitySet="Values" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Values_Properties" Association="ProjectPropertiesModel.FK_Values_Properties">
+            <End Role="Properties" EntitySet="Properties" />
+            <End Role="Values" EntitySet="Values" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AvailableValue">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Property" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Value" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Property1" Relationship="ProjectPropertiesModel.FK_AvailableValues_Properties" FromRole="AvailableValues" ToRole="Properties" />
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="History">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="ValueId" Type="Int32" Nullable="false" />
+          <Property Name="Time" Type="DateTime" Nullable="false" />
+          <Property Name="Value" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Author" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Value1" Relationship="ProjectPropertiesModel.FK_History_Values" FromRole="History" ToRole="Values" />
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="Project">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LastChanged" Type="DateTime" Nullable="false" />
+          <Property Name="Created" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Values" Relationship="ProjectPropertiesModel.FK_Values_Projects" FromRole="Projects" ToRole="Values" />
+        </EntityType>
+        <EntityType Name="Property">
+          <Key>
+            <PropertyRef Name="SystemName" />
+          </Key>
+          <Property Name="SystemName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DisplayName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="AvailableValues" Relationship="ProjectPropertiesModel.FK_AvailableValues_Properties" FromRole="Properties" ToRole="AvailableValues" />
+          <NavigationProperty Name="Values" Relationship="ProjectPropertiesModel.FK_Values_Properties" FromRole="Properties" ToRole="Values" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Value">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="SystemName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Value1" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="ProjectId" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Visible" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Histories" Relationship="ProjectPropertiesModel.FK_History_Values" FromRole="Values" ToRole="History" />
+          <NavigationProperty Name="Project" Relationship="ProjectPropertiesModel.FK_Values_Projects" FromRole="Values" ToRole="Projects" />
+          <NavigationProperty Name="Property" Relationship="ProjectPropertiesModel.FK_Values_Properties" FromRole="Values" ToRole="Properties" />
+          <Property Type="Boolean" Name="Important" Nullable="false" />
+          <Property Type="String" Name="Author" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="Time" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_AvailableValues_Properties">
+          <End Role="Properties" Type="ProjectPropertiesModel.Property" Multiplicity="1" />
+          <End Role="AvailableValues" Type="ProjectPropertiesModel.AvailableValue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Properties">
+              <PropertyRef Name="SystemName" />
+            </Principal>
+            <Dependent Role="AvailableValues">
+              <PropertyRef Name="Property" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_History_Values">
+          <End Role="Values" Type="ProjectPropertiesModel.Value" Multiplicity="1" />
+          <End Role="History" Type="ProjectPropertiesModel.History" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Values">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="History">
+              <PropertyRef Name="ValueId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Values_Projects">
+          <End Role="Projects" Type="ProjectPropertiesModel.Project" Multiplicity="1" />
+          <End Role="Values" Type="ProjectPropertiesModel.Value" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Projects">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Values">
+              <PropertyRef Name="ProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Values_Properties">
+          <End Role="Properties" Type="ProjectPropertiesModel.Property" Multiplicity="1" />
+          <End Role="Values" Type="ProjectPropertiesModel.Value" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Properties">
+              <PropertyRef Name="SystemName" />
+            </Principal>
+            <Dependent Role="Values">
+              <PropertyRef Name="SystemName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ProjectPropertiesModelStoreContainer" CdmEntityContainer="ProjectPropertiesEntities">
+          <EntitySetMapping Name="AvailableValues"><EntityTypeMapping TypeName="ProjectPropertiesModel.AvailableValue"><MappingFragment StoreEntitySet="AvailableValues">
+            <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Property" ColumnName="Property" />
+            <ScalarProperty Name="Value" ColumnName="Value" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Histories"><EntityTypeMapping TypeName="ProjectPropertiesModel.History"><MappingFragment StoreEntitySet="History">
+            <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ValueId" ColumnName="ValueId" />
+            <ScalarProperty Name="Time" ColumnName="Time" />
+            <ScalarProperty Name="Value" ColumnName="Value" />
+            <ScalarProperty Name="Author" ColumnName="Author" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Projects"><EntityTypeMapping TypeName="ProjectPropertiesModel.Project"><MappingFragment StoreEntitySet="Projects">
+            <ScalarProperty Name="Id" ColumnName="Id" />
+            <ScalarProperty Name="LastChanged" ColumnName="LastChanged" />
+            <ScalarProperty Name="Created" ColumnName="Created" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Properties"><EntityTypeMapping TypeName="ProjectPropertiesModel.Property"><MappingFragment StoreEntitySet="Properties">
+            <ScalarProperty Name="SystemName" ColumnName="SystemName" />
+            <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+            <ScalarProperty Name="Type" ColumnName="Type" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams"><EntityTypeMapping TypeName="ProjectPropertiesModel.sysdiagram"><MappingFragment StoreEntitySet="sysdiagrams">
+            <ScalarProperty Name="name" ColumnName="name" />
+            <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+            <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+            <ScalarProperty Name="version" ColumnName="version" />
+            <ScalarProperty Name="definition" ColumnName="definition" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Values"><EntityTypeMapping TypeName="ProjectPropertiesModel.Value"><MappingFragment StoreEntitySet="Values">
+            <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="Important" ColumnName="Important" />
+                <ScalarProperty Name="SystemName" ColumnName="SystemName" />
+            <ScalarProperty Name="Value1" ColumnName="Value" />
+            <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+            <ScalarProperty Name="Id" ColumnName="Id" />
+            <ScalarProperty Name="Visible" ColumnName="Visible" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="ProjectPropertiesDB">
+        <EntityTypeShape EntityType="ProjectPropertiesModel.AvailableValue" Width="1.5" PointX="3" PointY="4.125" Height="1.4279589843749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectPropertiesModel.History" Width="1.5" PointX="5.25" PointY="4.375" Height="1.7566536458333335" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectPropertiesModel.Project" Width="1.5" PointX="0.75" PointY="1.25" Height="1.5923063151041665" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectPropertiesModel.Property" Width="1.5" PointX="0.75" PointY="4" Height="1.7566536458333339" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectPropertiesModel.sysdiagram" Width="1.5" PointX="0.75" PointY="7.375" Height="1.7566536458333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectPropertiesModel.Value" Width="1.5" PointX="3" PointY="0.75" Height="2.2496956380208326" IsExpanded="true" />
+        <AssociationConnector Association="ProjectPropertiesModel.FK_AvailableValues_Properties" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="4.8389794921875" />
+          <ConnectorPoint PointX="3" PointY="4.8389794921875" />
+        </AssociationConnector>
+        <AssociationConnector Association="ProjectPropertiesModel.FK_History_Values" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="1.8748478190104163" />
+          <ConnectorPoint PointX="6" PointY="1.8748478190104163" />
+          <ConnectorPoint PointX="6" PointY="4.375" />
+        </AssociationConnector>
+        <AssociationConnector Association="ProjectPropertiesModel.FK_Values_Projects" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="2.0461531575520833" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="2.0461531575520828" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="2.0461531575520833" />
+          <ConnectorPoint PointX="3" PointY="2.0461531575520833" />
+        </AssociationConnector>
+        <AssociationConnector Association="ProjectPropertiesModel.FK_Values_Properties" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="4" />
+          <ConnectorPoint PointX="2.625" PointY="3.625" />
+          <ConnectorPoint PointX="2.625" PointY="1.3668245787760407" />
+          <ConnectorPoint PointX="3" PointY="1.3668245787760407" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

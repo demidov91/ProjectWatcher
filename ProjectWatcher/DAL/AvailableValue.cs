@@ -5,24 +5,24 @@ using System.Text;
 
 namespace DAL
 {
-    class AvailableValue
+    public partial class AvailableValue
     {
-        public virtual String Value
+        private static Object locker = new Object();
+
+        public static Object Locker
         {
-            get;
-            set;
-        }
-        public virtual String Property
-        {
-            get;
-            set;
+            get
+            {
+                return locker;
+            }
         }
 
-        private int Id
-        {
-            get;
-            set;
 
+        public static AvailableValue CreateAvailableValue(String systemName)
+        {
+            return new AvailableValue { Property = systemName };
+ 
         }
+        
     }
 }

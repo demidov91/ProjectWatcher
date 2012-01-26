@@ -4,3 +4,9 @@ E:\информация\Проекты\поиск работы\itransition\Proje
 E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\Validation\obj\Debug\ResolveAssemblyReference.cache
 E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\Validation\obj\Debug\Validation.dll
 E:\информация\Проекты\поиск работы\itransition\ProjectsWatcher\ProjectWatcher\Validation\obj\Debug\Validation.pdb
+D:\work\demidov\ProjectWatcher_21_01_2012_Demidov\ProjectWatcher\Validation\bin\Debug\Validation.dll.config
+D:\work\demidov\ProjectWatcher_21_01_2012_Demidov\ProjectWatcher\Validation\bin\Debug\Validation.dll
+D:\work\demidov\ProjectWatcher_21_01_2012_Demidov\ProjectWatcher\Validation\bin\Debug\Validation.pdb
+D:\work\demidov\ProjectWatcher_21_01_2012_Demidov\ProjectWatcher\Validation\obj\Debug\ResolveAssemblyReference.cache
+D:\work\demidov\ProjectWatcher_21_01_2012_Demidov\ProjectWatcher\Validation\obj\Debug\Validation.dll
+D:\work\demidov\ProjectWatcher_21_01_2012_Demidov\ProjectWatcher\Validation\obj\Debug\Validation.pdb

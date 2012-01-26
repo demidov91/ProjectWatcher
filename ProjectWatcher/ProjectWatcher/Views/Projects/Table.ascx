@@ -1,15 +1,15 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<ProjectWatcher.Models.Projects.TableModel>" %>
 <%@ Import Namespace="ProjectWatcher.Models.Projects" %>
+<%@ Import namespace="ProjectWatcher.Helpers" %>
 
 <div id="labelTableBlock">
     <table id="projectsTable" border="1">
         <tr id="tableHeader">
             <%for (int i = 0; i < Model.Headers.Length; i++)
-                { %>
-                <td>
-                    <%=Html.Encode(Model.Headers[i]) %>
-                </td>
-            <%} %>
+              {%>
+              <%:Html.GetWidthTd(Model.Headers[i], Model.Width[i])%>
+                  <%
+              } %>
         </tr>
         <%foreach (ProjectModel project in Model.Projects)
             {%>

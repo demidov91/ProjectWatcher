@@ -2,39 +2,21 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Text.RegularExpressions;
 
 namespace ProjectWatcher.Helpers
 {
-    public class HttpContextHelper
+    public static class HttpContextHelper
     {
-        protected HttpContextBase context;
-
-        protected static String cultureTemplate = @"\w{2}-\w{2}";
-
-        public HttpContextHelper(HttpContextBase context)
+        public static void RedirectToBadRequest(this HttpContextBase context)
         {
-            this.context = context; 
+            context.RedirectToBadRequest(SettingsHelper.Instance.BadRequestPath);
         }
 
-        /// <summary>
-        /// Gets culture from cookies, sets default culture if it wasn't in cookies
-        /// </summary>
-        /// <returns>Culture in "en-US" format</returns>
-        public String GetCulture()
+
+        public static void RedirectToBadRequest(this HttpContextBase context, String path)
         {
-            HttpCookie cookieCulture = context.Request.Cookies["culture"];
-            String culture;           
-            if (cookieCulture == null || !Regex.IsMatch(cookieCulture.ToString(), cultureTemplate))
-            {
-                culture = SettingsHelper.Instance.DefaultCulture;
-                context.Response.Cookies.Add(new HttpCookie("culture", culture));                                   
-            }
-            else
-            {
-                culture = cookieCulture.ToString();
-            }
-            return culture;
+            context.Server.Transfer(path);
+            
         }
     }
 }

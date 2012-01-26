@@ -14,7 +14,9 @@
     text-align:center;
 }
     
-.centerDiv{}
+.centerDiv {
+    
+}
     
 .okCancelButton{
     float:right;
@@ -120,3 +122,94 @@
     
 /*footer.ascx*/
 /*===========================*/
+
+/*================================*/
+/*AddProperties.aspx*/
+#AddPropertiesDiv {
+    text-align: center;
+    padding: 50px;
+    
+}
+
+#forProjectProperties {
+    float: left;
+    
+}
+
+#forOtherProperties {
+    float: right;
+}
+
+#forErrorMessage {
+    clear: both;
+    padding-top: 5px;
+}
+
+#forCreatePropertyButton {
+    float: left;
+}
+
+#forGoToProjectButton {
+    float: right;
+}
+/*AddProperties.aspx*/
+/*===========================*/
+
+
+
+
+/*Index.aspx*/
+/*===========================*/
+
+
+#properties 
+{
+}
+
+
+#ProjectWithProperties
+        {
+            font-family: Times New Roman;
+            margin-left: 20px;
+        }
+        .header
+        {
+            font-family: Calibri;
+            font-size: xx-large;
+        }
+        .textbox
+        {
+            font-family: Times New Roman;
+            height: 40px;
+            width: 100px;
+            padding: 5px;
+            border: solid 1px black;
+            float: left;
+        }
+        .btn-slide
+        {
+            float: left;
+            visibility: hidden;
+        }
+        .section
+        {
+            margin: 20px;
+        }
+        .history 
+        {
+            font-family: cursive;
+            color: greenyellow;  
+        }
+        .propertyString 
+        {
+            background-color: lightgray;
+            cursor: pointer;
+        }
+        
+        #historyAndDescription
+        {
+            position:relative;
+            margin-top: 20px;
+        }
+        
+/*/////////////////////////////////////*/

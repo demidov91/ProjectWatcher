@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using DAL;
+using SystemSettings;
 
 namespace ProjectWatcher.Models.Project
 {
     public class PropertyModel
     {
-        private DAL.Property naturalProperty;
+        private Property naturalProperty;
+
+        private String localAvailableValues = null;
 
         public PropertyModel()
         {
@@ -17,18 +20,29 @@ namespace ProjectWatcher.Models.Project
 
         public PropertyModel(DAL.Property naturalProperty)
         {
-            this.naturalProperty = naturalProperty;
+            if (naturalProperty != null)
+            {
+                this.naturalProperty = naturalProperty;
+            }
+            else
+            {
+                naturalProperty = new Property();
+            }
         }
 
         public String Name
         {
             get
             {
-                return naturalProperty.Name;
+                return naturalProperty.DisplayName;
             }
             set
             {
-                naturalProperty.Name = value;
+                if (value == null)
+                {
+                    value = "";
+                }
+                naturalProperty.DisplayName = value;
             }
         }
 
@@ -40,7 +54,10 @@ namespace ProjectWatcher.Models.Project
             }
             set
             {
-                naturalProperty.SystemName = value;
+                if (value != null)
+                {
+                    naturalProperty.SystemName = value;
+                }
             }
         }
 
@@ -52,7 +69,10 @@ namespace ProjectWatcher.Models.Project
             }
             set
             {
-                naturalProperty.Type = value;
+                if (value != null)
+                {
+                    naturalProperty.Type = value;
+                }
             }
         }
 
@@ -60,15 +80,18 @@ namespace ProjectWatcher.Models.Project
         {
             get
             {
-                if (naturalProperty.AvailableValues == null)
+                if (localAvailableValues == null)
                 {
-                    return "";
+                    return String.Concat(naturalProperty.AvailableValues.Select(x => x.Value + '\n'));
                 }
-                return String.Concat(naturalProperty.AvailableValues.Select(x => x + '\n'));
+                return localAvailableValues;
             }
             set
             {
-                naturalProperty.AvailableValues = value.Split('\n').Where(x => Validation.TypeValidationHelper.IsValidDisplayName(x)).ToArray();
+                if (value != null)
+                {
+                    localAvailableValues = value;
+                }
             }
         }
 
@@ -77,13 +100,26 @@ namespace ProjectWatcher.Models.Project
         {
             get 
             {
-                return naturalProperty.AvailableValues.ToArray();
+                if (localAvailableValues == null)
+                {
+                    return naturalProperty.AvailableValues.Select(x => x.Value).ToArray();
+                }
+                return localAvailableValues.Split('\r', '\n');
             }
             set
             {
-                naturalProperty.AvailableValues = value;
+                localAvailableValues = String.Concat(value.Select(x => x + '\n'));
             }
  
+        }
+
+        /// <summary>
+        /// This attribute of value but it is necessary for "CreationOfNewProperty" view
+        /// </summary>
+        public bool IsImportant
+        {
+            get;
+            set;
         }
 
         public override int GetHashCode()

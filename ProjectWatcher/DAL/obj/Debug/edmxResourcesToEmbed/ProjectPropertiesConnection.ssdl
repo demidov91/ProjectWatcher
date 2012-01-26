@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DAL.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="DALStoreContainer">
+    <EntitySet Name="AvailableValues" EntityType="DAL.Store.AvailableValues" store:Type="Tables" store:Schema="dbo" store:Name="AvailableValues">
+      <DefiningQuery>SELECT 
+      [AvailableValues].[Property] AS [Property], 
+      [AvailableValues].[Value] AS [Value]
+      FROM [dbo].[AvailableValues] AS [AvailableValues]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="History" EntityType="DAL.Store.History" store:Type="Tables" store:Schema="dbo" store:Name="History">
+      <DefiningQuery>SELECT 
+      [History].[ValueId] AS [ValueId], 
+      [History].[Time] AS [Time], 
+      [History].[Value] AS [Value], 
+      [History].[Author] AS [Author]
+      FROM [dbo].[History] AS [History]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Projects" EntityType="DAL.Store.Projects" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Properties" EntityType="DAL.Store.Properties" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="DAL.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Values" EntityType="DAL.Store.Values" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_AvailableValues_Properties" Association="DAL.Store.FK_AvailableValues_Properties">
+      <End Role="Properties" EntitySet="Properties" />
+      <End Role="AvailableValues" EntitySet="AvailableValues" />
+    </AssociationSet>
+    <AssociationSet Name="FK_History_Values" Association="DAL.Store.FK_History_Values">
+      <End Role="Values" EntitySet="Values" />
+      <End Role="History" EntitySet="History" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Values_Projects" Association="DAL.Store.FK_Values_Projects">
+      <End Role="Projects" EntitySet="Projects" />
+      <End Role="Values" EntitySet="Values" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Values_Properties" Association="DAL.Store.FK_Values_Properties">
+      <End Role="Properties" EntitySet="Properties" />
+      <End Role="Values" EntitySet="Values" />
+    </AssociationSet>
+  </EntityContainer>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'D:\WORK\DEMIDOV\PROJECTWATCHER_21_01_2012_DEMIDOV\PROJECTWATCHER\DAL\PROJECTPROPERTIES.MDF.dbo.AvailableValues' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="AvailableValues">
+    <Key>
+      <PropertyRef Name="Property" />
+      <PropertyRef Name="Value" />
+    </Key>
+    <Property Name="Property" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Value" Type="nvarchar" Nullable="false" MaxLength="500" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'D:\WORK\DEMIDOV\PROJECTWATCHER_21_01_2012_DEMIDOV\PROJECTWATCHER\DAL\PROJECTPROPERTIES.MDF.dbo.History' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="History">
+    <Key>
+      <PropertyRef Name="ValueId" />
+      <PropertyRef Name="Time" />
+      <PropertyRef Name="Value" />
+      <PropertyRef Name="Author" />
+    </Key>
+    <Property Name="ValueId" Type="int" Nullable="false" />
+    <Property Name="Time" Type="datetime" Nullable="false" />
+    <Property Name="Value" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="Author" Type="nvarchar" Nullable="false" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Projects">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LastChanged" Type="datetime" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Properties">
+    <Key>
+      <PropertyRef Name="SystemName" />
+    </Key>
+    <Property Name="SystemName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="DisplayName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Type" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Values">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="SystemName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Value" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="ProjectId" Type="int" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Visible" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_AvailableValues_Properties">
+    <End Role="Properties" Type="DAL.Store.Properties" Multiplicity="1" />
+    <End Role="AvailableValues" Type="DAL.Store.AvailableValues" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Properties">
+        <PropertyRef Name="SystemName" />
+      </Principal>
+      <Dependent Role="AvailableValues">
+        <PropertyRef Name="Property" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_History_Values">
+    <End Role="Values" Type="DAL.Store.Values" Multiplicity="1" />
+    <End Role="History" Type="DAL.Store.History" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Values">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="History">
+        <PropertyRef Name="ValueId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Values_Projects">
+    <End Role="Projects" Type="DAL.Store.Projects" Multiplicity="1" />
+    <End Role="Values" Type="DAL.Store.Values" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Projects">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Values">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Values_Properties">
+    <End Role="Properties" Type="DAL.Store.Properties" Multiplicity="1" />
+    <End Role="Values" Type="DAL.Store.Values" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Properties">
+        <PropertyRef Name="SystemName" />
+      </Principal>
+      <Dependent Role="Values">
+        <PropertyRef Name="SystemName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

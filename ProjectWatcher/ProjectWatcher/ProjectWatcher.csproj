@@ -67,8 +67,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\ProjectController.cs" />
+    <Compile Include="Helpers\HtmlHelperHelper.cs" />
     <Compile Include="Helpers\HttpContextHelper.cs" />
+    <Compile Include="Helpers\HttpContextWarker.cs" />
     <Compile Include="Helpers\ProjectHelper.cs" />
+    <Compile Include="Helpers\SettingsHelper.cs" />
     <Compile Include="Models\Projects\FilterModel.cs" />
     <Compile Include="Models\Projects\FooterModel.cs" />
     <Compile Include="Models\Projects\TableModel.cs" />
@@ -92,7 +95,6 @@
     <Compile Include="Helpers\Container.cs" />
     <Compile Include="Helpers\ResourcesHelper.cs" />
     <Compile Include="Helpers\ProjectsHelper.cs" />
-    <Compile Include="Helpers\SettingsHelper.cs" />
     <Compile Include="Models\Projects\ColumnDefinition.cs" />
     <Compile Include="Models\Projects\ProjectModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -137,6 +139,8 @@
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
     <Content Include="Global.asax" />
     <Content Include="Resources\AcceptButton.png" />
+    <Content Include="Resources\no.png" />
+    <Content Include="Resources\pinion.png" />
     <Content Include="Resources\SettingsButton.png" />
     <Content Include="Resources\RejectButton.png" />
     <Content Include="Resources\LeftGreenArrow.png" />
@@ -151,15 +155,20 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\modernizr-1.7.js" />
     <Content Include="Scripts\modernizr-1.7.min.js" />
+    <Content Include="Scripts\Site.js" />
+    <Content Include="Scripts\window.js" />
     <Content Include="Views\Projects\Filter.ascx" />
     <Content Include="Views\Projects\Footer.ascx" />
     <Content Include="Views\Projects\Index.aspx" />
     <Content Include="Views\Projects\Table.ascx" />
     <Content Include="Views\Projects\Upload.ascx" />
     <Content Include="Views\Project\AddProperties.aspx" />
+    <Content Include="Views\Project\ChangeImportance.ascx" />
     <Content Include="Views\Project\CreationOfNewProperty.aspx" />
     <Content Include="Views\Project\Index.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -200,9 +209,9 @@
       <Project>{7D3D09B7-D61A-4554-ACDE-1FD8691AC5E3}</Project>
       <Name>DAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Validation\Validation.csproj">
+    <ProjectReference Include="..\Validation\SystemSettings.csproj">
       <Project>{A8E85134-955D-4A2A-AF44-D0E7BEF7C9A2}</Project>
-      <Name>Validation</Name>
+      <Name>SystemSettings</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -236,7 +245,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>1853</DevelopmentServerPort>
+          <DevelopmentServerPort>61937</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost/ProjectWatcher</IISUrl>
           <NTLMAuthentication>True</NTLMAuthentication>

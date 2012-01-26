@@ -46,17 +46,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NHibernate, Version=3.2.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\ExternalLibs\NHibernate.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.SqlServerCe, Version=3.5.1.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\ExternalLibs\System.Data.SqlServerCe.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -69,31 +63,32 @@
     <Compile Include="BadPropertyTypeException.cs" />
     <Compile Include="BadSystemNameException.cs" />
     <Compile Include="ConnectionException.cs" />
-    <Compile Include="Helpers\ConnectionHelper.cs" />
     <Compile Include="DALException.cs" />
     <Compile Include="Evaluation.cs" />
+    <Compile Include="Helpers\ConnectionHelper.cs" />
+    <Compile Include="Helpers\EntityHelper.cs" />
+    <Compile Include="Helpers\PropertiesHelper.cs" />
+    <Compile Include="Helpers\SQLParser.cs" />
+    <Compile Include="History.cs" />
+    <Compile Include="IllegalDBOperationException.cs" />
     <Compile Include="Modifier.cs" />
     <Compile Include="Project.cs" />
+    <Compile Include="ProjectPropertiesDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProjectPropertiesDB.edmx</DependentUpon>
+    </Compile>
     <Compile Include="ProjectsReader.cs" />
     <Compile Include="Property.cs" />
     <Compile Include="RequestBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Value.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="hibernate.cfg.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <SubType>Designer</SubType>
-    </Content>
-    <EmbeddedResource Include="Mappings\AvailableValue.hbm.xml">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <Content Include="ProjectProperties.mdf" />
     <Content Include="ProjectProperties_log.LDF">
       <DependentUpon>ProjectProperties.mdf</DependentUpon>
     </Content>
-    <EmbeddedResource Include="Mappings\Property.hbm.xml">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">
@@ -128,10 +123,19 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Validation\Validation.csproj">
+    <ProjectReference Include="..\Validation\SystemSettings.csproj">
       <Project>{A8E85134-955D-4A2A-AF44-D0E7BEF7C9A2}</Project>
-      <Name>Validation</Name>
+      <Name>SystemSettings</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="ProjectPropertiesDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ProjectPropertiesDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

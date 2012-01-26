@@ -2,26 +2,48 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using DAL.Helpers;
 
 namespace DAL
 {
     /// <summary>
-    /// To implement
+    /// Create, set Owner, Filter, execute GetValues. Use object of this filter once for each 'GetValues' call
     /// </summary>
     public class RequestBuilder
     {
-        protected String[] variables = new String[0];
+        protected String filter = null;
 
-        protected String[] functions = new String[0];
+        protected String owner = null;
 
-        
+        protected IEnumerable<Project> projects;
+
+        protected HashSet<String> functions = new HashSet<string>();
+
+        protected HashSet<String> variables = new HashSet<string>();
+
+        public RequestBuilder()
+        {
+            projects = ConnectionHelper.GetProjects();
+        }
+
 
         /// <summary>
         /// It would be shown only projects of this owner. If "Owner" was not set, all projets should be filtered 
         /// </summary>
         public String Owner
         {
-            set { }
+            get
+            {
+                return owner;
+            }
+            set
+            {
+                if (owner == null)
+                {
+                    projects = projects.Where(x => x.Owner == value);
+                    owner = value;
+                }
+            }
         }
 
         /// <summary>
@@ -29,7 +51,18 @@ namespace DAL
         /// </summary>
         public String Filter
         {
-            set { }
+            get
+            {
+                return filter;
+            }
+            set
+            {
+                if (filter == null)
+                {
+                    projects = projects.Where(x => SQLParser.IsSatisfying(x, value));
+                    filter = value;
+                }
+            }
         }
 
         /// <summary>
@@ -37,9 +70,12 @@ namespace DAL
         /// </summary>
         public string[] SqlFunctions
         {
-            set {
-                functions = new String[value.Length];
-                value.CopyTo(functions, 0);            
+            set
+            {
+                foreach(String function in value)
+                {
+                    functions.Add(function);
+                }
             }
         }
 
@@ -48,38 +84,57 @@ namespace DAL
         /// </summary>
         public string[] Variables
         {
-            set {
-                variables = new String[value.Length];
-                value.CopyTo(variables, 0);
+            set
+            {
+                foreach(String variable in value)
+                {
+                    variables.Add(variable);
+                }
             }
         }
 
         /// <summary>
-        /// To implement.
         /// Returns values for each "variable" or "function" in each project that matches "Filter"
         /// </summary>
         /// <returns>Each element of array is collection of requered values in (valueName, value) format</returns>
         public Evaluation[] GetValues()
         {
-            Evaluation[] toReturn = new Evaluation[2];
-            toReturn[0] = new Evaluation();
-            toReturn[1] = new Evaluation();
-            int i = 0;
+            List<Evaluation> evaluations = new List<Evaluation>(projects.Count());
+            foreach (Project project in projects)
+            {
+                Evaluation evaluation = new Evaluation();
+                evaluation.Values = EvaluateVariables(project);
+                evaluation.Formulas = EvaluateFormulas(project);
+                evaluations.Add(evaluation);
+            }
+            return evaluations.ToArray();
+        }
+
+
+        protected Dictionary<String, String> EvaluateVariables(Project project)
+        {
+            Dictionary<String, String> toReturn = new Dictionary<string, string>();
             foreach (String variable in variables)
             {
-                toReturn[0].Values.Add(variable, i.ToString());
-                i++;
-                toReturn[1].Values.Add(variable, i.ToString());
-                i++;
+                toReturn.Add(variable, project.GetValue(variable));
             }
+            return toReturn;
+        }
+
+        protected Dictionary<String, String> EvaluateFormulas(Project project)
+        {
+            Dictionary<String, String> toReturn = new Dictionary<String, String>();
             foreach (String function in functions)
             {
-                toReturn[0].Formulas.Add(function, i.ToString());
-                i++;
-                toReturn[1].Formulas.Add(function, i.ToString());
-                i++;
+                toReturn.Add(function, SQLParser.Execute(function, project));
             }
-            return toReturn.ToArray();
+            return toReturn;
         }
+
+
+
+
+
+
     }
 }

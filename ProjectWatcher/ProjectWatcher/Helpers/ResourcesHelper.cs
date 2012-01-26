@@ -11,12 +11,12 @@ namespace ProjectWatcher.Helpers
     public static class ResourcesHelper
     {
         private static Dictionary<String, ResourceManager> localizedResourses;
-        
+
 
         private static ResourceManager commonResourses;
 
         public static bool LoadResourses()
-        {   
+        {
             try
             {
                 commonResourses = Common.ResourceManager;
@@ -24,7 +24,8 @@ namespace ProjectWatcher.Helpers
                 localizedResourses["ru-RU"] = RussianText.ResourceManager;
                 localizedResourses["en-US"] = EnglishText.ResourceManager;
             }
-            catch {
+            catch
+            {
                 return false;
             }
             return true;
@@ -38,25 +39,23 @@ namespace ProjectWatcher.Helpers
         public static string GetText(string name, string language)
         {
             ResourceManager specifiedLanguage = GetLocalizedResourses(language);
-            try
+            String toReturn = specifiedLanguage.GetString(name);
+            if (toReturn == null)
             {
-                return specifiedLanguage.GetString(name);
+                return "Message" + name + "was not declared in resourses";
             }
-            catch(Exception)
-            {
-                return "Message" + name + "was not declared in resourses"; 
-            }
+            return toReturn;
         }
 
         public static Image GetImage(string name)
         {
-            
+
             return (Image)commonResourses.GetObject(name);
         }
 
         private static ResourceManager GetLocalizedResourses(String culture)
         {
-            if(localizedResourses.ContainsKey(culture))
+            if (localizedResourses.ContainsKey(culture))
             {
                 return localizedResourses[culture];
             }

@@ -1,0 +1,66 @@
+﻿<RecentFiles>
+  <RecentFiles>
+    <File id="7D3D09B7-D61A-4554-ACDE-1FD8691AC5E3/f:IllegalDBOperationException.cs" caret="0" fromTop="0" />
+    <File id="7D3D09B7-D61A-4554-ACDE-1FD8691AC5E3/d:Helpers/f:SQLParser.cs" caret="561" fromTop="17" />
+    <File id="7D3D09B7-D61A-4554-ACDE-1FD8691AC5E3/f:History.cs" caret="412" fromTop="22" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Views/d:Project/f:Index.aspx" caret="0" fromTop="0" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Views/d:Projects/f:Filter.ascx" caret="549" fromTop="12" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Helpers/f:HttpContextHelper.cs" caret="546" fromTop="21" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Views/d:Projects/f:Index.aspx" caret="0" fromTop="0" />
+    <File id="A8E85134-955D-4A2A-AF44-D0E7BEF7C9A2/f:DBDefinitionsHelper.cs" caret="1018" fromTop="28" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Helpers/f:ProjectHelper.cs" caret="1993" fromTop="27" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/f:Global.asax.cs" caret="717" fromTop="21" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Views/d:Projects/f:Table.ascx" caret="0" fromTop="0" />
+    <File id="7D3D09B7-D61A-4554-ACDE-1FD8691AC5E3/f:BadDisplayTypeName.cs" caret="0" fromTop="0" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Helpers/f:HtmlHelperHelper.cs" caret="506" fromTop="16" />
+    <File id="FD99454C-B17B-4D57-BB4F-E5742728F940/f:ProjectsHelperTest.cs" caret="6053" fromTop="18" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Views/d:Project/f:CreationOfNewProperty.aspx" caret="1754" fromTop="27" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Views/d:Projects/f:Footer.ascx" caret="425" fromTop="9" />
+    <File id="FD99454C-B17B-4D57-BB4F-E5742728F940/f:ProjectsReaderTest.cs" caret="0" fromTop="0" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Models/d:Projects/f:FooterModel.cs" caret="573" fromTop="26" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Helpers/f:ProjectsHelper.cs" caret="2804" fromTop="3" />
+    <File id="7D3D09B7-D61A-4554-ACDE-1FD8691AC5E3/f:ProjectsReader.cs" caret="3453" fromTop="94" />
+    <File id="7D3D09B7-D61A-4554-ACDE-1FD8691AC5E3/f:Project.cs" caret="1558" fromTop="18" />
+    <File id="7D3D09B7-D61A-4554-ACDE-1FD8691AC5E3/d:Helpers/f:ConnectionHelper.cs" caret="8543" fromTop="32" />
+    <File id="C8136077-37A5-46B4-B3B5-1BF17A986257/f:RedirectableAttribute.cs" caret="1028" fromTop="32" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Controllers/f:ProjectsController.cs" caret="2971" fromTop="24" />
+    <File id="A8E85134-955D-4A2A-AF44-D0E7BEF7C9A2/f:StringHelper.cs" caret="476" fromTop="16" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Controllers/f:ProjectController.cs" caret="4451" fromTop="34" />
+    <File id="7D3D09B7-D61A-4554-ACDE-1FD8691AC5E3/f:RequestBuilder.cs" caret="2364" fromTop="0" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Content/f:Site.css" caret="1840" fromTop="28" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Scripts/f:Site.js" caret="104" fromTop="3" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Views/d:Project/f:AddProperties.aspx" caret="4318" fromTop="24" />
+  </RecentFiles>
+  <RecentEdits>
+    <File id="FD99454C-B17B-4D57-BB4F-E5742728F940/f:ProjectsHelperTest.cs" caret="312" fromTop="8" />
+    <File id="FD99454C-B17B-4D57-BB4F-E5742728F940/f:ProjectsHelperTest.cs" caret="6280" fromTop="21" />
+    <File id="FD99454C-B17B-4D57-BB4F-E5742728F940/f:ProjectsHelperTest.cs" caret="6053" fromTop="18" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Views/d:Projects/f:Footer.ascx" caret="425" fromTop="9" />
+    <File id="C8136077-37A5-46B4-B3B5-1BF17A986257/f:RedirectableAttribute.cs" caret="1028" fromTop="32" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Controllers/f:ProjectsController.cs" caret="2617" fromTop="27" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Controllers/f:ProjectsController.cs" caret="3235" fromTop="33" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Controllers/f:ProjectController.cs" caret="7124" fromTop="19" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Controllers/f:ProjectController.cs" caret="7459" fromTop="27" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Controllers/f:ProjectController.cs" caret="8312" fromTop="29" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Controllers/f:ProjectsController.cs" caret="2971" fromTop="24" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Controllers/f:ProjectController.cs" caret="8451" fromTop="27" />
+    <File id="7D3D09B7-D61A-4554-ACDE-1FD8691AC5E3/d:Helpers/f:ConnectionHelper.cs" caret="2966" fromTop="21" />
+    <File id="7D3D09B7-D61A-4554-ACDE-1FD8691AC5E3/d:Helpers/f:ConnectionHelper.cs" caret="3337" fromTop="31" />
+    <File id="7D3D09B7-D61A-4554-ACDE-1FD8691AC5E3/d:Helpers/f:ConnectionHelper.cs" caret="3587" fromTop="39" />
+    <File id="7D3D09B7-D61A-4554-ACDE-1FD8691AC5E3/d:Helpers/f:ConnectionHelper.cs" caret="6638" fromTop="26" />
+    <File id="7D3D09B7-D61A-4554-ACDE-1FD8691AC5E3/d:Helpers/f:ConnectionHelper.cs" caret="6621" fromTop="28" />
+    <File id="7D3D09B7-D61A-4554-ACDE-1FD8691AC5E3/d:Helpers/f:ConnectionHelper.cs" caret="6528" fromTop="24" />
+    <File id="7D3D09B7-D61A-4554-ACDE-1FD8691AC5E3/d:Helpers/f:ConnectionHelper.cs" caret="6398" fromTop="23" />
+    <File id="7D3D09B7-D61A-4554-ACDE-1FD8691AC5E3/d:Helpers/f:ConnectionHelper.cs" caret="7252" fromTop="31" />
+    <File id="7D3D09B7-D61A-4554-ACDE-1FD8691AC5E3/f:Project.cs" caret="1889" fromTop="26" />
+    <File id="7D3D09B7-D61A-4554-ACDE-1FD8691AC5E3/d:Helpers/f:ConnectionHelper.cs" caret="8569" fromTop="34" />
+    <File id="7D3D09B7-D61A-4554-ACDE-1FD8691AC5E3/f:Project.cs" caret="1558" fromTop="18" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Controllers/f:ProjectController.cs" caret="4558" fromTop="36" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Controllers/f:ProjectController.cs" caret="8268" fromTop="38" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Controllers/f:ProjectController.cs" caret="8268" fromTop="27" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Views/d:Project/f:AddProperties.aspx" caret="4269" fromTop="23" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Controllers/f:ProjectController.cs" caret="4451" fromTop="34" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Content/f:Site.css" caret="1840" fromTop="28" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Scripts/f:Site.js" caret="104" fromTop="3" />
+  </RecentEdits>
+</RecentFiles>

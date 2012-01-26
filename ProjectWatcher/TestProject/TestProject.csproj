@@ -95,9 +95,9 @@
       <Project>{2D2E596F-E640-4480-9903-CEB77F80E637}</Project>
       <Name>ProjectWatcher</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Validation\Validation.csproj">
+    <ProjectReference Include="..\Validation\SystemSettings.csproj">
       <Project>{A8E85134-955D-4A2A-AF44-D0E7BEF7C9A2}</Project>
-      <Name>Validation</Name>
+      <Name>SystemSettings</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

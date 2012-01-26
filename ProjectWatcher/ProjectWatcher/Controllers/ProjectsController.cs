@@ -9,6 +9,7 @@ using ProjectWatcher.Models.Projects;
 using Authorization;
 using DAL;
 using System.IO;
+using SystemSettings;
 
 namespace ProjectWatcher.Controllers
 {
@@ -16,7 +17,7 @@ namespace ProjectWatcher.Controllers
     {
         public ActionResult Index(string filter, string tableDefinition, bool? downloadSucces)
         {
-            HttpContextHelper cultureProvider = new HttpContextHelper(HttpContext);
+            HttpContextWarker cultureProvider = new HttpContextWarker(HttpContext);
             string culture = cultureProvider.GetCulture();
             if (filter == null)
             {
@@ -26,9 +27,10 @@ namespace ProjectWatcher.Controllers
             {
                 tableDefinition = SettingsHelper.Instance.DefaultTableDefinition;
             }
+            HttpContextWarker context = new HttpContextWarker(HttpContext);
             ViewData["filterModel"] = ProjectsHelper.CreateFilterModel(filter, tableDefinition, culture);
             ViewData["tableModel"] = ProjectsHelper.CreateTableModel(filter, tableDefinition, HttpContext);
-            ViewData["footerModel"] = ProjectsHelper.CreateFooterModel(filter, tableDefinition, downloadSucces, culture);
+            ViewData["footerModel"] = ProjectsHelper.CreateFooterModel(filter, tableDefinition, downloadSucces, context);
             TempData["exportData"] = ProjectsHelper.CreateExportData((TableModel)ViewData["tableModel"]);
             return View();
         }
@@ -62,19 +64,22 @@ namespace ProjectWatcher.Controllers
         /// Creates new project in DB and opens it
         /// </summary>
         /// <returns></returns>
-        [RedirectableAuthorize("~/Projects", Roles="administrator")]
+        [HttpPost]
+        [RedirectableAuthorize("~/Projects/Index", Roles = "administrator")]
         public ActionResult NewProject()
         {
             ProjectsReader dal = new ProjectsReader();
-            int projectId = dal.CreateNewProject();
-            return RedirectToAction("Index", new { projectId = projectId });
+            int newProjectId = dal.CreateNewProject(User.Identity.Name);
+            return RedirectToAction("Index", "Project", new { projectId = newProjectId });
         }
 
+        [HttpPost]
         public ActionResult EditFilter(String tableDefinition, FilterModel model)
         {
             return RedirectToAction("Index", new {filter=model.Filter, tableDefinition=tableDefinition }); 
         }
 
+        [HttpPost]
         public ActionResult EditTable(String filter, TableModel model)
         {
             return RedirectToAction("Index", new { filter = filter, tableDefinition = model.TableDefinition });

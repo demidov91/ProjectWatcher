@@ -56,12 +56,14 @@ namespace ProjectWatcher.Helpers
         /// </summary>
         /// <param name="culture">User language</param>
         /// <returns>Model for Footer.ascx</returns>
-        public static FooterModel CreateFooterModel(String filter, String tableDefinition, Boolean? downloadSuccess, String culture)
+        public static FooterModel CreateFooterModel(String filter, String tableDefinition, Boolean? downloadSuccess, HttpContextWarker context)
         {
+            String culture = context.GetCulture();
             FooterModel model = new FooterModel();
             model.Filter = filter;
             model.TableDefinition = tableDefinition;
             model.AddProjectTitle = ResourcesHelper.GetText("AddProject", culture);
+            model.IsAdmin = context.User.IsInRole("administrator");
             model.ExportTitle = ResourcesHelper.GetText("Export", culture);
             model.SubmitUploadTitle = ResourcesHelper.GetText("Upload", culture);
             model.UploadTitle = ResourcesHelper.GetText("Import", culture);
@@ -162,7 +164,7 @@ namespace ProjectWatcher.Helpers
             string[] properties = Regex.Split(comaSeparatedProperties, @"(?<!\\),");
             if (properties.Length != 4)
             {
-                HttpContextHelper cultureProvider = new HttpContextHelper(context);
+                HttpContextWarker cultureProvider = new HttpContextWarker(context);
                 String culture = cultureProvider.GetCulture();            
                 String message = ResourcesHelper.GetText("BadColumnDefinition", culture);
                 throw new ArgumentException(message);
@@ -180,7 +182,7 @@ namespace ProjectWatcher.Helpers
             }
             catch
             {
-                HttpContextHelper cultureProvider = new HttpContextHelper(context);
+                HttpContextWarker cultureProvider = new HttpContextWarker(context);
                 String culture = cultureProvider.GetCulture();            
                 String message = ResourcesHelper.GetText("BadWidthDefinition", culture);
                 throw new ArgumentException(message);

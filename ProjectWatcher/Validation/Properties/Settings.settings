@@ -1,12 +1,15 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Validation.Properties" GeneratedClassName="Settings">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SystemSettings.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
     <Setting Name="AvailableTypes" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">String,Date,Percentage,Select,Multyselect</Value>
+      <Value Profile="(Default)">Date,Select,Multyselect,String,Number,Percentage</Value>
     </Setting>
     <Setting Name="SelectableTypes" Type="System.String" Scope="Application">
       <Value Profile="(Default)">Select,Multyselect</Value>
+    </Setting>
+    <Setting Name="DefaultProperties" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">description,owner,name,project_url</Value>
     </Setting>
   </Settings>
 </SettingsFile>

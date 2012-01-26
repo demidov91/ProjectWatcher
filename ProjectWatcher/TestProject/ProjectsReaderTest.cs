@@ -44,7 +44,7 @@ namespace TestProject
         public static void MyClassInitialize(TestContext testContext)
         {
             DAL.Helpers.ConnectionHelper.LoadORM();
-            Validation.TypeValidationHelper.LoadTypes();
+            SystemSettings.TypeValidationHelper.LoadTypes();
         }
         //
         //Use ClassCleanup to run code after all tests in a class have run
@@ -78,7 +78,7 @@ namespace TestProject
             Assert.IsNotNull(actual);
             foreach (Property property in actual)
             {
-                Assert.IsTrue(property.Name.Length > 0);
+                Assert.IsTrue(property.DisplayName.Length > 0);
                 Assert.IsTrue(property.SystemName != null);
                 Assert.IsTrue(Regex.IsMatch(property.SystemName, @"\A\w{1,}\z"));
                 Assert.IsTrue(property.Type == "String" || property.Type == "Select" || property.Type == "Multyselect" || property.Type == "Number" || property.Type == "Percentage");

@@ -27,6 +27,12 @@ namespace ProjectWatcher.Models.Projects
             set;
         }
 
+        public Boolean IsAdmin
+        {
+            get;
+            set;
+        }
+
         public String ExportTitle
         {
             get;
