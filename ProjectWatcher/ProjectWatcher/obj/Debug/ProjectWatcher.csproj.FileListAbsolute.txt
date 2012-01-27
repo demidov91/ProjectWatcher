@@ -144,22 +144,22 @@ D:\work\Demidov\ProjectWatcher_25_samsonov\ProjectWatcher\ProjectWatcher\obj\Deb
 D:\work\Demidov\ProjectWatcher_25_samsonov\ProjectWatcher\ProjectWatcher\obj\Debug\GenerateResource.write.1.tlog
 D:\work\Demidov\ProjectWatcher_25_samsonov\ProjectWatcher\ProjectWatcher\obj\Debug\ProjectWatcher.dll
 D:\work\Demidov\ProjectWatcher_25_samsonov\ProjectWatcher\ProjectWatcher\obj\Debug\ProjectWatcher.pdb
-E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\ProjectWatcher\bin\ProjectWatcher.dll
-E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\ProjectWatcher\bin\ProjectWatcher.pdb
-E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\ProjectWatcher\bin\anrControls.Markdown.NET.dll
-E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\ProjectWatcher\bin\Authorization.dll
-E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\ProjectWatcher\bin\DAL.dll
-E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\ProjectWatcher\bin\EntityFramework.dll
-E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\ProjectWatcher\bin\SystemSettings.dll
-E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\ProjectWatcher\bin\Authorization.pdb
-E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\ProjectWatcher\bin\DAL.pdb
-E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\ProjectWatcher\bin\SystemSettings.pdb
-E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\ProjectWatcher\bin\EntityFramework.xml
-E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\ProjectWatcher\obj\Debug\ResolveAssemblyReference.cache
-E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\ProjectWatcher\obj\Debug\ProjectWatcher.Resources.Common.resources
-E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\ProjectWatcher\obj\Debug\ProjectWatcher.Resources.EnglishText.resources
-E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\ProjectWatcher\obj\Debug\ProjectWatcher.Resources.RussianText.resources
-E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\ProjectWatcher\obj\Debug\GenerateResource.read.1.tlog
-E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\ProjectWatcher\obj\Debug\GenerateResource.write.1.tlog
-E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\ProjectWatcher\obj\Debug\ProjectWatcher.dll
-E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\ProjectWatcher\obj\Debug\ProjectWatcher.pdb
+D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\ProjectWatcher\bin\ProjectWatcher.dll
+D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\ProjectWatcher\bin\ProjectWatcher.pdb
+D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\ProjectWatcher\bin\anrControls.Markdown.NET.dll
+D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\ProjectWatcher\bin\Authorization.dll
+D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\ProjectWatcher\bin\DAL.dll
+D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\ProjectWatcher\bin\EntityFramework.dll
+D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\ProjectWatcher\bin\SystemSettings.dll
+D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\ProjectWatcher\bin\Authorization.pdb
+D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\ProjectWatcher\bin\DAL.pdb
+D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\ProjectWatcher\bin\SystemSettings.pdb
+D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\ProjectWatcher\bin\EntityFramework.xml
+D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\ProjectWatcher\obj\Debug\ResolveAssemblyReference.cache
+D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\ProjectWatcher\obj\Debug\ProjectWatcher.Resources.Common.resources
+D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\ProjectWatcher\obj\Debug\ProjectWatcher.Resources.EnglishText.resources
+D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\ProjectWatcher\obj\Debug\ProjectWatcher.Resources.RussianText.resources
+D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\ProjectWatcher\obj\Debug\GenerateResource.read.1.tlog
+D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\ProjectWatcher\obj\Debug\GenerateResource.write.1.tlog
+D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\ProjectWatcher\obj\Debug\ProjectWatcher.dll
+D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\ProjectWatcher\obj\Debug\ProjectWatcher.pdb

@@ -18,12 +18,15 @@ namespace ProjectWatcher.Controllers
             string culture = cultureProvider.GetCulture();
             ViewData["projectName"] = ResourcesHelper.GetText("TheProject1", culture);
             ViewData["lastUser"] = ResourcesHelper.GetText("Admin", culture);
-            ViewData["lastUpdate"] = ResourcesHelper.GetText("date", culture);
-            ViewData["description"] = ResourcesHelper.GetText("Description", culture);
-            ViewData["propertyInfo"] = ResourcesHelper.GetText("PropertyInfo", culture);
+            HttpContext.User.IsInRole("administrator");
             ProjectModel model = new ProjectModel();
             model.Id = projectId;
             ProjectsReader dal = new ProjectsReader();
+            DAL.Project project = dal.GetProject(model.Id);
+            ViewData["User"] = (HttpContext.User.IsInRole("administrator") ||
+                                project.Owner == HttpContext.User.Identity.Name)
+                                   ? true
+                                   : false;
             model.ProjectProperties = ProjectHelper.GetProperties(dal, model.Id);
             return View(model);
         }

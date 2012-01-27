@@ -140,21 +140,21 @@ D:\work\Demidov\ProjectWatcher_25_samsonov\ProjectWatcher\TestProject\bin\Debug\
 D:\work\Demidov\ProjectWatcher_25_samsonov\ProjectWatcher\TestProject\obj\Debug\ResolveAssemblyReference.cache
 D:\work\Demidov\ProjectWatcher_25_samsonov\ProjectWatcher\TestProject\obj\Debug\TestProject.dll
 D:\work\Demidov\ProjectWatcher_25_samsonov\ProjectWatcher\TestProject\obj\Debug\TestProject.pdb
-E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\TestProject\bin\Debug\TestProject.dll
-E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\TestProject\bin\Debug\TestProject.pdb
-E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\TestProject\bin\Debug\Authorization.dll
-E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\TestProject\bin\Debug\DAL.dll
-E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\TestProject\bin\Debug\EntityFramework.dll
-E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\TestProject\bin\Debug\NMock2.dll
-E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\TestProject\bin\Debug\ProjectWatcher.dll
-E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\TestProject\bin\Debug\SystemSettings.dll
-E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\TestProject\bin\Debug\Authorization.pdb
-E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\TestProject\bin\Debug\DAL.pdb
-E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\TestProject\bin\Debug\ProjectWatcher.pdb
-E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\TestProject\bin\Debug\SystemSettings.pdb
-E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\TestProject\bin\Debug\EntityFramework.xml
-E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\TestProject\bin\Debug\ProjectWatcher_Accessor.dll
-E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\TestProject\bin\Debug\ProjectWatcher_Accessor.pdb
-E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\TestProject\obj\Debug\ResolveAssemblyReference.cache
-E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\TestProject\obj\Debug\TestProject.dll
-E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\TestProject\obj\Debug\TestProject.pdb
+D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\TestProject\bin\Debug\TestProject.dll
+D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\TestProject\bin\Debug\TestProject.pdb
+D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\TestProject\bin\Debug\Authorization.dll
+D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\TestProject\bin\Debug\DAL.dll
+D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\TestProject\bin\Debug\EntityFramework.dll
+D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\TestProject\bin\Debug\NMock2.dll
+D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\TestProject\bin\Debug\ProjectWatcher.dll
+D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\TestProject\bin\Debug\SystemSettings.dll
+D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\TestProject\bin\Debug\Authorization.pdb
+D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\TestProject\bin\Debug\DAL.pdb
+D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\TestProject\bin\Debug\ProjectWatcher.pdb
+D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\TestProject\bin\Debug\SystemSettings.pdb
+D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\TestProject\bin\Debug\EntityFramework.xml
+D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\TestProject\bin\Debug\ProjectWatcher_Accessor.dll
+D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\TestProject\bin\Debug\ProjectWatcher_Accessor.pdb
+D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\TestProject\obj\Debug\ResolveAssemblyReference.cache
+D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\TestProject\obj\Debug\TestProject.dll
+D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\TestProject\obj\Debug\TestProject.pdb

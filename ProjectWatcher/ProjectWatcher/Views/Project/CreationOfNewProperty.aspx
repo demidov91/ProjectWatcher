@@ -17,7 +17,7 @@
             <%=ViewData["nameTitle"] %>
             </td>
             <td class="tableLayoutRightSide">
-                <%:Html.TextBoxFor(m => m.Name) %>
+                <%:Html.TextBoxFor(m => m.Name)%>
             </td>
         </tr>
         <tr>
