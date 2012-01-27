@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Text.RegularExpressions;
+using DAL.Interface;
 
 
 namespace TestProject
@@ -43,7 +44,7 @@ namespace TestProject
         [ClassInitialize()]
         public static void MyClassInitialize(TestContext testContext)
         {
-            DAL.Helpers.ConnectionHelper.LoadORM();
+            DAL.Interface.Starter.Start();
             SystemSettings.TypeValidationHelper.LoadTypes();
         }
         //
@@ -73,7 +74,7 @@ namespace TestProject
         {
             ProjectsReader target = new ProjectsReader(); // TODO: Initialize to an appropriate value
             int projectId = 0; // TODO: Initialize to an appropriate value
-            Property[] actual;
+            IProperty[] actual;
             actual = target.GetPropertiesDefinitions(projectId);
             Assert.IsNotNull(actual);
             foreach (Property property in actual)
@@ -139,10 +140,10 @@ namespace TestProject
         {
             ProjectsReader target = new ProjectsReader(); 
             int projectId = 5; 
-            Project actual;
+            IProject actual;
             actual = target.GetProject(projectId);
             Assert.IsNotNull(actual);
-            Assert.IsNotNull(actual.Owner);            
+            Assert.IsNotNull(actual.GetValue("owner"));            
         }
     }
 }

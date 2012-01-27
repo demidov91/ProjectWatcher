@@ -28,3 +28,9 @@ D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\Validation\bin\Debug\SystemSett
 D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\Validation\obj\Debug\ResolveAssemblyReference.cache
 D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\Validation\obj\Debug\SystemSettings.dll
 D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\Validation\obj\Debug\SystemSettings.pdb
+E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\Validation\bin\Debug\SystemSettings.dll.config
+E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\Validation\bin\Debug\SystemSettings.dll
+E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\Validation\bin\Debug\SystemSettings.pdb
+E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\Validation\obj\Debug\ResolveAssemblyReference.cache
+E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\Validation\obj\Debug\SystemSettings.dll
+E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\Validation\obj\Debug\SystemSettings.pdb

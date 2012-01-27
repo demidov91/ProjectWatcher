@@ -78,3 +78,11 @@ D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\DAL\bin\Debug\SystemSettings.pd
 D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\DAL\obj\Debug\ResolveAssemblyReference.cache
 D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\DAL\obj\Debug\DAL.dll
 D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\DAL\obj\Debug\DAL.pdb
+E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\DAL\bin\Debug\DAL.dll.config
+E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\DAL\bin\Debug\DAL.dll
+E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\DAL\bin\Debug\DAL.pdb
+E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\DAL\bin\Debug\SystemSettings.dll
+E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\DAL\bin\Debug\SystemSettings.pdb
+E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\DAL\obj\Debug\ResolveAssemblyReference.cache
+E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\DAL\obj\Debug\DAL.dll
+E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\DAL\obj\Debug\DAL.pdb

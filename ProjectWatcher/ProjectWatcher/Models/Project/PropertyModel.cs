@@ -2,23 +2,24 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using DAL;
+using DAL.Interface;
 using SystemSettings;
 
 namespace ProjectWatcher.Models.Project
 {
     public class PropertyModel
     {
-        private Property naturalProperty;
+        private IProperty naturalProperty;
 
         private String localAvailableValues = null;
 
         public PropertyModel()
         {
-            naturalProperty = new Property(); 
+
+            naturalProperty = (IProperty)EntityGenerator<IProperty>.CreateEntity();
         }
 
-        public PropertyModel(DAL.Property naturalProperty)
+        public PropertyModel(IProperty naturalProperty)
         {
             if (naturalProperty != null)
             {
@@ -26,7 +27,7 @@ namespace ProjectWatcher.Models.Project
             }
             else
             {
-                naturalProperty = new Property();
+                this.naturalProperty = (IProperty)EntityGenerator<IProperty>.CreateEntity();
             }
         }
 
@@ -82,7 +83,7 @@ namespace ProjectWatcher.Models.Project
             {
                 if (localAvailableValues == null)
                 {
-                    return String.Concat(naturalProperty.AvailableValues.Select(x => x.Value + '\n'));
+                    return String.Concat(naturalProperty.GetAvailableValues().Select(x => x.GetValue().ToString() + '\n'));
                 }
                 return localAvailableValues;
             }
@@ -102,7 +103,7 @@ namespace ProjectWatcher.Models.Project
             {
                 if (localAvailableValues == null)
                 {
-                    return naturalProperty.AvailableValues.Select(x => x.Value).ToArray();
+                    return naturalProperty.GetAvailableValues().Select(x => x.GetValue().ToString()).ToArray();
                 }
                 return localAvailableValues.Split('\r', '\n');
             }
@@ -114,9 +115,15 @@ namespace ProjectWatcher.Models.Project
         }
 
         /// <summary>
-        /// This attribute of value but it is necessary for "CreationOfNewProperty" view
+        /// Is this property important for current user
         /// </summary>
         public bool IsImportant
+        {
+            get;
+            set;
+        }
+
+        public int ProjectId
         {
             get;
             set;

@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using ProjectWatcher.Helpers;
 using ProjectWatcher.Models.Project;
-using DAL;
+using DAL.Interface;
 using Authorization;
 
 namespace ProjectWatcher.Controllers
@@ -18,16 +18,13 @@ namespace ProjectWatcher.Controllers
             string culture = cultureProvider.GetCulture();
             ViewData["projectName"] = ResourcesHelper.GetText("TheProject1", culture);
             ViewData["lastUser"] = ResourcesHelper.GetText("Admin", culture);
-            HttpContext.User.IsInRole("administrator");
-            ProjectModel model = new ProjectModel();
-            model.Id = projectId;
             ProjectsReader dal = new ProjectsReader();
-            DAL.Project project = dal.GetProject(model.Id);
+            IProject project = dal.GetProject(projectId);
+            ProjectWithValuesModel model = new ProjectWithValuesModel(project);
             ViewData["User"] = (HttpContext.User.IsInRole("administrator") ||
-                                project.Owner == HttpContext.User.Identity.Name)
+                                model.Owner == HttpContext.User.Identity.Name)
                                    ? true
                                    : false;
-            model.ProjectProperties = ProjectHelper.GetProperties(dal, model.Id);
             return View(model);
         }
 
@@ -69,8 +66,8 @@ namespace ProjectWatcher.Controllers
         public ActionResult DeleteProperty(int projectId, string systemName)
         {
             ProjectsReader dal = new ProjectsReader();
-            Project actualProject = dal.GetProject(projectId);
-            if (actualProject != null && (User.IsInRole("administrator") || User.Identity.Name == actualProject.Owner))
+            IProject actualProject = dal.GetProject(projectId);
+            if (actualProject != null && (User.IsInRole("administrator") || User.Identity.Name == actualProject.GetValue("owner").ToString()))
             {
                 actualProject.DeleteProperty(systemName);                
             }
@@ -81,8 +78,8 @@ namespace ProjectWatcher.Controllers
         public ActionResult AddExistingProperty(int projectId, string systemName)
         {
             ProjectsReader dal = new ProjectsReader();
-            Project actualProject = dal.GetProject(projectId);
-            if (actualProject != null && (User.IsInRole("administrator") || User.Identity.Name == actualProject.Owner))
+            IProject actualProject = dal.GetProject(projectId);
+            if (actualProject != null && (User.IsInRole("administrator") || User.Identity.Name == actualProject.GetValue("owner")))
             {
                 try
                 {
@@ -123,7 +120,7 @@ namespace ProjectWatcher.Controllers
             if (Request.Form.AllKeys.Contains("accept.x"))
             {
                 HttpContextWarker contexter = new HttpContextWarker(HttpContext);
-                String result = CreateNewProperty(projectId, model, model.IsImportant, contexter);
+                String result = CreateNewProperty(projectId, model, true, contexter);
                 if (result == null)
                 {
                     return RedirectToAction("AddProperties", new { projectId = projectId });
@@ -143,9 +140,9 @@ namespace ProjectWatcher.Controllers
         private string CreateNewProperty(int projectId, PropertyModel model, bool important, HttpContextWarker contexter)
         {
             ProjectsReader dal = new ProjectsReader();
-            Project currentProject = dal.GetProject(projectId);
+            IProject currentProject = dal.GetProject(projectId);
             String culture = contexter.GetCulture();
-            if (currentProject == null || currentProject.Owner != contexter.User.Identity.Name && !contexter.User.IsInRole("administrator"))
+            if (currentProject == null || currentProject.GetValue("owner") != contexter.User.Identity.Name && !contexter.User.IsInRole("administrator"))
             {
                 return ResourcesHelper.GetText("NotEnoughRigts", culture);
             }
@@ -185,18 +182,19 @@ namespace ProjectWatcher.Controllers
         public PartialViewResult ChangeImportance(String systemName, int projectId)
         {
             ProjectsReader dal = new ProjectsReader();
-            Project project = dal.GetProject(projectId);
-            Value toChange = project.Values.FirstOrDefault(x => x.SystemName == systemName);
+            IProject project = dal.GetProject(projectId);
+            IValue toChange = project.GetValues().FirstOrDefault(x => x.SystemName == systemName);
             if (toChange == null)
             {
-                return PartialView("ChangeImportance", Value.CreateValue(systemName, projectId, true, false, ""));
+                return PartialView("ChangeImportance",
+                    new PropertyModel { IsImportant = false, ProjectId = projectId, SystemName = systemName });
             }
             else
             {
                 Modifier modifier = new Modifier();
                 toChange.Important = !toChange.Important;
                 modifier.Modify(toChange);
-                return PartialView("ChangeImportance", toChange);
+                return PartialView("ChangeImportance", new PropertyModel { IsImportant = toChange.Important, ProjectId = toChange.ProjectId, SystemName = toChange.SystemName});
             }
         }
 

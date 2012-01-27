@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<DAL.Value>" %>
+﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<ProjectWatcher.Models.Project.PropertyModel>" %>
 <%@Import namespace="ProjectWatcher.Models.Project" %>
 
 
@@ -8,7 +8,7 @@
     %>
  <div id="<%="forImportance" + Model.SystemName %>">
         <%
-    if (Model.Important)
+    if (Model.IsImportant)
     { %>
 
     <input type="image" src="../../Resources/AcceptButton.png" onclick="<%=changeImportanceCall %>"/>

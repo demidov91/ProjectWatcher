@@ -7,7 +7,7 @@ using ProjectWatcher.Properties;
 using ProjectWatcher.Helpers;
 using ProjectWatcher.Models.Projects;
 using Authorization;
-using DAL;
+using DAL.Interface;
 using System.IO;
 using SystemSettings;
 

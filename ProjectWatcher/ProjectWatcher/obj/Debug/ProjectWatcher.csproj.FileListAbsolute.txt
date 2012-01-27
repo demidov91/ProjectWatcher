@@ -163,3 +163,22 @@ D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\ProjectWatcher\obj\Debug\Genera
 D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\ProjectWatcher\obj\Debug\GenerateResource.write.1.tlog
 D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\ProjectWatcher\obj\Debug\ProjectWatcher.dll
 D:\ProjectWatcher_26_01_2012_2217\ProjectWatcher\ProjectWatcher\obj\Debug\ProjectWatcher.pdb
+E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\bin\ProjectWatcher.dll
+E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\bin\ProjectWatcher.pdb
+E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\bin\anrControls.Markdown.NET.dll
+E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\bin\Authorization.dll
+E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\bin\DAL.dll
+E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\bin\EntityFramework.dll
+E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\bin\SystemSettings.dll
+E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\bin\Authorization.pdb
+E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\bin\DAL.pdb
+E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\bin\SystemSettings.pdb
+E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\bin\EntityFramework.xml
+E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\obj\Debug\ResolveAssemblyReference.cache
+E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\obj\Debug\ProjectWatcher.Resources.Common.resources
+E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\obj\Debug\ProjectWatcher.Resources.EnglishText.resources
+E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\obj\Debug\ProjectWatcher.Resources.RussianText.resources
+E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\obj\Debug\GenerateResource.read.1.tlog
+E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\obj\Debug\GenerateResource.write.1.tlog
+E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\obj\Debug\ProjectWatcher.dll
+E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\obj\Debug\ProjectWatcher.pdb

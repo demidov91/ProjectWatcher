@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using DAL.Helpers;
 using SystemSettings;
+using DAL.Interface;
 
 namespace DAL
 {
-    public partial class Project
+    partial class Project: IProject
     {
 
         /// <summary>
@@ -25,6 +26,7 @@ namespace DAL
         /// Hides property.
         /// </summary>
         /// <param name="systemName">Property to hide.</param>
+        /// <exception cref="ConnectionException" />
         public void DeleteProperty(String systemName)
         {
             Value toDelete = Values.FirstOrDefault(x => x.SystemName == systemName);
@@ -59,35 +61,9 @@ namespace DAL
         }
 
 
-        public String Name
+        public IEnumerable<IValue> GetValues()
         {
-            get
-            {
-                try
-                {
-                    return ConnectionHelper.GetValue(this, "name");
-                }
-                catch (BadSystemNameException e)
-                {
-                    return "";
-                }
-            }
-
-        }
-
-        public String Owner
-        {
-            get 
-            {
-                try
-                {
-                    return ConnectionHelper.GetValue(this, "owner");
-                }
-                catch (BadSystemNameException e)
-                {
-                    return "";
-                }
-            }
+            return this.Values;
         }
 
         
@@ -97,6 +73,7 @@ namespace DAL
         /// </summary>
         /// <param name="systemName">Name of the property or some string that wouldn't be avaluated.</param>
         /// <returns>Value of property or input string.</returns>
+        /// <exception cref="BadSystemnameException" />
         public String GetValue(String systemName)
         {
             return ConnectionHelper.GetValue(this, systemName);

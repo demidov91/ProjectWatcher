@@ -36,7 +36,7 @@ namespace ProjectWatcher
 
             Authorization.AuthorizationHelper.LoadUserRoles();
             Helpers.ResourcesHelper.LoadResourses();
-            DAL.Helpers.ConnectionHelper.LoadORM();
+            DAL.Interface.Starter.Start();
             SystemSettings.TypeValidationHelper.LoadTypes();
             SystemSettings.DBDefinitionsHelper.Load();
         }

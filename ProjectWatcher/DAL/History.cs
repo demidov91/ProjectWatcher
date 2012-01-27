@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using DAL.Interface;
 
 namespace DAL
 {
-    public partial class History
+    partial class History: IHistory
     {
         public History(Value oldVersion)
         {

@@ -1,6 +1,9 @@
-<%@ Page Language="C#" Inherits="System.Web.Mvc.ViewPage<ProjectWatcher.Models.Project.ProjectModel>" %>
+<%@ Page Language="C#" Inherits="System.Web.Mvc.ViewPage<ProjectWatcher.Models.Project.ProjectWithValuesModel>" %>
 <%@ Import Namespace="ProjectWatcher.Models.Project" %>
-<%@ Import Namespace="DAL" %>
+<%@ Import Namespace="DAL.Interface" %>
+<%@ Import Namespace="ProjectWatcher.Helpers" %>
+
+
 
 <!DOCTYPE html>
 <html>
@@ -19,57 +22,55 @@
     <div id="ProjectWithProperties">
         <div id="title">
             <span class="header">
-                <%DAL.ProjectsReader reader = new ProjectsReader();
-                  DAL.Project project = reader.GetProject(Model.Id);   
-                %>
-                <%=project.Name%>
+                
+                <%=Model.Name%>
             </span><span>-edited by
                 <%=ViewData["lastUser"]%>
                 at
-                <%=project.LastChanged%></span>
+                <%=Model.LastChanged%></span>
         </div>
         <div id="historyAndDescription">
-            <%=project.GetValue("description") %>
+            <%=Model.GetValue("description") %>
         </div>
         <div id="properties">
-            <% foreach (PropertyModel property in Model.ProjectProperties)
+            <% foreach (ValueModel value in Model.Values)
                {
-                   if (property.SystemName == "history" || property.SystemName == "description")
+                   if (value.SystemName == "history" || value.SystemName == "description")
                    {
                        continue;
                    } %>
             <div>
-                <%= property.Name %>
-                <% if (property.Type == "String")
+                <%=value.Name%>
+                <% if (value.Property.Type == "String")
                    {%>
-                <input type="text" id="<%= property.SystemName %>" class="propertyString" value="<%= project.GetValue(property.SystemName) %>" />
-                <input type="button" id="btn" class="<%= property.SystemName %>" style="visibility: hidden"
+                <input type="text" id="<%= value.SystemName %>" class="propertyString" value="<%= value.Value %>" />
+                <input type="button" id="btn" class="<%= value.SystemName %>" style="visibility: hidden"
                     value="Submit" />
                 <% } %>
-                <% if (property.Type == "Number")
+                <% if (value.Property.Type == "Number")
                    {%>
-                <input type="number" id="<%= property.SystemName %>" class="propertyNumber" value="<%= project.GetValue(property.SystemName) %>"
+                <input type="number" id="<%= value.SystemName %>" class="propertyNumber" value="<%= value.Value %>"
                     onkeypress='validate(event)' />
-                <input type="button" id="btn" class="<%= property.SystemName %>" style="visibility: hidden"
+                <input type="button" id="btn" class="<%= value.SystemName %>" style="visibility: hidden"
                     value="Submit" />
                 <% } %>
-                <% if (property.Type == "Date")
+                <% if (value.Property.Type == "Date")
                    { %>
-                <input type="text" readonly="readonly" id="<%= property.SystemName %>" class="propertyDate"
-                    size="40" value="<%= project.GetValue(property.SystemName) %>" />
+                <input type="text" readonly="readonly" id="<%= value.SystemName %>" class="propertyDate"
+                    size="40" value="<%= value.Value %>" />
                 <input type="button">
                 <% }%>
-                <% if (property.Type == "Percentage")
+                <% if (value.Property.Type == "Percentage")
                    { %>
-                <input type="text" id="<%= property.SystemName %>" class="propertyPercentage" value="<%= project.GetValue(property.SystemName) %>%" />
-                <input type="button" id="btn" class="<%= property.SystemName %>" style="visibility: hidden"
+                <input type="text" id="<%= value.SystemName %>" class="propertyPercentage" value="<%= value.Value %>%" />
+                <input type="button" id="btn" class="<%= value.SystemName %>" style="visibility: hidden"
                     value="Submit" />
                 <% } %>
-                <% if (property.Type == "Select")
+                <% if (value.Property.Type == "Select")
                    { %>
-                  <select id="<%= property.SystemName %>" class="propertySelect" tabindex="1" draggable="draggable" >
-                       <option selected="selected" id="<%= project.GetValue(property.SystemName) %>"><%= project.GetValue(property.SystemName) %></option>
-                       <% foreach (var valueToSelect in property.AvailableValuesAsArray)
+                  <select id="<%= value.SystemName %>" class="propertySelect" tabindex="1" draggable="draggable" >
+                       <option selected="selected" id="<%= value.Value %>"><%= value.Value%></option>
+                       <% foreach (IAvailableValue valueToSelect in value.Property.GetAvailableValues())
                           { %>
                               <option id="valueToSelect"><%= valueToSelect %></option>
                           <% } %>
@@ -77,7 +78,7 @@
 
                 <% } %>
                 
-                <% if (property.Type == "Multyselect")
+                <% if (value.Property.Type == "Multyselect")
                    {  %>
 
                 <% } %>                

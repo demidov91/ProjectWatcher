@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Text.RegularExpressions;
 using ProjectWatcher.Helpers;
+using DAL.Interface;
 
 namespace ProjectWatcher.Models.Projects
 {
@@ -41,7 +42,7 @@ namespace ProjectWatcher.Models.Projects
         /// </summary>
         /// <param name="values"></param>
         /// <returns>"Formula" with project values instead of sqlFunctions and %values% in viewable form</returns>
-        public String ParseFormula(DAL.Evaluation values)
+        public String ParseFormula(Evaluation values)
         {
             string evaluatedFormula = Formula;
             foreach (KeyValuePair<String, String> value in values.Formulas)

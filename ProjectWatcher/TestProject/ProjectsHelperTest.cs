@@ -9,6 +9,7 @@ using DAL;
 using System.Security.Principal;
 using NMock2;
 using System.Web;
+using DAL.Interface;
 
 namespace TestProject
 {
@@ -200,17 +201,7 @@ Header2,    $if(%ut_coverage% > 50\, %ut_coverage%, %false%), Enumeration, 20";
             Assert.IsTrue(variables[0] == @"link");
         }
 
-        [TestMethod()]
-        public void GetRequestBuilderTest()
-        {
-            string filter = exampleFilter;
-            string tableDefinition = exampleTableDefinition;
-            NMock2.Mockery mockery = new NMock2.Mockery();
-            IPrincipal mockUser = mockery.NewMock<IPrincipal>();
-            NMock2.Expect.Once.On(mockUser).Method(new NMock2.Matchers.MethodNameMatcher("IsInRole")).With(new String[]{"administrator"}).Will(NMock2.Return.Value(true));
-            RequestBuilder actual = ProjectsHelper_Accessor.GetRequestBuilder(filter, tableDefinition, mockUser);
-            Assert.IsNotNull(actual);            
-        }
+        
 
         [TestMethod()]
         public void GetVariablesTest()

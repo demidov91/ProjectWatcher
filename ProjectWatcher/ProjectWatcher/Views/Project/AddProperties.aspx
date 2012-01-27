@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" Inherits="System.Web.Mvc.ViewPage<ProjectWatcher.Models.Project.ProjectModel>" %>
 <%@ Import Namespace="ProjectWatcher.Models.Project" %>
-<%@ Import Namespace="DAL" %>
+<%@ Import Namespace="DAL.Interface" %>
 <!DOCTYPE html>
 
 <html>
@@ -46,10 +46,9 @@
                     <%=property.Type %>
                 </td>
                 <td>
-                    <%
-                        Value projectvalue = Value.CreateValue(property.SystemName, Model.Id, true,
-                                                        property.IsImportant, "");
-                        Html.RenderPartial("ChangeImportance", projectvalue); %>
+                    <%  
+                        Html.RenderPartial("ChangeImportance", property); 
+                        %>
 
                 </td>
                 <td>

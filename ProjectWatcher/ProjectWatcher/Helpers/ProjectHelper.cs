@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using DAL;
+using DAL.Interface;
 using ProjectWatcher.Models.Project;
 using System.Web.Mvc;
 
@@ -10,9 +10,9 @@ namespace ProjectWatcher.Helpers
 {
     public static class ProjectHelper
     {
-        public static PropertyModel[] GetProperties(ProjectsReader dal, int projectId)
+        public static PropertyModel[] GetProperties(DAL.Interface.ProjectsReader dal, int projectId)
         {
-            Property[] propertiesFromDAL = dal.GetPropertiesDefinitions(projectId);
+            IProperty[] propertiesFromDAL = dal.GetPropertiesDefinitions(projectId);
             PropertyModel[] outputProperties = new PropertyModel[propertiesFromDAL.Length];
             for (int i = 0; i < propertiesFromDAL.Length; i++ )
             {
@@ -24,20 +24,21 @@ namespace ProjectWatcher.Helpers
 
         internal static PropertyModel[] GetVisibleProperties(ProjectsReader dal, int projectId)
         {
-            Project project = dal.GetProject(projectId);
+            IProject project = dal.GetProject(projectId);
             if(project == null)
             {
                 return null;
             }
             List<PropertyModel> outputProperties = new List<PropertyModel>();
-            foreach (Value value in project.Values)
+            foreach (IValue value in project.GetValues())
             {
                 if (!value.Visible)
                 {
                     continue;
                 }
-                PropertyModel property = new PropertyModel(value.Property);
+                PropertyModel property = new PropertyModel(value.GetProperty());
                 property.IsImportant = value.Important;
+                property.ProjectId = projectId;
                 outputProperties.Add(property);
             }
             return outputProperties.ToArray();
@@ -45,7 +46,7 @@ namespace ProjectWatcher.Helpers
 
         public static PropertyModel[] ExcludeProperties(ProjectsReader dal, PropertyModel[] propertiesFromProject)
         {
-            Property[] propertiesFromDAL = dal.GetPropertiesDefinitions();
+            IProperty[] propertiesFromDAL = dal.GetPropertiesDefinitions();
             PropertyModel[] modeledProperties = new PropertyModel[propertiesFromDAL.Length];
             for (int i = 0; i < propertiesFromDAL.Length; i++)
             {

@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using DAL.Interface;
 
 namespace DAL
 {
-    public partial class AvailableValue
+    partial class AvailableValue: IAvailableValue
     {
         private static Object locker = new Object();
 
@@ -23,6 +24,13 @@ namespace DAL
             return new AvailableValue { Property = systemName };
  
         }
+
+        public Object GetValue()
+        {
+            return this.Value;
+        }
+
+
         
     }
 }

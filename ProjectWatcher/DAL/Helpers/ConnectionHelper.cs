@@ -6,16 +6,27 @@ using System.Text;
 using SystemSettings;
 using System.Data.Objects.DataClasses;
 using System.Data.Common;
+using DAL;
+using DAL.Interface;
 
 namespace DAL.Helpers
 {
-    public class ConnectionHelper
+    class ConnectionHelper
     {
+        
         private static ProjectPropertiesEntities db;
 
-        public static void LoadORM()
+        internal static bool LoadORM()
         {
-            db = new ProjectPropertiesEntities();
+            try
+            {    
+                db = new ProjectPropertiesEntities();
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
         }
 
         /// <summary>
@@ -335,7 +346,7 @@ namespace DAL.Helpers
         /// </summary>
         /// <param name="entity">Existing entity.</param>
         /// <returns>If operation was successfull.</returns>
-        internal static bool Modify(EntityObject entity)
+        internal static bool Modify(IEntity entity)
         {
             try
             {

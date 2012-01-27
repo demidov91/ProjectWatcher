@@ -3,11 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using DAL.Helpers;
+using DAL.Interface;
 
 namespace DAL
 {
-    public partial class Property
+    partial class Property: IProperty
     {
+        public IEnumerable<IAvailableValue> GetAvailableValues()
+        {
+            return this.AvailableValues;
+        }
+
+        
+        
         
 
     }

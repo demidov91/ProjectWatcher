@@ -162,16 +162,16 @@
             <End Role="Values" EntitySet="Values" />
           </AssociationSet>
         </EntityContainer>
-        <EntityType Name="AvailableValue">
+        <EntityType Name="AvailableValue" a:TypeAccess="Public" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Property" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="Value" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="Property1" Relationship="ProjectPropertiesModel.FK_AvailableValues_Properties" FromRole="AvailableValues" ToRole="Properties" />
+          <NavigationProperty Name="Property1" Relationship="ProjectPropertiesModel.FK_AvailableValues_Properties" FromRole="AvailableValues" ToRole="Properties" a:SetterAccess="Public" a:GetterAccess="Public" />
           <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
-        <EntityType Name="History">
+        <EntityType Name="History" a:TypeAccess="Public" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -182,7 +182,7 @@
           <NavigationProperty Name="Value1" Relationship="ProjectPropertiesModel.FK_History_Values" FromRole="History" ToRole="Values" />
           <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
-        <EntityType Name="Project">
+        <EntityType Name="Project" a:TypeAccess="Public" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -191,7 +191,7 @@
           <Property Name="Created" Type="DateTime" Nullable="false" />
           <NavigationProperty Name="Values" Relationship="ProjectPropertiesModel.FK_Values_Projects" FromRole="Projects" ToRole="Values" />
         </EntityType>
-        <EntityType Name="Property">
+        <EntityType Name="Property" a:TypeAccess="Public" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
           <Key>
             <PropertyRef Name="SystemName" />
           </Key>
@@ -211,7 +211,7 @@
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
-        <EntityType Name="Value">
+        <EntityType Name="Value" a:TypeAccess="Public" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -220,9 +220,9 @@
           <Property Name="ProjectId" Type="Int32" Nullable="false" />
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Visible" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="Histories" Relationship="ProjectPropertiesModel.FK_History_Values" FromRole="Values" ToRole="History" />
-          <NavigationProperty Name="Project" Relationship="ProjectPropertiesModel.FK_Values_Projects" FromRole="Values" ToRole="Projects" />
-          <NavigationProperty Name="Property" Relationship="ProjectPropertiesModel.FK_Values_Properties" FromRole="Values" ToRole="Properties" />
+          <NavigationProperty Name="Histories" Relationship="ProjectPropertiesModel.FK_History_Values" FromRole="Values" ToRole="History" a:GetterAccess="Public" a:SetterAccess="Public" />
+          <NavigationProperty Name="Project" Relationship="ProjectPropertiesModel.FK_Values_Projects" FromRole="Values" ToRole="Projects" a:GetterAccess="Public" a:SetterAccess="Public" />
+          <NavigationProperty Name="Property" Relationship="ProjectPropertiesModel.FK_Values_Properties" FromRole="Values" ToRole="Properties" a:GetterAccess="Public" a:SetterAccess="Public" />
           <Property Type="Boolean" Name="Important" Nullable="false" />
           <Property Type="String" Name="Author" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Type="DateTime" Name="Time" Nullable="false" />
