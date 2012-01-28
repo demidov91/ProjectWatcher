@@ -44,6 +44,11 @@ namespace ProjectWatcher.Helpers
             get { return context.User; }
         }
 
-        
+
+
+        internal bool CanModify(DAL.Interface.IProject modifying)
+        {
+            return modifying != null && context.User.IsInRole("administrator") || context.User.Identity.Name == modifying.GetValue("owner");
+        }
     }
 }

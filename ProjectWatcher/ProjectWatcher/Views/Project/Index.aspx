@@ -1,7 +1,4 @@
 <%@ Page Language="C#" Inherits="System.Web.Mvc.ViewPage<ProjectWatcher.Models.Project.Index.ProjectWithValuesModel>" %>
-<%@ Import Namespace="ProjectWatcher.Models.Project" %>
-<%@ Import Namespace="DAL.Interface" %>
-<%@ Import Namespace="ProjectWatcher.Helpers" %>
 <%@ Import Namespace="ProjectWatcher.Models.Project.Index" %>
 
 
@@ -11,28 +8,18 @@
     
     
     <title>The Project</title>
-    <link rel="Stylesheet" href="../../Content/Site.css" type="text/css" />
-    <link rel="stylesheet" href="../../Content/jquery-ui-1.8.17.custom.css" type="text/css"/>
-    <link rel="stylesheet" href="../../Content/Calendar.css" type="text/css"/>
-    <script src="../../Scripts/jquery-1.5.1.js" type="text/javascript"></script>
-    <script src="../../Scripts/jdate.js" type="text/javascript"></script>
-    <script src="../../Scripts/jquery-ui-1.8.11.js" type="text/javascript"></script>
+    <link rel="Stylesheet" href="../../Content/ProjectIndex.css" type="text/css" />
+    
 </head>
 <body>
 <div id="ProjectWithProperties">
     <div id="forTitle">
-        <span class="header">
-                <%=Model.Name%>
-        </span>
-        <span>-edited by
-                <%=Model.LastUser%>
-                at
-                <%=Model.LastChanged%>
-        </span>
+        <span class="header"><%=Model.Name%> </span><span>-edited by <%=Model.LastUser%> at <%=Model.LastChanged%></span>
     </div>
     <div id="forProperties">
         <%foreach (ValueModel value in Model.Values)
           {
+              if(value.IsVisible)
               Html.RenderPartial("BigValue", value);
           } %>
     </div>

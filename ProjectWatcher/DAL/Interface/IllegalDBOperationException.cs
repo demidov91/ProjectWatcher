@@ -20,7 +20,11 @@ namespace DAL.Interface
             this.BadValue = badValue;
         }
 
-        
+        public IllegalDBOperationException(InvalidOperationException e)
+        {
+            InnerException = e;
+        }
+
 
     }
 }

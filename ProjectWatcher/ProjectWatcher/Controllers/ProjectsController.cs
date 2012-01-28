@@ -21,7 +21,6 @@ namespace ProjectWatcher.Controllers
         public ActionResult Index(string filter, string tableDefinition)
         {
             HttpContextWarker cultureProvider = new HttpContextWarker(HttpContext);
-            string culture = cultureProvider.GetCulture();
             if (filter == null)
             {
                 filter = "";
@@ -35,7 +34,7 @@ namespace ProjectWatcher.Controllers
                 ViewData["errorMessage"] = TempData["errorUpload"];
             }
             HttpContextWarker context = new HttpContextWarker(HttpContext);
-            ViewData["filterModel"] = ProjectsHelper.CreateFilterModel(filter, tableDefinition, culture);
+            ViewData["filterModel"] = ProjectsHelper.CreateFilterModel(filter, tableDefinition, context.GetCulture());
             ViewData["tableModel"] = ProjectsHelper.CreateTableModel(filter, tableDefinition, HttpContext);
             ViewData["footerModel"] = ProjectsHelper.CreateFooterModel(filter, tableDefinition, context);
             TempData["exportData"] = ProjectsHelper.CreateExportData((TableModel)ViewData["tableModel"]);
@@ -73,17 +72,25 @@ namespace ProjectWatcher.Controllers
                 return RedirectToAction("Index", new { filter = filter, tableDefinition = tableDefinition });
             }
             List<int> badProjects = new List<int>();
-            Modifier dal = new Modifier();
+            List<int> badRights = new List<int>();
+            Modifier modifier = new Modifier();
+            ProjectsReader reader = new ProjectsReader();
             foreach (KeyValuePair<int, Evaluation> project in newRecords)
             {
-                if (!dal.ModifyOrCreate(project.Key, project.Value.Values, (RolablePrincipal)HttpContext.User))
+                IProject modifying = reader.GetProject(project.Key);
+                if(!contexter.CanModify(modifying))
+                {
+                    badRights.Add(modifying.Id);
+                    continue;
+                }
+                if (!modifier.ModifyOrCreate(project.Key, project.Value.Values, (RolablePrincipal)HttpContext.User))
                 {
                     badProjects.Add(project.Key);
                 }
             }
-            if (badProjects.Count > 0)
+            if (badProjects.Count > 0 || badRights.Count > 0)
             {
-                TempData["errorUpload"] = ProjectsHelper.FormUploadErrorMessage(badProjects, culture);
+                TempData["errorUpload"] = ProjectsHelper.FormUploadErrorMessage(badProjects, badRights, culture);
             }
             else 
             {

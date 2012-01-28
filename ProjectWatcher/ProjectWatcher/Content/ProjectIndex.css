@@ -1,0 +1,78 @@
+﻿
+/*============================================*/
+/*Index*/
+#ProjectWithProperties{
+            font-family: Times New Roman;
+            margin: 25px;
+        }
+        
+.header {
+    font-family: cursive;
+    font-size: xx-large;
+}
+        
+#forAddPropertyButton {
+    float: left;
+}
+ 
+ #forBackButton {
+     float: right;
+     
+ }
+        
+        
+/*============================================*/
+
+/*============================================*/
+/*BigValue*/
+
+
+.forValueName {    
+    float: left;
+    
+    
+}
+
+.forNameValueSeparator {
+    float: left;
+    margin-left: 3px;
+    margin-right: 20px;
+}
+
+.forBigValue {
+    float: left;
+}
+
+/*============================================*/
+
+/*=====================*/
+/*Just look value*/
+.property {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    
+}
+
+
+.value {
+    float: left;
+}
+
+.editButton {
+    float: left;
+}
+
+
+
+
+
+
+
+
+
+/*============================================*/
+/*ValueEdit*/
+.forOkCancelButton {
+    text-align: right;
+}
+/*============================================*/

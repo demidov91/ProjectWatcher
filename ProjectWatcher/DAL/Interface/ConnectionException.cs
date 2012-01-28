@@ -17,7 +17,7 @@ namespace DAL.Interface
             }
         }
 
-        public new Exception InnerException
+        public Exception InnerException
         {
             get;
             set;

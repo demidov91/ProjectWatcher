@@ -316,17 +316,31 @@ namespace ProjectWatcher.Helpers
         /// <param name="badProjects">Ids of bad formed projects.</param>
         /// <param name="culture">User language.</param>
         /// <returns>Message to show user.</returns>
-        internal static String FormUploadErrorMessage(List<int> badProjects, string culture)
+        internal static String FormUploadErrorMessage(List<int> badProjects, List<Int32> badRights, string culture)
         {
             StringBuilder message = new StringBuilder();
-            message.Append(ResourcesHelper.GetText("BeginOfErrorInUploadingFiles", culture));
-            message.Append('\n');
-            foreach (int projectId in badProjects)
+            if (badProjects.Count > 0)
             {
-                message.Append(projectId);
-                message.Append(", ");
+                message.Append(ResourcesHelper.GetText("BeginOfErrorInUploadingFiles", culture));
+                message.Append('\n');
+                foreach (int projectId in badProjects)
+                {
+                    message.Append(projectId);
+                    message.Append(", ");
+                }
+                message.Remove(message.Length - 2, 2);
             }
-            message.Remove(message.Length - 2, 2);
+            if (badRights.Count > 0)
+            {
+                message.Append(ResourcesHelper.GetText("NotEnoughRightsForModifying", culture));
+                message.Append('\n');
+                foreach (int projectId in badRights)
+                {
+                    message.Append(projectId);
+                    message.Append(", ");
+                }
+                message.Remove(message.Length - 2, 2);
+            }
             return message.ToString();
         }
     }

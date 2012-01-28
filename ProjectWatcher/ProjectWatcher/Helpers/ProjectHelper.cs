@@ -68,6 +68,46 @@ namespace ProjectWatcher.Helpers
         }
 
 
+        internal static string CreateNewProperty(int projectId, PropertyModel model, bool important, HttpContextWarker contexter)
+        {
+            ProjectsReader dal = new ProjectsReader();
+            IProject currentProject = dal.GetProject(projectId);
+            String culture = contexter.GetCulture();
+            if (!contexter.CanModify(currentProject))
+            {
+                return ResourcesHelper.GetText("NotEnoughRigts", culture);
+            }
+            try
+            {
+                dal.CreateNewProperty(model.Name, model.SystemName, model.Type, model.AvailableValuesAsArray);
+            }
+            catch (BadSystemNameException)
+            {
+                return ResourcesHelper.GetText("BadPropertySystemName", culture);
+            }
+            catch (BadPropertyTypeException)
+            {
+                return ResourcesHelper.GetText("BadPropertyType", culture);
+            }
+            catch (ConnectionException)
+            {
+                return ResourcesHelper.GetText("ConnectionError", culture);
+            }
+            catch (BadDisplayTypeNameException)
+            {
+                return ResourcesHelper.GetText("BadDisplayType", culture);
+            }
+            try
+            {
+                currentProject.AddProperty(model.SystemName, true, important, contexter.User.Identity.Name);
+            }
+            catch (ConnectionException e)
+            {
+                return ResourcesHelper.GetText("ConnectionError", contexter.GetCulture());
+            }
+            return null;
+        }
+
         
     }
 }

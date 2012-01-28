@@ -159,7 +159,7 @@
 
 
 /*Index.aspx*/
-/*===========================*/
+/*===========================
 
 
 #properties 
@@ -167,11 +167,7 @@
 }
 
 
-#ProjectWithProperties
-        {
-            font-family: Times New Roman;
-            margin-left: 20px;
-        }
+
         .header
         {
             font-family: Calibri;
@@ -212,5 +208,5 @@
             margin-top: 20px;
         }
         
-/*/////////////////////////////////////*/
+/////////////////////////////////////*/
 

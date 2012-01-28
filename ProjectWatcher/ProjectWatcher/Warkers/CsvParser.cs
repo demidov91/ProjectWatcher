@@ -54,7 +54,7 @@ namespace ProjectWatcher.Warkers
 
         private KeyValuePair<int, Evaluation> ReadDictionaryOfEvaluations(string projectFromFile, String[] headers)
         {
-            String[] valuesFromFile = projectFromFile.Split(';').ToArray();
+            String[] valuesFromFile = projectFromFile.Split(';').Where(x => System.Text.RegularExpressions.Regex.IsMatch(x, @"\w{1,}")).ToArray();
             if(valuesFromFile.Length != headers.Length)
             {
                 return new KeyValuePair<int,Evaluation>();

@@ -19,26 +19,16 @@ D:\work\demidov\ProjectWatcher\TestProject\bin\Debug\TestProject.dll
 D:\work\demidov\ProjectWatcher\TestProject\bin\Debug\TestProject.pdb
 D:\work\demidov\ProjectWatcher\TestProject\bin\Debug\Authorization.dll
 D:\work\demidov\ProjectWatcher\TestProject\bin\Debug\DAL.dll
-D:\work\demidov\ProjectWatcher\TestProject\bin\Debug\EntityFramework.dll
 D:\work\demidov\ProjectWatcher\TestProject\bin\Debug\NMock2.dll
 D:\work\demidov\ProjectWatcher\TestProject\bin\Debug\ProjectWatcher.dll
-D:\work\demidov\ProjectWatcher\TestProject\bin\Debug\Rhino.Mocks.dll
 D:\work\demidov\ProjectWatcher\TestProject\bin\Debug\Authorization.pdb
 D:\work\demidov\ProjectWatcher\TestProject\bin\Debug\DAL.pdb
 D:\work\demidov\ProjectWatcher\TestProject\bin\Debug\ProjectWatcher.pdb
-D:\work\demidov\ProjectWatcher\TestProject\bin\Debug\EntityFramework.xml
 D:\work\demidov\ProjectWatcher\TestProject\bin\Debug\ProjectWatcher_Accessor.dll
 D:\work\demidov\ProjectWatcher\TestProject\bin\Debug\ProjectWatcher_Accessor.pdb
 D:\work\demidov\ProjectWatcher\TestProject\obj\Debug\ResolveAssemblyReference.cache
 D:\work\demidov\ProjectWatcher\TestProject\obj\Debug\TestProject.dll
 D:\work\demidov\ProjectWatcher\TestProject\obj\Debug\TestProject.pdb
-D:\work\demidov\ProjectWatcher\TestProject\bin\Debug\hibernate.cfg.xml.xml
-D:\work\demidov\ProjectWatcher\TestProject\bin\Debug\NHibernate.dll
-D:\work\demidov\ProjectWatcher\TestProject\bin\Debug\Iesi.Collections.dll
-D:\work\demidov\ProjectWatcher\TestProject\bin\Debug\NHibernate.pdb
-D:\work\demidov\ProjectWatcher\TestProject\bin\Debug\NHibernate.xml
-D:\work\demidov\ProjectWatcher\TestProject\bin\Debug\Iesi.Collections.pdb
-D:\work\demidov\ProjectWatcher\TestProject\bin\Debug\Iesi.Collections.xml
 D:\work\demidov\ProjectWatcher_19_01_2012_2137_Demidov\ProjectWatcher\TestProject\bin\Debug\hibernate.cfg.xml
 D:\work\demidov\ProjectWatcher_19_01_2012_2137_Demidov\ProjectWatcher\TestProject\bin\Debug\TestProject.dll
 D:\work\demidov\ProjectWatcher_19_01_2012_2137_Demidov\ProjectWatcher\TestProject\bin\Debug\TestProject.pdb
@@ -176,3 +166,5 @@ E:\информация\Проекты\поиск работы\itransition\Proje
 E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\TestProject\obj\Debug\ResolveAssemblyReference.cache
 E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\TestProject\obj\Debug\TestProject.dll
 E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\TestProject\obj\Debug\TestProject.pdb
+D:\work\Demidov\ProjectWatcher\TestProject\bin\Debug\SystemSettings.dll
+D:\work\Demidov\ProjectWatcher\TestProject\bin\Debug\SystemSettings.pdb

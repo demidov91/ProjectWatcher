@@ -74,8 +74,15 @@ namespace DAL
             {
                 return false;
             }
-            return Id == other.Id && Time == other.Time && Value1 == other.Value1 && Author == other.Author;
+            return Id == other.Id && Time == other.Time && Value1 == other.Value1 && Author == other.Author &&
+                   Important == other.Important && Visible == other.Visible;
         }
+
+
+       
+
+
+
 
         internal void SetLike(IValue original)
         {

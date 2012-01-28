@@ -20,10 +20,8 @@ D:\work\demidov\ProjectWatcher\ProjectWatcher\bin\ProjectWatcher.pdb
 D:\work\demidov\ProjectWatcher\ProjectWatcher\bin\anrControls.Markdown.NET.dll
 D:\work\demidov\ProjectWatcher\ProjectWatcher\bin\Authorization.dll
 D:\work\demidov\ProjectWatcher\ProjectWatcher\bin\DAL.dll
-D:\work\demidov\ProjectWatcher\ProjectWatcher\bin\EntityFramework.dll
 D:\work\demidov\ProjectWatcher\ProjectWatcher\bin\Authorization.pdb
 D:\work\demidov\ProjectWatcher\ProjectWatcher\bin\DAL.pdb
-D:\work\demidov\ProjectWatcher\ProjectWatcher\bin\EntityFramework.xml
 D:\work\demidov\ProjectWatcher\ProjectWatcher\obj\Debug\ResolveAssemblyReference.cache
 D:\work\demidov\ProjectWatcher\ProjectWatcher\obj\Debug\ProjectWatcher.Resources.Common.resources
 D:\work\demidov\ProjectWatcher\ProjectWatcher\obj\Debug\ProjectWatcher.Resources.EnglishText.resources
@@ -32,13 +30,6 @@ D:\work\demidov\ProjectWatcher\ProjectWatcher\obj\Debug\GenerateResource.read.1.
 D:\work\demidov\ProjectWatcher\ProjectWatcher\obj\Debug\GenerateResource.write.1.tlog
 D:\work\demidov\ProjectWatcher\ProjectWatcher\obj\Debug\ProjectWatcher.dll
 D:\work\demidov\ProjectWatcher\ProjectWatcher\obj\Debug\ProjectWatcher.pdb
-D:\work\demidov\ProjectWatcher\ProjectWatcher\bin\hibernate.cfg.xml.xml
-D:\work\demidov\ProjectWatcher\ProjectWatcher\bin\NHibernate.dll
-D:\work\demidov\ProjectWatcher\ProjectWatcher\bin\Iesi.Collections.dll
-D:\work\demidov\ProjectWatcher\ProjectWatcher\bin\NHibernate.pdb
-D:\work\demidov\ProjectWatcher\ProjectWatcher\bin\NHibernate.xml
-D:\work\demidov\ProjectWatcher\ProjectWatcher\bin\Iesi.Collections.pdb
-D:\work\demidov\ProjectWatcher\ProjectWatcher\bin\Iesi.Collections.xml
 D:\work\demidov\ProjectWatcher_19_01_2012_2137_Demidov\ProjectWatcher\ProjectWatcher\bin\hibernate.cfg.xml
 D:\work\demidov\ProjectWatcher_19_01_2012_2137_Demidov\ProjectWatcher\ProjectWatcher\bin\ProjectWatcher.dll
 D:\work\demidov\ProjectWatcher_19_01_2012_2137_Demidov\ProjectWatcher\ProjectWatcher\bin\ProjectWatcher.pdb
@@ -182,3 +173,5 @@ E:\информация\Проекты\поиск работы\itransition\Proje
 E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\obj\Debug\GenerateResource.write.1.tlog
 E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\obj\Debug\ProjectWatcher.dll
 E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\ProjectWatcher\obj\Debug\ProjectWatcher.pdb
+D:\work\Demidov\ProjectWatcher\ProjectWatcher\bin\SystemSettings.dll
+D:\work\Demidov\ProjectWatcher\ProjectWatcher\bin\SystemSettings.pdb

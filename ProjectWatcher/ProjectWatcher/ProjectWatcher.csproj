@@ -41,6 +41,9 @@
       <HintPath>..\packages\EntityFramework.4.1.10331.0\lib\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Schema, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.Data.Schema.UnitTesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
@@ -67,6 +70,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\ProjectController.cs" />
+    <Compile Include="Errors\NotEnoughRightsException.cs" />
+    <Compile Include="Errors\ProjectWatcherException.cs" />
     <Compile Include="Helpers\EntityHelper.cs" />
     <Compile Include="Helpers\HtmlHelperHelper.cs" />
     <Compile Include="Helpers\HttpContextHelper.cs" />
@@ -134,6 +139,7 @@
     <Content Include="Content\images\ui-icons_ffd27a_256x240.png" />
     <Content Include="Content\images\ui-icons_ffffff_256x240.png" />
     <Content Include="Content\jquery-ui-1.8.17.custom.css" />
+    <Content Include="Content\ProjectIndex.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -165,6 +171,8 @@
     <Content Include="Resources\AcceptButton.png" />
     <Content Include="Resources\no.png" />
     <Content Include="Resources\pinion.png" />
+    <Content Include="Resources\yellowPlus.png" />
+    <Content Include="Resources\back.png" />
     <Content Include="Resources\SettingsButton.png" />
     <Content Include="Resources\RejectButton.png" />
     <Content Include="Resources\LeftGreenArrow.png" />

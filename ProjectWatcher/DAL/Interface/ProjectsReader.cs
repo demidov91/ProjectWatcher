@@ -47,9 +47,22 @@ namespace DAL.Interface
             return ConnectionHelper.GetProperties();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="projectId">Id of searching project entity.</param>
+        /// <returns>Entity interface or null if there is no projects with such id.</returns>
         public IProject GetProject(int projectId)
         {
-            return ConnectionHelper.GetProject(projectId);
+            try
+            {
+                return ConnectionHelper.GetProject(projectId);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            
         }
 
         /// <summary>
@@ -108,7 +121,7 @@ namespace DAL.Interface
         /// <returns>Id of created project.</returns>
         public int CreateNewProject(String owner)
         {
-            return ConnectionHelper.CreateProject(owner, DateTime.Now);
+            return ConnectionHelper.CreateProject(owner);
         }
 
 

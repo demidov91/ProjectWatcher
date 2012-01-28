@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using DAL;
 using ProjectWatcher.Helpers;
 using ProjectWatcher.Models.Project;
 using ProjectWatcher.Models.Project.Index;
 using DAL.Interface;
 using Authorization;
+using ProjectWatcher.Errors;
 
 namespace ProjectWatcher.Controllers
 {
@@ -17,10 +19,12 @@ namespace ProjectWatcher.Controllers
         {
             HttpContextWarker cultureProvider = new HttpContextWarker(HttpContext);
             string culture = cultureProvider.GetCulture();
-            ViewData["projectName"] = ResourcesHelper.GetText("TheProject1", culture);
-            ViewData["lastUser"] = ResourcesHelper.GetText("Admin", culture);
             ProjectsReader dal = new ProjectsReader();
             IProject project = dal.GetProject(projectId);
+            if(project == null)
+            {
+                return RedirectToAction("BadRequest");
+            }
             ProjectWithValuesModel model = new ProjectWithValuesModel(project);
             model.IsEditable = (HttpContext.User.IsInRole("administrator") ||
                                 model.Owner == HttpContext.User.Identity.Name)
@@ -31,8 +35,14 @@ namespace ProjectWatcher.Controllers
 
         public ActionResult AddProperties(int projectId)
         {
-            HttpContextWarker cultureProvider = new HttpContextWarker(HttpContext);
-            string culture = cultureProvider.GetCulture();
+            HttpContextWarker contexter = new HttpContextWarker(HttpContext);
+            ProjectsReader dal = new ProjectsReader();
+            IProject projectToShow = dal.GetProject(projectId);
+            if(!contexter.CanModify(projectToShow))
+            {
+                return RedirectToAction("NotEnoughRights");
+            }
+            string culture = contexter.GetCulture();
             ViewData["projectProperties"] = ResourcesHelper.GetText("ProjectProperties", culture);
             ViewData["availableProperties"] = ResourcesHelper.GetText("AvailableProperties", culture);
             ViewData["createPropertyTitle"] = ResourcesHelper.GetText("CreateProperty", culture);
@@ -45,12 +55,10 @@ namespace ProjectWatcher.Controllers
             ViewData["addTitle"] = ResourcesHelper.GetText("Add", culture);
             ProjectModel model = new ProjectModel();
             model.Id = projectId;
-            ProjectsReader dal = new ProjectsReader();
             model.ProjectProperties = ProjectHelper.GetVisibleProperties(dal, model.Id);
-            
             if (model.ProjectProperties == null)
             {
-                return RedirectToAction("Index", "Projects");
+                return RedirectToAction("BadRequest");
             }
             PropertyModel[] existingProperties = ProjectHelper.ExcludeProperties(dal, model.ProjectProperties);
             model.OtherProperties = existingProperties;
@@ -66,9 +74,10 @@ namespace ProjectWatcher.Controllers
         [HttpPost]
         public ActionResult DeleteProperty(int projectId, string systemName)
         {
+            HttpContextWarker contexter = new HttpContextWarker(HttpContext);
             ProjectsReader dal = new ProjectsReader();
             IProject actualProject = dal.GetProject(projectId);
-            if (actualProject != null && (User.IsInRole("administrator") || User.Identity.Name == actualProject.GetValue("owner").ToString()))
+            if (contexter.CanModify(actualProject))
             {
                 actualProject.DeleteProperty(systemName);                
             }
@@ -78,9 +87,10 @@ namespace ProjectWatcher.Controllers
         [HttpPost]
         public ActionResult AddExistingProperty(int projectId, string systemName)
         {
+            HttpContextWarker contexter = new HttpContextWarker(HttpContext);
             ProjectsReader dal = new ProjectsReader();
             IProject actualProject = dal.GetProject(projectId);
-            if (actualProject != null && (User.IsInRole("administrator") || User.Identity.Name == actualProject.GetValue("owner")))
+            if (contexter.CanModify(actualProject))
             {
                 try
                 {
@@ -96,6 +106,7 @@ namespace ProjectWatcher.Controllers
             return RedirectToAction("AddProperties", new { projectId = projectId });
         }
 
+        [HttpPost]
         public ActionResult CreationOfNewProperty(int projectId)
         {
             ViewData["projectId"] = projectId;
@@ -121,7 +132,7 @@ namespace ProjectWatcher.Controllers
             if (Request.Form.AllKeys.Contains("accept.x"))
             {
                 HttpContextWarker contexter = new HttpContextWarker(HttpContext);
-                String result = CreateNewProperty(projectId, model, true, contexter);
+                String result = ProjectHelper.CreateNewProperty(projectId, model, true, contexter);
                 if (result == null)
                 {
                     return RedirectToAction("AddProperties", new { projectId = projectId });
@@ -138,52 +149,18 @@ namespace ProjectWatcher.Controllers
 
 
 
-        private string CreateNewProperty(int projectId, PropertyModel model, bool important, HttpContextWarker contexter)
-        {
-            ProjectsReader dal = new ProjectsReader();
-            IProject currentProject = dal.GetProject(projectId);
-            String culture = contexter.GetCulture();
-            if (currentProject == null || currentProject.GetValue("owner") != contexter.User.Identity.Name && !contexter.User.IsInRole("administrator"))
-            {
-                return ResourcesHelper.GetText("NotEnoughRigts", culture);
-            }
-            try
-            {
-                dal.CreateNewProperty(model.Name, model.SystemName, model.Type, model.AvailableValuesAsArray);
-            }
-            catch (BadSystemNameException)
-            {
-                return ResourcesHelper.GetText("BadPropertySystemName", culture);
-            }
-            catch (BadPropertyTypeException)
-            {
-                return ResourcesHelper.GetText("BadPropertyType", culture);
-            }
-            catch (ConnectionException)
-            {
-                return ResourcesHelper.GetText("ConnectionError", culture);
-            }
-            catch (BadDisplayTypeNameException)
-            {
-                return ResourcesHelper.GetText("BadDisplayType", culture); 
-            }
-            try
-            {
-                currentProject.AddProperty(model.SystemName, true, important, contexter.User.Identity.Name);
-            }
-            catch (ConnectionException e)
-            {   
-                return ResourcesHelper.GetText("ConnectionError", contexter.GetCulture());
-            }
-            return null;
-        }
-                        
         
-
+                        
+        [HttpPost]
         public PartialViewResult ChangeImportance(String systemName, int projectId)
         {
+            HttpContextWarker contexter = new HttpContextWarker(HttpContext);
             ProjectsReader dal = new ProjectsReader();
             IProject project = dal.GetProject(projectId);
+            if(!contexter.CanModify(project))
+            {
+                throw new NotEnoughRightsException();
+            }
             IValue toChange = project.GetValues().FirstOrDefault(x => x.SystemName == systemName);
             if (toChange == null)
             {
@@ -194,10 +171,19 @@ namespace ProjectWatcher.Controllers
             {
                 Modifier modifier = new Modifier();
                 toChange.Important = !toChange.Important;
-                modifier.Modify(toChange);
+                modifier.ModifyImportance(toChange);
                 return PartialView("ChangeImportance", new PropertyModel { IsImportant = toChange.Important, ProjectId = toChange.ProjectId, SystemName = toChange.SystemName});
             }
         }
 
+        public ActionResult Badrequest()
+        {
+            return RedirectToAction("Index", "Projects");
+        }
+
+        public ActionResult NotEnoughRights()
+        {
+            return RedirectToAction("Badrequest");
+        }
     }
 }
