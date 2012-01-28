@@ -4,25 +4,17 @@
 <div id="visibleFooter">
     <% if (Model.IsAdmin)
        {%>
-<form action="<%= Html.AttributeEncode(Url.Action("NewProject")) %>" method="post">
-    <input class="leftSide" type="submit" value="<%= Model.AddProjectTitle %>" />
+  
+<form action="<%= Html.AttributeEncode(Url.Action("NewProject")) %>" method="post" style="margin: 10px;">
+    <input class="leftSide button big blue" type="submit" value="<%= Model.AddProjectTitle %>" />
 </form>
 <% }%> 
 
-<form action="<%=Html.AttributeEncode(Url.Action("Export", new{headers=((TableModel)ViewData["tableModel"]).Headers, values=((TableModel)ViewData["tableModel"]).AllValues})) %>" method="post">
-    <input class="rightSide" type="submit" value="<%=Model.ExportTitle %>" />
+<form style="margin: 10px;" action="<%=Html.AttributeEncode(Url.Action("Export", new{headers=((TableModel)ViewData["tableModel"]).Headers, values=((TableModel)ViewData["tableModel"]).AllValues})) %>" method="post">
+    <input class="rightSide button big blue" type="submit" value="<%=Model.ExportTitle %>" />
 </form>
 
-<table class="rightSide">
-    <tr>
-        <td>
-            <%Html.RenderPartial("Upload", Model.Upload); %>
-        </td>
-    </tr>        
-    <tr>
-        <td>
-            <input type="submit" value="<%=Model.UploadTitle %>" onclick="" />
-        </td>
-    </tr>               
-</table>
+    <div class="rightSide">
+        <%Html.RenderPartial("Upload", Model.Upload); %>
+    </div>
 </div>

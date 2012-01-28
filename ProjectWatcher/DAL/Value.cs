@@ -95,5 +95,17 @@ namespace DAL
             this.Author = original.Author;
             this.Time = original.Time;
         }
+
+        internal void SetLike(IValue original)
+        {
+            this.Important = original.Important;
+            this.SystemName = original.SystemName;
+            this.Value1 = original.GetValue().ToString();
+            this.ProjectId = original.ProjectId;
+            this.Id = original.Id;
+            this.Visible = original.Visible;
+            this.Author = original.Author;
+            this.Time = original.Time;
+        }
     }
 }

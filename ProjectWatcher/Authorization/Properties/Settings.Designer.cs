@@ -25,7 +25,7 @@ namespace Authorization.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("ХП\\Dmitry")]
+        [global::System.Configuration.DefaultSettingValueAttribute("ХП\\Dmitry,ITRANSITION\\t.lebedev")]
         public string Administrators {
             get {
                 return ((string)(this["Administrators"]));

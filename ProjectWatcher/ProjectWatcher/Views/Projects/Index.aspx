@@ -6,7 +6,14 @@
 <head runat="server">
     <title>Index</title>
     <link rel="Stylesheet" href="../../Content/Site.css" type="text/css" />
+<<<<<<< HEAD
     <link rel="stylesheet" href="<%=Url.Content("~/Scripts/jQuerry/development-bundle/themes/base/jquery.ui.all.css")%>" />
+=======
+    <link rel="Stylesheet" href="../../Content/Table.css" type="text/css" />
+    <link rel="Stylesheet" href="../../Content/Button.css" type="text/css" />
+    <link rel="stylesheet" href="<%=Url.Content("~/Scripts/jQuerry/development-bundle/themes/base/jquery.ui.all.css")%>" />
+
+>>>>>>> master
 	<script src="<%=Url.Content("~/Scripts/jQuerry/development-bundle/jquery-1.7.1.js")%>" type="text/javascript"></script>
     <script src="<%=Url.Content("~/Scripts/jQuerry/development-bundle/ui/jquery.ui.core.js")%>" type="text/javascript"></script>
 	<script src="<%=Url.Content("~/Scripts/jQuerry/development-bundle/ui/jquery.ui.widget.js")%>" type="text/javascript"></script>
@@ -33,5 +40,8 @@
 </div>
 </body>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 </html>

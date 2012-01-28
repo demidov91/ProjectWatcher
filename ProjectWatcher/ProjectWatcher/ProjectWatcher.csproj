@@ -123,7 +123,9 @@
     <Compile Include="Warkers\FileStringHelper.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Button.css" />
     <Content Include="Content\Calendar.css" />
+    <Content Include="Content\ChooseFile.css" />
     <Content Include="Content\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
     <Content Include="Content\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
     <Content Include="Content\images\ui-bg_flat_10_000000_40x100.png" />
@@ -139,7 +141,11 @@
     <Content Include="Content\images\ui-icons_ffd27a_256x240.png" />
     <Content Include="Content\images\ui-icons_ffffff_256x240.png" />
     <Content Include="Content\jquery-ui-1.8.17.custom.css" />
+<<<<<<< HEAD
     <Content Include="Content\ProjectIndex.css" />
+=======
+    <Content Include="Content\Table.css" />
+>>>>>>> master
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />

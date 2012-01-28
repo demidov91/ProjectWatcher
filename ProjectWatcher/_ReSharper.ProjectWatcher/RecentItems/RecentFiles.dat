@@ -1,5 +1,6 @@
 ﻿<RecentFiles>
   <RecentFiles>
+<<<<<<< HEAD
     <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Content/f:Site.css" caret="2124" fromTop="0" />
     <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Models/d:Project/f:PropertyModel.cs" caret="3026" fromTop="20" />
     <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Views/d:Project/f:ChangeImportance.ascx" caret="419" fromTop="10" />
@@ -62,5 +63,69 @@
     <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Helpers/f:ProjectHelper.cs" caret="2786" fromTop="8" />
     <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Controllers/f:ProjectController.cs" caret="6274" fromTop="21" />
     <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Controllers/f:ProjectController.cs" caret="6496" fromTop="26" />
+=======
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Controllers/f:ProjectsController.cs" caret="2971" fromTop="24" />
+    <File id="A8E85134-955D-4A2A-AF44-D0E7BEF7C9A2/f:StringHelper.cs" caret="476" fromTop="16" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Scripts/f:Site.js" caret="104" fromTop="3" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Scripts/f:jdate.js" caret="49257" fromTop="44" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Scripts/f:jquery-ui-1.8.11.js" caret="0" fromTop="0" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Controllers/f:ProjectController.cs" caret="1324" fromTop="31" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/f:Web.config" caret="1029" fromTop="12" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Views/d:Project/f:Index.aspx" caret="848" fromTop="17" />
+    <File id="7D3D09B7-D61A-4554-ACDE-1FD8691AC5E3/d:Interface/f:IAvailableValue.cs" caret="0" fromTop="0" />
+    <File id="7D3D09B7-D61A-4554-ACDE-1FD8691AC5E3/d:Interface/f:Evaluation.cs" caret="0" fromTop="0" />
+    <File id="7D3D09B7-D61A-4554-ACDE-1FD8691AC5E3/d:Interface/f:DALException.cs" caret="0" fromTop="0" />
+    <File id="7D3D09B7-D61A-4554-ACDE-1FD8691AC5E3/d:Interface/f:ConnectionException.cs" caret="0" fromTop="0" />
+    <File id="7D3D09B7-D61A-4554-ACDE-1FD8691AC5E3/d:Interface/f:BadPropertyTypeException.cs" caret="0" fromTop="0" />
+    <File id="7D3D09B7-D61A-4554-ACDE-1FD8691AC5E3/d:Interface/f:BadDisplayTypeName.cs" caret="0" fromTop="0" />
+    <File id="7D3D09B7-D61A-4554-ACDE-1FD8691AC5E3/d:Interface/f:BadSystemNameException.cs" caret="0" fromTop="0" />
+    <File id="7D3D09B7-D61A-4554-ACDE-1FD8691AC5E3/d:Interface/f:ProjectsReader.cs" caret="0" fromTop="0" />
+    <File id="7D3D09B7-D61A-4554-ACDE-1FD8691AC5E3/d:Interface/f:Modifier.cs" caret="419" fromTop="19" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Content/f:Calendar.css" caret="0" fromTop="0" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Models/d:Projects/f:FooterModel.cs" caret="1153" fromTop="64" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Content/f:Button.css" caret="648" fromTop="16" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Content/f:Table.css" caret="441" fromTop="33" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Content/f:ChooseFile.css" caret="256" fromTop="16" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Views/d:Project/f:AddProperties.aspx" caret="5391" fromTop="18" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Views/d:Projects/f:Index.aspx" caret="1680" fromTop="18" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Views/d:Projects/f:Upload.ascx" caret="540" fromTop="9" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Views/d:Projects/f:Table.ascx" caret="992" fromTop="12" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Views/d:Projects/f:Filter.ascx" caret="211" fromTop="4" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Views/d:Projects/f:Footer.ascx" caret="878" fromTop="17" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Content/f:Site.css" caret="269" fromTop="22" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Views/d:Project/f:CreationOfNewProperty.aspx" caret="1095" fromTop="13" />
+  </RecentFiles>
+  <RecentEdits>
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Views/d:Project/f:AddProperties.aspx" caret="5380" fromTop="24" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Views/d:Project/f:AddProperties.aspx" caret="5380" fromTop="22" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Views/d:Projects/f:Footer.ascx" caret="199" fromTop="3" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Views/d:Projects/f:Footer.ascx" caret="348" fromTop="7" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Views/d:Projects/f:Footer.ascx" caret="498" fromTop="12" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Views/d:Projects/f:Footer.ascx" caret="819" fromTop="16" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Views/d:Projects/f:Upload.ascx" caret="333" fromTop="3" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Views/d:Projects/f:Upload.ascx" caret="540" fromTop="9" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Views/d:Projects/f:Table.ascx" caret="251" fromTop="4" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Views/d:Projects/f:Index.aspx" caret="1793" fromTop="28" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Content/f:Table.css" caret="150" fromTop="11" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Content/f:Table.css" caret="872" fromTop="26" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Views/d:Projects/f:Table.ascx" caret="1921" fromTop="36" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Content/f:Site.css" caret="3333" fromTop="2" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Content/f:Site.css" caret="3236" fromTop="9" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Views/d:Projects/f:Table.ascx" caret="1827" fromTop="27" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Views/d:Projects/f:Table.ascx" caret="1921" fromTop="32" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Views/d:Projects/f:Table.ascx" caret="1921" fromTop="39" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Views/d:Projects/f:Table.ascx" caret="1921" fromTop="24" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Views/d:Projects/f:Table.ascx" caret="1921" fromTop="15" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Views/d:Projects/f:Table.ascx" caret="448" fromTop="11" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Views/d:Projects/f:Table.ascx" caret="1164" fromTop="22" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Content/f:Site.css" caret="1438" fromTop="26" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Views/d:Project/f:CreationOfNewProperty.aspx" caret="2153" fromTop="29" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Views/d:Project/f:CreationOfNewProperty.aspx" caret="2093" fromTop="38" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Views/d:Project/f:CreationOfNewProperty.aspx" caret="396" fromTop="11" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Views/d:Projects/f:Index.aspx" caret="1680" fromTop="18" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Views/d:Projects/f:Table.ascx" caret="1923" fromTop="13" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Views/d:Projects/f:Table.ascx" caret="2481" fromTop="35" />
+    <File id="2D2E596F-E640-4480-9903-CEB77F80E637/d:Content/f:Site.css" caret="269" fromTop="22" />
+>>>>>>> master
   </RecentEdits>
 </RecentFiles>

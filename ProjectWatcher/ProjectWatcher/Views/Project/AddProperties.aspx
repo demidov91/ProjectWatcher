@@ -7,6 +7,9 @@
 <head runat="server">
     <title>AddProperties</title>
     <link rel="Stylesheet" href="../../Content/Site.css" type="text/css" />
+    <link rel="Stylesheet" href="../../Content/Table.css" type="text/css" />
+    <link rel="Stylesheet" href="../../Content/Button.css" type="text/css" />
+    <link rel="Stylesheet" href="../../Content/ChooseFile.css" type="text/css" />
 </head>
 <body>
     <div id="AddPropertiesDiv">
@@ -110,12 +113,12 @@
     <div id="footer">
                 <div id="forCreatePropertyButton">
                     <form method="post" action="<%=Html.AttributeEncode(Url.Action("CreationOfNewProperty", new {projectId=Model.Id})) %>">
-                        <input type="submit" value="<%=ViewData["createPropertyTitle"] %>" />
+                        <input type="submit" value="<%=ViewData["createPropertyTitle"] %>" class="button big blue" />
                     </form>
                 </div>   
                 <div id="forGoToProjectButton">
                     <form method="post" action="<%= Html.AttributeEncode(Url.Action("Index", new {projectId=Model.Id})) %>">
-                        <input type="submit" value="<%=ViewData["backToProjectViewTitle"] %>" />
+                        <input type="submit" value="<%=ViewData["backToProjectViewTitle"] %>"  class="button big blue"/>
                     </form>
                 </div> 
     </div>

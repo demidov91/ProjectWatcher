@@ -75,10 +75,13 @@ namespace DAL.Interface
             }
             return result;
         }
+<<<<<<< HEAD
 
         public void ModifyImportance(IValue toChange)
         {
             ConnectionHelper.SetImportance(new Value(toChange));
         }
+=======
+>>>>>>> master
     }
 }

@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="Administrators" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">ХП\Dmitry</Value>
+      <Value Profile="(Default)">ХП\Dmitry,ITRANSITION\t.lebedev</Value>
     </Setting>
     <Setting Name="KnownUsers" Type="System.String" Scope="Application">
       <Value Profile="(Default)">ХП\Дмитрий,ХП\Dmitry</Value>

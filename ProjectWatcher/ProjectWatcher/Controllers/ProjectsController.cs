@@ -72,6 +72,7 @@ namespace ProjectWatcher.Controllers
                 return RedirectToAction("Index", new { filter = filter, tableDefinition = tableDefinition });
             }
             List<int> badProjects = new List<int>();
+<<<<<<< HEAD
             List<int> badRights = new List<int>();
             Modifier modifier = new Modifier();
             ProjectsReader reader = new ProjectsReader();
@@ -84,13 +85,25 @@ namespace ProjectWatcher.Controllers
                     continue;
                 }
                 if (!modifier.ModifyOrCreate(project.Key, project.Value.Values, (RolablePrincipal)HttpContext.User))
+=======
+            Modifier dal = new Modifier();
+            foreach (KeyValuePair<int, Evaluation> project in newRecords)
+            {
+                if (!dal.ModifyOrCreate(project.Key, project.Value.Values, (RolablePrincipal)HttpContext.User))
+>>>>>>> master
                 {
                     badProjects.Add(project.Key);
                 }
             }
+<<<<<<< HEAD
             if (badProjects.Count > 0 || badRights.Count > 0)
             {
                 TempData["errorUpload"] = ProjectsHelper.FormUploadErrorMessage(badProjects, badRights, culture);
+=======
+            if (badProjects.Count > 0)
+            {
+                TempData["errorUpload"] = ProjectsHelper.FormUploadErrorMessage(badProjects, culture);
+>>>>>>> master
             }
             else 
             {

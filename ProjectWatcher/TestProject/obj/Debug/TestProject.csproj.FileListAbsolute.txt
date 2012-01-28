@@ -166,5 +166,26 @@ E:\информация\Проекты\поиск работы\itransition\Proje
 E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\TestProject\obj\Debug\ResolveAssemblyReference.cache
 E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\TestProject\obj\Debug\TestProject.dll
 E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\TestProject\obj\Debug\TestProject.pdb
+<<<<<<< HEAD
 D:\work\Demidov\ProjectWatcher\TestProject\bin\Debug\SystemSettings.dll
 D:\work\Demidov\ProjectWatcher\TestProject\bin\Debug\SystemSettings.pdb
+=======
+D:\ProjectWatcher_28_01_2012_Demidov_1731\ProjectWatcher\TestProject\bin\Debug\TestProject.dll
+D:\ProjectWatcher_28_01_2012_Demidov_1731\ProjectWatcher\TestProject\bin\Debug\TestProject.pdb
+D:\ProjectWatcher_28_01_2012_Demidov_1731\ProjectWatcher\TestProject\bin\Debug\Authorization.dll
+D:\ProjectWatcher_28_01_2012_Demidov_1731\ProjectWatcher\TestProject\bin\Debug\DAL.dll
+D:\ProjectWatcher_28_01_2012_Demidov_1731\ProjectWatcher\TestProject\bin\Debug\EntityFramework.dll
+D:\ProjectWatcher_28_01_2012_Demidov_1731\ProjectWatcher\TestProject\bin\Debug\NMock2.dll
+D:\ProjectWatcher_28_01_2012_Demidov_1731\ProjectWatcher\TestProject\bin\Debug\ProjectWatcher.dll
+D:\ProjectWatcher_28_01_2012_Demidov_1731\ProjectWatcher\TestProject\bin\Debug\SystemSettings.dll
+D:\ProjectWatcher_28_01_2012_Demidov_1731\ProjectWatcher\TestProject\bin\Debug\Authorization.pdb
+D:\ProjectWatcher_28_01_2012_Demidov_1731\ProjectWatcher\TestProject\bin\Debug\DAL.pdb
+D:\ProjectWatcher_28_01_2012_Demidov_1731\ProjectWatcher\TestProject\bin\Debug\ProjectWatcher.pdb
+D:\ProjectWatcher_28_01_2012_Demidov_1731\ProjectWatcher\TestProject\bin\Debug\SystemSettings.pdb
+D:\ProjectWatcher_28_01_2012_Demidov_1731\ProjectWatcher\TestProject\bin\Debug\EntityFramework.xml
+D:\ProjectWatcher_28_01_2012_Demidov_1731\ProjectWatcher\TestProject\bin\Debug\ProjectWatcher_Accessor.dll
+D:\ProjectWatcher_28_01_2012_Demidov_1731\ProjectWatcher\TestProject\bin\Debug\ProjectWatcher_Accessor.pdb
+D:\ProjectWatcher_28_01_2012_Demidov_1731\ProjectWatcher\TestProject\obj\Debug\ResolveAssemblyReference.cache
+D:\ProjectWatcher_28_01_2012_Demidov_1731\ProjectWatcher\TestProject\obj\Debug\TestProject.dll
+D:\ProjectWatcher_28_01_2012_Demidov_1731\ProjectWatcher\TestProject\obj\Debug\TestProject.pdb
+>>>>>>> master

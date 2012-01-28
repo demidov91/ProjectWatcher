@@ -1,0 +1,60 @@
+﻿.button {
+    font-family: Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    font-weight: bold;
+    line-height: 1;
+    color: white;
+    text-shadow: 0 -1px 1px rgba(0,0,0,.3);
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.5), inset 0 1px 1px rgba(255,255,255,.5);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.5), inset 0 1px 1px rgba(255,255,255,.5);
+    -o-box-shadow: 0 1px 2px rgba(0,0,0,.5), inset 0 1px 1px rgba(255,255,255,.5);
+    box-shadow: 0 1px 2px rgba(0,0,0,.5), inset 0 1px 1px rgba(255,255,255,.5);
+}
+
+
+.small, .normal, .medium, .big, .megabig {
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -o-border-radius: 8px;
+    border-radius: 8px;
+    padding: 5px 10px;
+}
+  
+.small {
+    font-size: 11px;
+}
+  
+.normal {
+    font-size: 14px;
+}
+  
+.medium {
+    font-size: 18px;
+}
+  
+.big {
+    font-size: 24px;
+}
+  
+.megabig {
+    font-size: 32px;
+}
+
+.blue {
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#52A8E8), to(#377AD0));
+    background-image: -moz-linear-gradient(0% 100% 90deg, #377AD0, #52A8E8);
+    background-color: #52A8E8;
+    border: 1px solid #20559A;
+}
+
+.blue:hover, .blue:focus {
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#54A1D8), to(#1967CA));
+    background-image: -moz-linear-gradient(0% 100% 90deg, #1967CA, #54A1D8);
+    background-color: #52A8E8;
+    color: white;
+}
+
+.blue:active {
+    background: #2D7CD1;
+    color: white;
+}

@@ -74,7 +74,11 @@ namespace ProjectWatcher.Models.Project.Index
             }
         }
 
+<<<<<<< HEAD
         public Boolean IsVisible
+=======
+        public Boolean Visible
+>>>>>>> master
         {
             get
             {

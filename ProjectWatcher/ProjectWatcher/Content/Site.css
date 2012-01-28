@@ -1,4 +1,10 @@
 ﻿
+body 
+{
+    font-family: Tahoma;
+
+}
+
 
 .leftButtomAlignCell{
     text-align:left;
@@ -14,7 +20,9 @@
     text-align:center;
 }
     
-.centerDiv {
+ 
+.centerDiv 
+{
     
 }
     
@@ -100,7 +108,13 @@
 
 /*table.aspx*/
 /*=================================*/
-
+#tableSettingButton
+{
+    border-color: white;
+    margin-left: -1px;
+    position: absolute;
+    opacity: 0.2;
+}
 /*================================*/
 /*footer.ascx*/
 #visibleFooter
@@ -208,5 +222,9 @@
             margin-top: 20px;
         }
         
+<<<<<<< HEAD
 /////////////////////////////////////*/
 
+=======
+/*/////////////////////////////////////*/
+>>>>>>> master

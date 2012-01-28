@@ -5,6 +5,7 @@
 <html>
 <head runat="server">
     <title>CreationOfNewProperty</title>
+    <link rel="Stylesheet" href="../../Content/Button.css" type="text/css" />
     <link rel="Stylesheet" href="../../Content/Site.css" type="text/css" />
 </head>
 <body>
@@ -51,14 +52,10 @@
             <td style="text-align: right;">
                 <input  name="accept" type="image" src="../../Resources/AcceptButton.png" />
                 <input  name="reject" type="image" src="../../Resources/RejectButton.png" />
-                
-                
             </td>
         </tr>
     </table>
     </div>
-    
-    
     </form>
    </div>
 </body>
