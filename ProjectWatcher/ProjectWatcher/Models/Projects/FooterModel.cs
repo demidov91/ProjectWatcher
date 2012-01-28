@@ -45,17 +45,7 @@ namespace ProjectWatcher.Models.Projects
             set;
         }
 
-        public String UploadResultMessage 
-        {
-            set
-            {
-                if (upload == null)
-                {
-                    upload = new UploadModel();
-                }
-                upload.SuccessMessage = value; 
-            }
-        }
+        
 
         public String SubmitUploadTitle
         {

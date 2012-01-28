@@ -17,7 +17,7 @@ namespace DAL
         /// <param name="created">Time of creation of the project.</param>
         /// <param name="lastChanged"></param>
         /// <returns></returns>
-        public static Project CreateProject(DateTime created, DateTime lastChanged)
+        public static Project CreateProject(DateTime created, Int32? lastChanged)
         {
             return new Project { Created = created, LastChanged = lastChanged };
         }
@@ -44,6 +44,7 @@ namespace DAL
         /// <param name="important"></param>
         /// <param name="author">User who made this changing.</param>
         /// <exception cref="ConnectionException"></exception>
+        /// <exception cref="IllegalDBOperationException" />
         public void AddProperty(String systemName, bool visible, bool important, String author)
         {
             if (SystemSettings.TypeValidationHelper.IsValidSystemName(systemName))
@@ -77,6 +78,32 @@ namespace DAL
         public String GetValue(String systemName)
         {
             return ConnectionHelper.GetValue(this, systemName);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public IHistory LastImportantChanging
+        {
+            get
+            {
+                if (LastChanged == null)
+                { 
+                    Value firstValue = Values.FirstOrDefault(x => x.SystemName == Properties.Settings.Default.FirstProperty);
+                    return (firstValue == null ? null : new History(firstValue));
+                }
+                else
+                {
+                    try
+                    {
+                        return ConnectionHelper.GetHistory(LastChanged.Value);
+                    }
+                    catch (ConnectionException e)
+                    {
+                        return null;
+                    }
+                }
+            }
         }
     }
 }

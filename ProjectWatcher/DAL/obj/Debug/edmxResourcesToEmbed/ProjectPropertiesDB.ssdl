@@ -47,7 +47,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="LastChanged" Type="datetime" Nullable="false" />
+    <Property Name="LastChanged" Type="int" />
     <Property Name="Created" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="Properties">

@@ -590,13 +590,11 @@ namespace DAL
         /// Create a new Project object.
         /// </summary>
         /// <param name="id">Initial value of the Id property.</param>
-        /// <param name="lastChanged">Initial value of the LastChanged property.</param>
         /// <param name="created">Initial value of the Created property.</param>
-        public static Project CreateProject(global::System.Int32 id, global::System.DateTime lastChanged, global::System.DateTime created)
+        public static Project CreateProject(global::System.Int32 id, global::System.DateTime created)
         {
             Project project = new Project();
             project.Id = id;
-            project.LastChanged = lastChanged;
             project.Created = created;
             return project;
         }
@@ -634,9 +632,9 @@ namespace DAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.DateTime LastChanged
+        public Nullable<global::System.Int32> LastChanged
         {
             get
             {
@@ -651,8 +649,8 @@ namespace DAL
                 OnLastChangedChanged();
             }
         }
-        private global::System.DateTime _LastChanged;
-        partial void OnLastChangedChanging(global::System.DateTime value);
+        private Nullable<global::System.Int32> _LastChanged;
+        partial void OnLastChangedChanging(Nullable<global::System.Int32> value);
         partial void OnLastChangedChanged();
     
         /// <summary>

@@ -7,10 +7,17 @@ namespace DAL.Interface
 {
     public interface IProject: IEntity
     {
-        DateTime LastChanged
+        IHistory LastImportantChanging
         {
             get;
-            set;
+        }
+
+        /// <summary>
+        /// Uniq id in database.
+        /// </summary>
+        Int32 Id
+        {
+            get;
         }
 
         /// <summary>

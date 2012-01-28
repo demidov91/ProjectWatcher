@@ -3,6 +3,12 @@
 <%@ Import namespace="ProjectWatcher.Helpers" %>
 
 <div id="labelTableBlock">
+    <%if (ViewData["errorMessage"] != null)
+      {%>
+    <div id="dialog">
+        <%:Html.Encode(ViewData["errorMessage"])%>
+    </div>
+    <%} %>
     <table id="projectsTable" border="1">
         <tr id="tableHeader">
             <%for (int i = 0; i < Model.Headers.Length; i++)

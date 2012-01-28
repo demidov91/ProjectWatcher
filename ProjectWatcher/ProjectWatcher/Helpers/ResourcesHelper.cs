@@ -15,7 +15,7 @@ namespace ProjectWatcher.Helpers
 
         private static ResourceManager commonResourses;
 
-        public static bool LoadResourses()
+        internal static bool LoadResourses()
         {
             try
             {

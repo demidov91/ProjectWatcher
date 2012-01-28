@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using ProjectWatcher.Helpers;
 using ProjectWatcher.Models.Project;
+using ProjectWatcher.Models.Project.Index;
 using DAL.Interface;
 using Authorization;
 
@@ -21,7 +22,7 @@ namespace ProjectWatcher.Controllers
             ProjectsReader dal = new ProjectsReader();
             IProject project = dal.GetProject(projectId);
             ProjectWithValuesModel model = new ProjectWithValuesModel(project);
-            ViewData["User"] = (HttpContext.User.IsInRole("administrator") ||
+            model.IsEditable = (HttpContext.User.IsInRole("administrator") ||
                                 model.Owner == HttpContext.User.Identity.Name)
                                    ? true
                                    : false;

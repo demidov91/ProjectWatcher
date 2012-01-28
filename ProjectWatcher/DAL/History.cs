@@ -13,6 +13,7 @@ namespace DAL
             ValueId = oldVersion.Id;
             Time = oldVersion.Time;
             Author = oldVersion.Author;
+            Value = oldVersion.Value1;
         }
 
         public History()

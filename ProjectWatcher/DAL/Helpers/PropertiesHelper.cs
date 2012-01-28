@@ -5,11 +5,16 @@ using System.Text;
 
 namespace DAL.Helpers
 {
-    public class PropertiesHelper
+    public static class PropertiesHelper
     {
-        public static String DefaultValue(String systemName)
+        public static Object DefaultValue(String systemName)
         {
             Property property = ConnectionHelper.GetProperty(systemName);
+            return property.DefaultValue();
+        }
+
+        public static Object DefaultValue(this Property property)
+        {
             if (property == null)
             {
                 return "";
@@ -27,10 +32,10 @@ namespace DAL.Helpers
                 case "Percentage":
                     return "0";
                 default:
-                    return "";                   
-
+                    return "";
             }
-            
+ 
         }
+
     }
 }

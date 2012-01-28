@@ -5,3 +5,6 @@ function changeImportance(systemName, projectId) {
     $(divName).load("/Project/ChangeImportance", { projectId: projectId, systemName: systemName });
 }
 
+$(document).ready(function () {
+    $("#dialog").dialog();
+});

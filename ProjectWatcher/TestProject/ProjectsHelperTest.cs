@@ -48,7 +48,7 @@ namespace TestProject
             HttpContextBase contextMock = repository.CreateMock<HttpContextBase>();
             Expect.Call(contextMock.Request.Cookies).Return(cookies);
             context = contextMock;*/
-            ProjectWatcher.Helpers.ResourcesHelper.LoadResourses();            
+            ProjectWatcher.Starter.Start();      
         }
         //
         //Use ClassCleanup to run code after all tests in a class have run
@@ -165,7 +165,7 @@ Header2,    $if(%ut_coverage% > 50\, %ut_coverage%, %false%), Enumeration, 20";
             string culture = engCulture;
             String filter = "";
             String tableDefinition = "";
-            FooterModel actual = ProjectsHelper.CreateFooterModel(filter, tableDefinition, null, mockContext);
+            FooterModel actual = ProjectsHelper.CreateFooterModel(filter, tableDefinition, mockContext);
             Assert.IsNotNull(actual);
         }
 

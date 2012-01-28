@@ -7,5 +7,20 @@ namespace DAL.Interface
 {
     public class IllegalDBOperationException: DALException
     {
+        private string property;
+
+        public Object BadValue
+        {
+            get;
+            private set;
+        }
+            
+        public IllegalDBOperationException(IEntity badValue)
+        {
+            this.BadValue = badValue;
+        }
+
+        
+
     }
 }

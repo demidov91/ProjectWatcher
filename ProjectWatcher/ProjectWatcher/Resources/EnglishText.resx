@@ -141,12 +141,6 @@
   <data name="date" xml:space="preserve">
     <value>Last Update</value>
   </data>
-  <data name="DownloadFail" xml:space="preserve">
-    <value>Error in file</value>
-  </data>
-  <data name="DownloadOK" xml:space="preserve">
-    <value>Download succeeded</value>
-  </data>
   <data name="Export" xml:space="preserve">
     <value>Export</value>
   </data>
@@ -206,5 +200,17 @@
   </data>
   <data name="NotEnoughRights" xml:space="preserve">
     <value>Not enough rights</value>
+  </data>
+  <data name="BadInputCsvFileFormat" xml:space="preserve">
+    <value>Bad csv-file format</value>
+  </data>
+  <data name="ErrorWhileUploading" xml:space="preserve">
+    <value>Error while uploading</value>
+  </data>
+  <data name="ImportSuccess" xml:space="preserve">
+    <value>Import succeded</value>
+  </data>
+  <data name="BeginOfErrorInUploadingFiles" xml:space="preserve">
+    <value>Error in definitions of project with this ids:</value>
   </data>
 </root>

@@ -14,19 +14,9 @@ namespace DAL.Helpers
     class ConnectionHelper
     {
         
-        private static ProjectPropertiesEntities db;
-
         internal static bool LoadORM()
-        {
-            try
-            {    
-                db = new ProjectPropertiesEntities();
-                return true;
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
+        {  
+            return true;
         }
 
         /// <summary>
@@ -36,9 +26,25 @@ namespace DAL.Helpers
         internal static Property[] GetProperties()
         {
             List<Property> toReturn = new List<Property>();
-            foreach (Property property in db.Properties)
+            ProjectPropertiesEntities db = new ProjectPropertiesEntities();
+            if (db.Connection.State != System.Data.ConnectionState.Open)
             {
-                toReturn.Add(property);
+                db.Connection.Open();
+            }
+            try
+            {
+                foreach (Property property in db.Properties)
+                {
+                    toReturn.Add(property);
+                }
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                 
             }
             return toReturn.ToArray();
         }
@@ -47,10 +53,27 @@ namespace DAL.Helpers
         /// Gets project definition by id.
         /// </summary>
         /// <param name="id">Id of the searching project.</param>
-        /// <returns>Project with specified id.</returns>
+        /// <returns>Project with specified id or null.</returns>
+        /// <exception cref="ConnectionException" />
         internal static Project GetProject(int id)
-        {            
-            return db.Projects.FirstOrDefault(x => x.Id == id);
+        {
+            ProjectPropertiesEntities db = new ProjectPropertiesEntities();
+            if (db.Connection.State != System.Data.ConnectionState.Open)
+            {
+                db.Connection.Open();
+            }
+            try
+            {
+                return db.Projects.FirstOrDefault(x => x.Id == id);
+            }
+            catch (Exception e)
+            {
+                throw new ConnectionException(e);
+            }
+            finally
+            {
+                 
+            }
         }
 
 
@@ -58,9 +81,26 @@ namespace DAL.Helpers
         /// Gets all existing projects.
         /// </summary>
         /// <returns>Entities of all projects.</returns>
+        /// <exception cref="ConnectionException" />
         internal static IEnumerable<Project> GetProjects()
         {
-            return db.Projects;
+            ProjectPropertiesEntities db = new ProjectPropertiesEntities();
+            if (db.Connection.State != System.Data.ConnectionState.Open)
+            {
+                db.Connection.Open();
+            }
+            try
+            {
+                return db.Projects;
+            }
+            catch (Exception e)
+            {
+                throw new ConnectionException(e);
+            }
+            finally
+            {
+                 
+            }
         }
 
         /// <summary>
@@ -68,24 +108,29 @@ namespace DAL.Helpers
         /// </summary>
         /// <param name="availableValues">Enumeration of available values.</param>
         /// <param name="property">Entity of selectable property.</param>
-        internal static void AddAvailableValues(IEnumerable<string> availableValues, Property property)
+        internal static bool AddAvailableValues(IEnumerable<string> availableValues, Property property)
         {
-            try
+            ProjectPropertiesEntities db = new ProjectPropertiesEntities();
+            if (db.Connection.State != System.Data.ConnectionState.Open)
             {
                 db.Connection.Open();
-                using (DbTransaction transaction = db.Connection.BeginTransaction())
-                {
-                    foreach (String availableValue in availableValues)
-                    {
-                        db.AddToAvailableValues(new AvailableValue { Value = availableValue, Property = property.SystemName });
-                    }
-                    db.SaveChanges();
-                    transaction.Commit();
-                }
             }
-            finally 
+            try
             {
-                db.Connection.Close();
+                foreach (String availableValue in availableValues)
+                {
+                    db.AddToAvailableValues(new AvailableValue { Value = availableValue, Property = property.SystemName });
+                }
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;                
+            }
+            finally
+            {
+                 
             }
         }
 
@@ -96,27 +141,25 @@ namespace DAL.Helpers
         /// <returns>If saving was successful.</returns>
         internal static bool CreateProperty(Property creating)
         {
-            Boolean resultOfOperation = false;
-            try
+            ProjectPropertiesEntities db = new ProjectPropertiesEntities();
+            if (db.Connection.State != System.Data.ConnectionState.Open)
             {
                 db.Connection.Open();
-                using (DbTransaction transaction = db.Connection.BeginTransaction())
-                {
-                    db.AddToProperties(creating);
-                    db.SaveChanges();
-                    transaction.Commit();
-                }
-                resultOfOperation = true;
             }
-            catch (Exception)
+            try
             {
-                resultOfOperation = false;
+                db.AddToProperties(creating);
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
             }
             finally
             {
-                db.Connection.Close();
+                 
             }
-            return resultOfOperation;
         }
 
         /// <summary>
@@ -126,13 +169,15 @@ namespace DAL.Helpers
         /// <param name="dateTime"></param>
         internal static int CreateProject(string owner, DateTime dateTime)
         {
-            Project project = Project.CreateProject(dateTime, dateTime);
-            try
+            ProjectPropertiesEntities db = new ProjectPropertiesEntities();
+            if (db.Connection.State != System.Data.ConnectionState.Open)
             {
                 db.Connection.Open();
-                System.Data.Common.DbTransaction transaction = db.Connection.BeginTransaction();
+            }
+            try
+            {
+                Project project = Project.CreateProject(dateTime, null);
                 db.AddToProjects(project);
-                db.SaveChanges();
                 IEnumerable<String> defaultPropertiesNames = DBDefinitionsHelper.GetDefaultProperties();
                 foreach (String name in defaultPropertiesNames)
                 {
@@ -148,119 +193,175 @@ namespace DAL.Helpers
                     }
                     db.AddToValues(defaultProperty);
                 }
-                db.SaveChanges();
                 Value ownerEntity = project.Values.First(x => x.SystemName == "owner");
                 ownerEntity.Value1 = owner;
                 db.Refresh(System.Data.Objects.RefreshMode.ClientWins, ownerEntity);
-                db.SaveChanges();
-                transaction.Commit();
-                db.Connection.Close();
+                return project.Id;
             }
             catch (Exception e)
             {
-                db.Connection.Close();
                 throw new ConnectionException(e);
-            }            
-            return project.Id;
+            }
+            finally
+            {
+                 
+            }
         }
 
         /// <summary>
         /// Marks record for deleting.
         /// </summary>
         /// <param name="toDelete"></param>
-        private static void DeleteWithoutSumitting(EntityObject toDelete)
+        private static bool DeleteWithoutSumitting(EntityObject toDelete, ProjectPropertiesEntities db)
         {
-            db.DeleteObject(toDelete);
+            if (db.Connection.State != System.Data.ConnectionState.Open)
+            {
+                db.Connection.Open();
+            }
+            try
+            {
+                db.DeleteObject(toDelete);
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+            finally
+            {
+                 
+            }
         }
 
         /// <summary>
         /// Deletes record from db.
         /// </summary>
         /// <param name="toDelete"></param>
+        /// <exception cref="ConnectionException" />
         internal static void Delete(EntityObject toDelete)
         {
+            ProjectPropertiesEntities db = new ProjectPropertiesEntities();
+            if (db.Connection.State != System.Data.ConnectionState.Open)
+            {
+                db.Connection.Open();
+            }
             try
             {
-                using (DbTransaction transaction = db.Connection.BeginTransaction())
-                {
-                    db.DeleteObject(toDelete);
-                    db.SaveChanges();
-                    transaction.Commit();
-                }
+                db.DeleteObject(toDelete);
+                db.SaveChanges();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 throw new ConnectionException(e);
             }
             finally
             {
-                db.Connection.Close();
+                 
             }
-
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="toDelete"></param>
+        /// <param name="visible"></param>
+        /// <exception cref="ConnectionException" />
         internal static void SetVisability(Value toDelete, bool visible)
         {
             toDelete.Visible = visible;
-            try
+            ProjectPropertiesEntities db = new ProjectPropertiesEntities();
+            if (db.Connection.State != System.Data.ConnectionState.Open)
             {
                 db.Connection.Open();
-                using (DbTransaction transaction = db.Connection.BeginTransaction())
-                {
-                    db.Refresh(System.Data.Objects.RefreshMode.ClientWins, toDelete);
-                    db.SaveChanges();
-                    transaction.Commit();
-                }
             }
-            catch(Exception e)
+            try
+            {
+                db.Refresh(System.Data.Objects.RefreshMode.ClientWins, toDelete);
+                db.SaveChanges();
+            }
+            catch (Exception e)
             {
                 throw new ConnectionException(e);
             }
             finally
             {
-                db.Connection.Close();
+                 
             }
-
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="project"></param>
+        /// <param name="systemName"></param>
+        /// <returns>Value of project property or what user gave method if project doesn't have such property.</returns>
+        /// <exception cref="ConnectionException" />
         internal static string GetValue(Project project, String systemName)
         {
-            Value toReturn = project.Values.FirstOrDefault(x => x.SystemName == systemName);
-            if (toReturn == null)
+            ProjectPropertiesEntities db = new ProjectPropertiesEntities();
+            if (db.Connection.State != System.Data.ConnectionState.Open)
             {
-                return systemName;
+                db.Connection.Open();
             }
-            else 
+            try
             {
-                return toReturn.Value1;
+                Value toReturn = project.Values.FirstOrDefault(x => x.SystemName == systemName);
+                if (toReturn == null)
+                {
+                    return systemName;
+                }
+                else
+                {
+                    return toReturn.Value1;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new ConnectionException(e);
+            }
+            finally
+            {
+                 
             }
         }
 
         internal static void AddProperties(string[] properties, Project project, bool visible, bool important, String author)
         {
-            try
+            ProjectPropertiesEntities db = new ProjectPropertiesEntities();
+            if (db.Connection.State != System.Data.ConnectionState.Open)
             {
                 db.Connection.Open();
-                using (DbTransaction transaction = db.Connection.BeginTransaction())
+            }
+            try
+            {
+                foreach (String property in properties)
                 {
-                    foreach (String property in properties)
+                    Value toAdd = Value.CreateValue(property, project.Id, visible, important, author);
+                    if (toAdd == null)
                     {
-                        Value toAdd = Value.CreateValue(property, project.Id, visible, important, author);
+                        throw new IllegalDBOperationException(project);
+                    }
+                    else
+                    {
                         db.AddToValues(toAdd);
                     }
-                    db.SaveChanges();
-                    transaction.Commit();
                 }
+                db.SaveChanges();
             }
-            catch(Exception e)
+            catch(IllegalDBOperationException e)
+            {
+                throw e;
+            }
+            catch (Exception e)
             {
                 throw new ConnectionException(e);
-
             }
             finally
             {
-                db.Connection.Close();
+                 
             }
+                
+            
         }
 
         /// <summary>
@@ -268,39 +369,57 @@ namespace DAL.Helpers
         /// </summary>
         /// <param name="availablevalues"></param>
         /// <param name="property"></param>
+        /// <exception cref="ConnectionException" />
         internal static void SetAvailableValues(IEnumerable<String> availablevalues, Property property)
         {
-            try
+            ProjectPropertiesEntities db = new ProjectPropertiesEntities();
+            if (db.Connection.State != System.Data.ConnectionState.Open)
             {
                 db.Connection.Open();
-                using (DbTransaction transaction = db.Connection.BeginTransaction())
-                {
-                    lock (AvailableValue.Locker)
-                    {
-                        foreach (AvailableValue value in property.AvailableValues)
-                        {
-                            DeleteWithoutSumitting(value);
-                        }
-                        foreach (String value in availablevalues)
-                        {
-                            AvailableValue availableValue = AvailableValue.CreateAvailableValue(property.SystemName);
-                            db.AddToAvailableValues(availableValue);
-                        }
-                        db.SaveChanges();
-                        transaction.Commit();
-                    }
-                }
             }
-            finally 
+            try
             {
-                db.Connection.Close(); 
+                foreach (AvailableValue value in property.AvailableValues)
+                {
+                    DeleteWithoutSumitting(value, db);
+                }
+                foreach (String value in availablevalues)
+                {
+                    AvailableValue availableValue = AvailableValue.CreateAvailableValue(property.SystemName);
+                    db.AddToAvailableValues(availableValue);
+                }
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                throw new ConnectionException(e);
+            }
+            finally
+            {
+                 
             }
         }
 
 
         internal static Property GetProperty(string systemName)
         {
-            return db.Properties.FirstOrDefault(x => x.SystemName == systemName);
+            ProjectPropertiesEntities db = new ProjectPropertiesEntities();
+            if (db.Connection.State != System.Data.ConnectionState.Open)
+            {
+                db.Connection.Open();
+            }
+            try
+            {
+                return db.Properties.FirstOrDefault(x => x.SystemName == systemName);
+            }
+            catch (Exception e)
+            {
+                throw new ConnectionException(e);
+            }
+            finally
+            {
+                 
+            }
         }
 
         /// <summary>
@@ -312,30 +431,50 @@ namespace DAL.Helpers
         internal static bool ModifyWithHistory(Value entity)
         {
             bool operationSuccess = false;
-            try
+            ProjectPropertiesEntities db = new ProjectPropertiesEntities();
+            if (db.Connection.State != System.Data.ConnectionState.Open)
             {
                 db.Connection.Open();
+            }
+            try
+            {
                 Value oldVersion = db.Values.FirstOrDefault(x => x.Id == entity.Id);
-                if(oldVersion == null)
+                if (oldVersion == null)
                 {
-                    throw new IllegalDBOperationException();
+                    throw new IllegalDBOperationException(entity);
                 }
-                if(oldVersion.Equals(entity))
+                if (oldVersion.Equals(entity))
                 {
                     return true;
                 }
-                using(DbTransaction transaction = db.Connection.BeginTransaction())
+                History forOldVersion = new History(oldVersion);
+                db.AddToHistories(forOldVersion);
+                oldVersion.SetLike(entity);
+                db.Refresh(RefreshMode.ClientWins, oldVersion);
+                if (entity.Important)
                 {
-                    History forOldVersion = new History(oldVersion);
-                    db.AddToHistories(forOldVersion);
-                    db.Refresh(RefreshMode.ClientWins, entity);
-                    transaction.Commit();
-                    operationSuccess = true;
+                    Project currentProject = db.Projects.FirstOrDefault(x => x.Id == entity.ProjectId);
+                    if (currentProject == null)
+                    {
+                        throw new IllegalDBOperationException(entity);
+                    }
+                    currentProject.LastChanged = forOldVersion.Id;
+                    db.Refresh(RefreshMode.ClientWins, currentProject);
                 }
+                db.SaveChanges();
+                operationSuccess = true;
+            }
+            catch(IllegalDBOperationException e)
+            {
+                ///Write known exception to log
+            }
+            catch (Exception e)
+            {
+                ///Write unknown exception to log
             }
             finally
             {
-                db.Connection.Close();
+                 
             }
             return operationSuccess;
         }
@@ -348,23 +487,32 @@ namespace DAL.Helpers
         /// <returns>If operation was successfull.</returns>
         internal static bool Modify(IEntity entity)
         {
-            try
-            {
-                db.Connection.Open();
-                using (DbTransaction transaction = db.Connection.BeginTransaction())
-                {
-                    db.Refresh(RefreshMode.ClientWins, entity);
-                    transaction.Commit();
-                }
-                db.Connection.Close();
-                return true;
-            }
-            catch(Exception e)
-            {
-                db.Connection.Close();
-                return false;
-            }
+            throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Null if there is no such history entity.</returns>
+        /// <exception cref="ConnectionException" />
+        internal static IHistory GetHistory(int id)
+        {
+            ProjectPropertiesEntities db = new ProjectPropertiesEntities();
+            if (db.Connection.State != System.Data.ConnectionState.Open)
+            {
+                db.Connection.Open();
+            }
+            try
+            {
+                History history = db.Histories.FirstOrDefault(x => x.Id == id);
+                return history;
+            }
+            catch (Exception e)
+            {
+                throw new ConnectionException(e);
+            }
+            
+        }
     }
 }

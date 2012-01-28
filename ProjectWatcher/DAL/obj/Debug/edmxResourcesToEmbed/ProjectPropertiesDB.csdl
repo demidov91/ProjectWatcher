@@ -49,7 +49,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="LastChanged" Type="DateTime" Nullable="false" />
+    <Property Name="LastChanged" Type="Int32" Nullable="true" />
     <Property Name="Created" Type="DateTime" Nullable="false" />
     <NavigationProperty Name="Values" Relationship="ProjectPropertiesModel.FK_Values_Projects" FromRole="Projects" ToRole="Values" />
   </EntityType>

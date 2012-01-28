@@ -10,12 +10,15 @@ using Authorization;
 using DAL.Interface;
 using System.IO;
 using SystemSettings;
+using System.Text;
+using ProjectWatcher.Warkers;
+using ProjectWatcher.Models.Shared;
 
 namespace ProjectWatcher.Controllers
 {
     public class ProjectsController : Controller
     {
-        public ActionResult Index(string filter, string tableDefinition, bool? downloadSucces)
+        public ActionResult Index(string filter, string tableDefinition)
         {
             HttpContextWarker cultureProvider = new HttpContextWarker(HttpContext);
             string culture = cultureProvider.GetCulture();
@@ -27,10 +30,14 @@ namespace ProjectWatcher.Controllers
             {
                 tableDefinition = SettingsHelper.Instance.DefaultTableDefinition;
             }
+            if (TempData["errorUpload"] != null)
+            {
+                ViewData["errorMessage"] = TempData["errorUpload"];
+            }
             HttpContextWarker context = new HttpContextWarker(HttpContext);
             ViewData["filterModel"] = ProjectsHelper.CreateFilterModel(filter, tableDefinition, culture);
             ViewData["tableModel"] = ProjectsHelper.CreateTableModel(filter, tableDefinition, HttpContext);
-            ViewData["footerModel"] = ProjectsHelper.CreateFooterModel(filter, tableDefinition, downloadSucces, context);
+            ViewData["footerModel"] = ProjectsHelper.CreateFooterModel(filter, tableDefinition, context);
             TempData["exportData"] = ProjectsHelper.CreateExportData((TableModel)ViewData["tableModel"]);
             return View();
         }
@@ -51,13 +58,38 @@ namespace ProjectWatcher.Controllers
         /// <returns>if operation ended successfully</returns>
         public ActionResult Import(HttpPostedFileBase uploadFile, String filter, String tableDefinition)
         {
+            HttpContextWarker contexter = new HttpContextWarker(HttpContext);
+            String culture = contexter.GetCulture();
             if (uploadFile == null)
             {
-                return RedirectToAction("Index");
+                TempData["errorUpload"] = ResourcesHelper.GetText("ErrorWhileUploading", culture);
+                return RedirectToAction("Index", new { filter = filter, tableDefinition = tableDefinition });
             }
-            Modifier writer = new Modifier();
-            bool succes = writer.Load(uploadFile.InputStream);
-            return RedirectToAction("Index", new { filter = filter, tableDefinition = tableDefinition, downloadSucces = succes});
+            CsvParser parser = new CsvParser(uploadFile.InputStream);
+            Dictionary<int, Evaluation> newRecords = parser.GetValuesForProjects();
+            if(newRecords == null)
+            {
+                TempData["errorUpload"] = ResourcesHelper.GetText("BadInputCsvFileFormat", contexter.GetCulture());
+                return RedirectToAction("Index", new { filter = filter, tableDefinition = tableDefinition });
+            }
+            List<int> badProjects = new List<int>();
+            Modifier dal = new Modifier();
+            foreach (KeyValuePair<int, Evaluation> project in newRecords)
+            {
+                if (!dal.ModifyOrCreate(project.Key, project.Value.Values, (RolablePrincipal)HttpContext.User))
+                {
+                    badProjects.Add(project.Key);
+                }
+            }
+            if (badProjects.Count > 0)
+            {
+                TempData["errorUpload"] = ProjectsHelper.FormUploadErrorMessage(badProjects, culture);
+            }
+            else 
+            {
+                TempData["errorUpload"] = ResourcesHelper.GetText("ImportSuccess", culture);
+            }
+            return RedirectToAction("Index", new { filter = filter, tableDefinition = tableDefinition});
         }
 
         /// <summary>
