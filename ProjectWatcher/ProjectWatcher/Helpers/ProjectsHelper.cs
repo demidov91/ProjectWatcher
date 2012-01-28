@@ -56,7 +56,7 @@ namespace ProjectWatcher.Helpers
         /// </summary>
         /// <param name="culture">User language</param>
         /// <returns>Model for Footer.ascx</returns>
-        public static FooterModel CreateFooterModel(String filter, String tableDefinition, Boolean? downloadSuccess, HttpContextWarker context)
+        public static FooterModel CreateFooterModel(String filter, String tableDefinition, HttpContextWarker context)
         {
             String culture = context.GetCulture();
             FooterModel model = new FooterModel();
@@ -67,18 +67,6 @@ namespace ProjectWatcher.Helpers
             model.ExportTitle = ResourcesHelper.GetText("Export", culture);
             model.SubmitUploadTitle = ResourcesHelper.GetText("Upload", culture);
             model.UploadTitle = ResourcesHelper.GetText("Import", culture);
-            if (downloadSuccess == null)
-            {
-                return model;
-            }
-            if (downloadSuccess.Value)
-            {
-                model.UploadResultMessage = ResourcesHelper.GetText("DownloadOK", culture);
-            }
-            else 
-            {
-                model.UploadResultMessage = ResourcesHelper.GetText("DownloadFail", culture);
-            }
             return model;
         }
 
@@ -322,7 +310,24 @@ namespace ProjectWatcher.Helpers
             return writer.ToString(); 
         }
 
-
-
+        /// <summary>
+        /// Writes message for user about failures while uploading values.
+        /// </summary>
+        /// <param name="badProjects">Ids of bad formed projects.</param>
+        /// <param name="culture">User language.</param>
+        /// <returns>Message to show user.</returns>
+        internal static String FormUploadErrorMessage(List<int> badProjects, string culture)
+        {
+            StringBuilder message = new StringBuilder();
+            message.Append(ResourcesHelper.GetText("BeginOfErrorInUploadingFiles", culture));
+            message.Append('\n');
+            foreach (int projectId in badProjects)
+            {
+                message.Append(projectId);
+                message.Append(", ");
+            }
+            message.Remove(message.Length - 2, 2);
+            return message.ToString();
+        }
     }
 }

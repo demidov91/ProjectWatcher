@@ -34,3 +34,9 @@ E:\информация\Проекты\поиск работы\itransition\Proje
 E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\Validation\obj\Debug\ResolveAssemblyReference.cache
 E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\Validation\obj\Debug\SystemSettings.dll
 E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\Validation\obj\Debug\SystemSettings.pdb
+D:\ProjectWatcher_28_01_2012_Demidov_1731\ProjectWatcher\Validation\bin\Debug\SystemSettings.dll.config
+D:\ProjectWatcher_28_01_2012_Demidov_1731\ProjectWatcher\Validation\bin\Debug\SystemSettings.dll
+D:\ProjectWatcher_28_01_2012_Demidov_1731\ProjectWatcher\Validation\bin\Debug\SystemSettings.pdb
+D:\ProjectWatcher_28_01_2012_Demidov_1731\ProjectWatcher\Validation\obj\Debug\ResolveAssemblyReference.cache
+D:\ProjectWatcher_28_01_2012_Demidov_1731\ProjectWatcher\Validation\obj\Debug\SystemSettings.dll
+D:\ProjectWatcher_28_01_2012_Demidov_1731\ProjectWatcher\Validation\obj\Debug\SystemSettings.pdb

@@ -2,8 +2,14 @@
 <%@ Import Namespace="ProjectWatcher.Models.Projects" %>
 <%@ Import namespace="ProjectWatcher.Helpers" %>
 
-<div id="labelTableBlock">
-    <table id="projectsTable" border="1">
+<div id="labelTableBlock" >
+    <%if (ViewData["errorMessage"] != null)
+      {%>
+    <div id="dialog">
+        <%:Html.Encode(ViewData["errorMessage"])%>
+    </div>
+    <%} %>
+    <table id="projectsTable" border="3">
         <tr id="tableHeader">
             <%for (int i = 0; i < Model.Headers.Length; i++)
               {%>
@@ -23,7 +29,7 @@
             </tr>                   
             <%} %>
     </table>
-    <input type="image" src="../../Resources/SettingsButton.png"/>
+    <input type="image" id="tableSettingButton" src="../../Resources/SettingsButton.png" border="2"/>
 </div>
 
 <div id="editTableBlock">
@@ -43,3 +49,26 @@
         </table>        
     </form>
 </div>
+
+
+<script>
+    $("#projectsTable, #tableSettingButton").mouseover(function () {
+        $("#projectsTable").css("border-color", "red");
+        $("#tableSettingButton").css({
+            "border-color": "red",
+            "opacity": 1
+        });
+    });
+</script>
+
+
+ 
+<script>
+    $("#projectsTable, #tableSettingButton").mouseout(function () {
+        $("#projectsTable").css("border-color", "black");
+        $("#tableSettingButton").css({
+            "border-color": "white",
+            "opacity": 0.2
+        });
+    });
+</script>

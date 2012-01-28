@@ -9,10 +9,23 @@ namespace DAL
 {
     partial class Property: IProperty
     {
+        public Property()
+        { }
+
+        public Property(IProperty parent)
+        {
+            this.SystemName = parent.SystemName;
+            this.DisplayName = parent.DisplayName;
+            this.Type = parent.Type;
+        }
+
+
+
         public IEnumerable<IAvailableValue> GetAvailableValues()
         {
             return this.AvailableValues;
         }
+
 
         
         

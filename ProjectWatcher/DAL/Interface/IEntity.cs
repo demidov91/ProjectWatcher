@@ -7,5 +7,6 @@ namespace DAL.Interface
 {
     public interface IEntity
     {
+        
     }
 }

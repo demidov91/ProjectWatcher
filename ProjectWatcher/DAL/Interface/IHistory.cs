@@ -7,6 +7,9 @@ namespace DAL.Interface
 {
     public interface IHistory: IEntity
     {
-        
+        String Author{ get; }
+
+
+        DateTime Time { get; }
     }
 }

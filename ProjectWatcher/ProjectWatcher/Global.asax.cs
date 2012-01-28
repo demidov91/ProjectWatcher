@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Security;
+using ProjectWatcher.Models.Shared;
 
 namespace ProjectWatcher
 {
@@ -35,15 +36,15 @@ namespace ProjectWatcher
             RegisterRoutes(RouteTable.Routes);
 
             Authorization.AuthorizationHelper.LoadUserRoles();
-            Helpers.ResourcesHelper.LoadResourses();
             DAL.Interface.Starter.Start();
+            ProjectWatcher.Starter.Start();
             SystemSettings.TypeValidationHelper.LoadTypes();
             SystemSettings.DBDefinitionsHelper.Load();
         }
 
         public void WindowsAuthentication_OnAuthenticate(Object Source, WindowsAuthenticationEventArgs e)
         {
-            e.User = new Authorization.RolablePrincipal(e.Identity);
+            e.User = new RolablePrincipal(e.Identity);
         }
     }
 }

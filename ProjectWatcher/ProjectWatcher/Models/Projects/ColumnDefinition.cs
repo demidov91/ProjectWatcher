@@ -5,6 +5,8 @@ using System.Web;
 using System.Text.RegularExpressions;
 using ProjectWatcher.Helpers;
 using DAL.Interface;
+using System.Web.Mvc;
+
 
 namespace ProjectWatcher.Models.Projects
 {
@@ -54,16 +56,8 @@ namespace ProjectWatcher.Models.Projects
             {
                 evaluatedFormula = Regex.Replace(evaluatedFormula, "%" + value.Key + "%", value.Value);
             }
-            switch (Type)
-            {
-                case "String":
-                    anrControls.Markdown converter = new anrControls.Markdown();
-                    return converter.Transform(evaluatedFormula);                                    
-                case "Percentage":
-                    return evaluatedFormula + "%";
-                default:
-                    return evaluatedFormula;
-            }
+            return HtmlHelperHelper.RenderValue(evaluatedFormula, Type);
+            
         }
 
 

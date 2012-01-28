@@ -50,7 +50,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="RedirectableAttribute.cs" />
-    <Compile Include="RolablePrincipal.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

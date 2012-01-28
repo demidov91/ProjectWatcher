@@ -14,16 +14,6 @@ namespace DAL.Interface
     /// </summary>
     public class Modifier
     {
-        /// <summary>
-        /// To implement. Should load properrties from csv-file
-        /// </summary>
-        /// <param name="input">Stream for csv-file</param>
-        /// <returns>if download was successful</returns>
-        public bool Load(Stream input)
-        {
-            return true;                         
-        }
-
 
         public bool Modify(IEntity entity)
         {
@@ -37,8 +27,53 @@ namespace DAL.Interface
             }
         }
 
-
-
-
+        /// <summary>
+        /// Modifies existing or creates new records in db. 
+        /// </summary>
+        /// <param name="projectId">Id of project to modify.</param>
+        /// <param name="values">New values for project.</param>
+        /// <param name="author">Author of changing.</param>
+        /// <returns>If it were problems while processing.</returns>
+        public bool ModifyOrCreate(int projectId, Dictionary<string, string> values, IUser author)
+        {
+            Project project;
+            try
+            {
+                project = ConnectionHelper.GetProject(projectId);
+            }
+            catch (ConnectionException e)
+            {
+                return false;
+            }
+            if(project == null)
+            {
+                return false;
+            }
+            bool result = true;
+            foreach (KeyValuePair<String, String> systemNameValuePair in values)
+            {
+                Value toModify = project.Values.FirstOrDefault(x => x.SystemName == systemNameValuePair.Key);
+                if (toModify == null)
+                {
+                    try
+                    {
+                        project.AddProperty(systemNameValuePair.Key, false, true, author.Name);
+                    }
+                    catch (DALException e)
+                    {
+                        result = false;
+                    }
+                }
+                else 
+                {
+                    
+                    toModify.Value1 = systemNameValuePair.Value;
+                    toModify.Author = author.Name;
+                    toModify.Time = DateTime.Now;
+                    result &= ConnectionHelper.ModifyWithHistory(toModify);
+                }
+            }
+            return result;
+        }
     }
 }

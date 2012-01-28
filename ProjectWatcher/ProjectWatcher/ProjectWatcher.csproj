@@ -73,14 +73,16 @@
     <Compile Include="Helpers\HttpContextWarker.cs" />
     <Compile Include="Helpers\ProjectHelper.cs" />
     <Compile Include="Helpers\SettingsHelper.cs" />
+    <Compile Include="Helpers\StringHelper.cs" />
     <Compile Include="Models\Projects\FilterModel.cs" />
     <Compile Include="Models\Projects\FooterModel.cs" />
     <Compile Include="Models\Projects\TableModel.cs" />
     <Compile Include="Models\Projects\UploadModel.cs" />
     <Compile Include="Models\Project\ProjectModel.cs" />
-    <Compile Include="Models\Project\ProjectWithValuesModel.cs" />
+    <Compile Include="Models\Project\Index\ProjectWithValuesModel.cs" />
     <Compile Include="Models\Project\PropertyModel.cs" />
-    <Compile Include="Models\Project\ValueModel.cs" />
+    <Compile Include="Models\Project\Index\ValueModel.cs" />
+    <Compile Include="Models\Shared\RolablePrincipal.cs" />
     <Compile Include="Resources\Common.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -111,9 +113,14 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Starter.cs" />
+    <Compile Include="Warkers\CsvParser.cs" />
+    <Compile Include="Warkers\FileStringHelper.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Button.css" />
     <Content Include="Content\Calendar.css" />
+    <Content Include="Content\ChooseFile.css" />
     <Content Include="Content\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
     <Content Include="Content\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
     <Content Include="Content\images\ui-bg_flat_10_000000_40x100.png" />
@@ -129,6 +136,7 @@
     <Content Include="Content\images\ui-icons_ffd27a_256x240.png" />
     <Content Include="Content\images\ui-icons_ffffff_256x240.png" />
     <Content Include="Content\jquery-ui-1.8.17.custom.css" />
+    <Content Include="Content\Table.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -183,9 +191,14 @@
     <Content Include="Views\Projects\Table.ascx" />
     <Content Include="Views\Projects\Upload.ascx" />
     <Content Include="Views\Project\AddProperties.aspx" />
+    <Content Include="Views\Project\BigValue.ascx" />
     <Content Include="Views\Project\ChangeImportance.ascx" />
     <Content Include="Views\Project\CreationOfNewProperty.aspx" />
+    <Content Include="Views\Project\History.ascx" />
     <Content Include="Views\Project\Index.aspx" />
+    <Content Include="Views\Project\JustLookValue.ascx" />
+    <Content Include="Views\Project\StringEdit.ascx" />
+    <Content Include="Views\Project\ValueEdit.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
