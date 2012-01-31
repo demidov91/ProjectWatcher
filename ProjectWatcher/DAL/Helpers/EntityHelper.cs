@@ -7,7 +7,7 @@ using DAL.Interface;
 
 namespace DAL.Helpers
 {
-    public static class EntityHelper
+    internal static class EntityHelper
     {
         /// <summary>
         /// Converts value that gave us user into this database format. 
@@ -23,7 +23,7 @@ namespace DAL.Helpers
         /// Converts value that gave us user into this database format. 
         /// </summary>
         /// <returns>Good format of value.</returns>
-        public static String FormatForDB(Object valueToSave, IProperty propertyOfvalue)
+        internal static String FormatForDB(Object valueToSave, IProperty propertyOfvalue)
         {
             String type = propertyOfvalue.Type;
             switch (type)
@@ -77,7 +77,7 @@ namespace DAL.Helpers
         /// <param name="project"></param>
         /// <param name="systemName"></param>
         /// <returns>Int32 for numbers and percentage, IEnumerable of string for multyselect, null in case of convertation exception. Int32, Boolean, Date or String for not a property.</returns>
-        public static Object GetTypedValue(this Project project, String systemName)
+        internal static Object GetTypedValue(this Project project, String systemName)
         {
             Property property = ConnectionHelper.GetProperty(systemName);
             if (property == null)

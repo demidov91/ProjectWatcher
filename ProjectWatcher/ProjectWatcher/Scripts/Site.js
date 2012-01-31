@@ -22,9 +22,21 @@ function my_function_v1(urlToPost) {
 }
 
 
+
+getNewValue = function (container) {
+    if ($(container).is("div")) {
+        return { Value: "itWasMultySelect" };
+    }
+    if ($(container).is("select")) {
+        return $(container)["selected"];
+    }
+    return $(container).attr("value");
+}
+
+
 function modifyValue(urlForAction, id) {
     var newValueContainer = "#newValue_"+id;
-    var newValue = $(newValueContainer).attr("value");
+    var newValue = getNewValue(newValueContainer);
     $.ajax({
         url: urlForAction,
         data: {Value:newValue},
