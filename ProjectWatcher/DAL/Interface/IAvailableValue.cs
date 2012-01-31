@@ -7,7 +7,9 @@ namespace DAL.Interface
 {
     public interface IAvailableValue
     {
-        IValue GetValue();
-        
+        Object GetValue();
+
+        Int32 Id { get; }
+
     }
 }

@@ -87,7 +87,9 @@
     <Compile Include="Models\Projects\FooterModel.cs" />
     <Compile Include="Models\Projects\TableModel.cs" />
     <Compile Include="Models\Projects\UploadModel.cs" />
+    <Compile Include="Models\Project\Index\AvailableValueModel.cs" />
     <Compile Include="Models\Project\Index\HistoryModel.cs" />
+    <Compile Include="Models\Project\Index\MultyselectModel.cs" />
     <Compile Include="Models\Project\ProjectModel.cs" />
     <Compile Include="Models\Project\Index\ProjectWithValuesModel.cs" />
     <Compile Include="Models\Project\PropertyModel.cs" />
