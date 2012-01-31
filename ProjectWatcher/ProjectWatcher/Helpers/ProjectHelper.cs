@@ -5,6 +5,7 @@ using System.Web;
 using DAL.Interface;
 using ProjectWatcher.Models.Project;
 using System.Web.Mvc;
+using ProjectWatcher.Models.Project.Index;
 
 namespace ProjectWatcher.Helpers
 {
@@ -108,6 +109,16 @@ namespace ProjectWatcher.Helpers
             return null;
         }
 
-        
+
+        /// <summary>
+        /// Sends value to DAL.
+        /// </summary>
+        /// <param name="model">What to save.</param>
+        /// <returns>If operation commited succesfully.</returns>
+        internal static bool Save(ValueModel model)
+        {
+            Modifier modifier = new Modifier();
+            return modifier.Modify(model.DalValue);
+        }
     }
 }

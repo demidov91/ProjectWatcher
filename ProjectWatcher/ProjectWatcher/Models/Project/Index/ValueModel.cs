@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using DAL.Interface;
+using ProjectWatcher.Models.Shared;
 
 namespace ProjectWatcher.Models.Project.Index
 {
@@ -10,11 +11,24 @@ namespace ProjectWatcher.Models.Project.Index
     {
         private IValue entity;
 
+        public ValueModel()
+        {
+            entity = new Value();
+        }
+
+
+
         public ValueModel(IValue entity, bool isEditable)
         {
             this.entity = entity;
             this.entity.SetProperty(entity.GetProperty());
             IsEditable = isEditable;
+        }
+
+
+        public IValue DalValue
+        {
+            get { return entity.GetCopy(); }
         }
 
 
@@ -34,7 +48,10 @@ namespace ProjectWatcher.Models.Project.Index
         {
             get 
             {
-                return entity.GetProperty().DisplayName;
+                return (entity == null
+                    ? ""
+                    : entity.GetProperty().DisplayName
+                    );
             }
             set
             {
@@ -46,19 +63,17 @@ namespace ProjectWatcher.Models.Project.Index
         {
             get
             {
-                return entity.GetValue().ToString();
-            }
-        }
-
-        public Int32 ProjectId
-        {
-            get
-            {
-                return entity.ProjectId;
+                return (entity == null || entity.GetValue() == null
+                    ? String.Empty
+                    : entity.GetValue().ToString()
+                    );
             }
             set
             {
-                entity.ProjectId = value;
+                if (entity != null)
+                {
+                    entity.SetValue(value);
+                }
             }
         }
 
@@ -74,11 +89,7 @@ namespace ProjectWatcher.Models.Project.Index
             }
         }
 
-<<<<<<< HEAD
         public Boolean IsVisible
-=======
-        public Boolean Visible
->>>>>>> master
         {
             get
             {
@@ -134,6 +145,15 @@ namespace ProjectWatcher.Models.Project.Index
             }
         }
 
+        public HistoryModel History
+        {
+            get
+            {
+                return new HistoryModel(this);
+            }
+        }
+
+
         /// <summary>
         /// If I should render views for editing for this property. Readonly.
         /// </summary>
@@ -142,6 +162,19 @@ namespace ProjectWatcher.Models.Project.Index
             get;
             private set;
 
+        }
+
+        internal IEnumerable<IHistory> GetHistories()
+        {
+            return entity.GetHistories();
+        }
+
+        public IProject Project
+        {
+            get
+            {
+                return entity.GetProject();
+            }
         }
     }
 }

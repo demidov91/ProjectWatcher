@@ -2,7 +2,7 @@
 body 
 {
     font-family: Tahoma;
-
+    background-image: url(images/sandsbl.gif)
 }
 
 
@@ -23,7 +23,14 @@ body
  
 .centerDiv 
 {
-    
+    margin-top: 30px;
+}
+
+.textArea 
+{
+    width: 151px; 
+    height: 115px;
+    resize: none;
 }
     
 .okCancelButton{
@@ -31,7 +38,8 @@ body
 }
     
 .tableLayoutLeftSide{
-    text-align:right;    
+    text-align:left;
+    width: 144px;
 }
     
 .tableLayoutRightSide{
@@ -39,7 +47,7 @@ body
 }
 
 .leftSide{
-    float:left;    
+    float:left;
 }
     
 .rightSide{
@@ -57,12 +65,11 @@ body
 #editFilterBlock
 {
     clear:left;    
-    }
+}
+
     
 /*filter.ascx*/
 /*===========================*/
-
-
 
 
 /*=================================*/
@@ -72,6 +79,7 @@ body
 {
     float:left;
     clear:left;
+    border-width: 3px;
     width:90%;   
     }
     
@@ -84,36 +92,47 @@ body
 #editTableBlock
 {
     clear:left;
-    }
+    display: none;
+}
     
 #labelTableBlock
 {
-    clear:left;
-    }
+    clear: left;
+}
     
-#editForTableDefinitionWrapper
+#editForTableDefinitionWrapper 
 {
-    width:90%;
-    }
+    width: 90%;
+}
     
 #editForTableDefinition
 {
-    width:100%;
+    width: 100%;
+    resize: none;
     height:300px;
     }
 #projectsEverything
 {
-    margin-left:30px;
-    }
+    width: 70%;
+    margin: 0 auto;
+    position: absolute;
+}
+
+.filterTextBox 
+{
+    
+}
+
+
 
 /*table.aspx*/
 /*=================================*/
 #tableSettingButton
 {
-    border-color: white;
+    border-color: transparent;
     margin-left: -1px;
-    position: absolute;
     opacity: 0.2;
+    clear: left;
 }
 /*================================*/
 /*footer.ascx*/
@@ -133,17 +152,23 @@ body
     font-style:italic;    
     }
 
+
     
 /*footer.ascx*/
 /*===========================*/
 
 /*================================*/
 /*AddProperties.aspx*/
-#AddPropertiesDiv {
-    text-align: center;
+
+#AddPropertiesDiv 
+{
+    margin: 0 auto;
+    position: absolute;
+    text-align: center;    
     padding: 50px;
-    
 }
+
+
 
 #forProjectProperties {
     float: left;
@@ -151,7 +176,8 @@ body
 }
 
 #forOtherProperties {
-    float: right;
+    float: left;
+    margin-left: 50px;
 }
 
 #forErrorMessage {
@@ -173,15 +199,15 @@ body
 
 
 /*Index.aspx*/
-/*===========================
-
-
-#properties 
-{
-}
+/*===========================*/
 
 
 
+#ProjectWithProperties
+        {
+            font-family: Times New Roman;
+            margin-left: 20px;
+        }
         .header
         {
             font-family: Calibri;
@@ -222,9 +248,4 @@ body
             margin-top: 20px;
         }
         
-<<<<<<< HEAD
-/////////////////////////////////////*/
-
-=======
 /*/////////////////////////////////////*/
->>>>>>> master

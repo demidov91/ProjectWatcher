@@ -11,5 +11,7 @@ namespace DAL.Interface
 
 
         DateTime Time { get; }
+
+        Object FormerValue { get; }
     }
 }

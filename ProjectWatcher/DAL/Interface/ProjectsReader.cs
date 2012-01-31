@@ -124,7 +124,22 @@ namespace DAL.Interface
             return ConnectionHelper.CreateProject(owner);
         }
 
-
-
+        /// <summary>
+        /// Gives you entity of value from db by Id
+        /// </summary>
+        /// <param name="valueId"></param>
+        /// <returns></returns>
+        public IValue GetValue(int valueId)
+        {
+            try
+            {
+                return ConnectionHelper.GetValue(valueId);
+            }
+            catch (ConnectionException e)
+            {
+                return null;
+                
+            }
+        }
     }
 }

@@ -1,70 +1,44 @@
-<%@ Page Language="C#" Inherits="System.Web.Mvc.ViewPage<ProjectWatcher.Models.Project.Index.ProjectWithValuesModel>" %>
-<<<<<<< HEAD
-=======
-<%@ Import Namespace="ProjectWatcher.Models.Project" %>
-<%@ Import Namespace="DAL.Interface" %>
-<%@ Import Namespace="ProjectWatcher.Helpers" %>
->>>>>>> master
+<%@ Page Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<ProjectWatcher.Models.Project.Index.ProjectWithValuesModel>" %>
 <%@ Import Namespace="ProjectWatcher.Models.Project.Index" %>
 
 
-<!DOCTYPE html>
-<html>
-<head id="Head1" runat="server">
-    
+<asp:Content ID="Content1" runat="server" ContentPlaceHolderID="HeaderPlaceholder">
     
     <title>The Project</title>
-<<<<<<< HEAD
     <link rel="Stylesheet" href="../../Content/ProjectIndex.css" type="text/css" />
+    <script src="<%=Url.Content("~/Scripts/jquery-1.7.1.js")%>" type="text/javascript"></script>
+    <script type="text/javascript" src="<%=Url.Content("~/Scripts/MicrosoftAjax.js") %>"></script>
+    <script type="text/javascript" src="<%=Url.Content("~/Scripts/MicrosoftMvcAjax.js") %>"></script>
+    <script type="text/javascript"src="<%=Url.Content("~/Scripts/Site.js")%>" ></script>
     
-=======
-    <link rel="Stylesheet" href="../../Content/Site.css" type="text/css" />
-    <link rel="stylesheet" href="../../Content/Theme.css" type="text/css">
-    <link rel="stylesheet" href="../../Content/jquery-ui-1.8.17.custom.css" type="text/css"/>
-    <link rel="stylesheet" href="../../Content/Calendar.css" type="text/css"/>
-    <script src="../../Scripts/jquery-1.5.1.js" type="text/javascript"></script>
-    <script src="../../Scripts/jdate.js" type="text/javascript"></script>
-    <script src="../../Scripts/jquery-ui-1.8.11.js" type="text/javascript"></script>
->>>>>>> master
-</head>
-<body>
+</asp:Content>
+<asp:Content ID="Content2" runat="server" ContentPlaceHolderID="ProjectWatcherPlaceholder">
 <div id="ProjectWithProperties">
     <div id="forTitle">
-<<<<<<< HEAD
         <span class="header"><%=Model.Name%> </span><span>-edited by <%=Model.LastUser%> at <%=Model.LastChanged%></span>
-=======
-        <span class="header">
-                <%=Model.Name%>
-        </span>
-        <span>-edited by
-                <%=Model.LastUser%>
-                at
-                <%=Model.LastChanged%>
-        </span>
->>>>>>> master
     </div>
     <div id="forProperties">
         <%foreach (ValueModel value in Model.Values)
           {
-<<<<<<< HEAD
               if(value.IsVisible)
-=======
->>>>>>> master
               Html.RenderPartial("BigValue", value);
           } %>
     </div>
     <div id="footer">
+        <% if (Model.IsEditable)
+           {%>
         <div id="forAddPropertyButton">
-            <form method="post" action="<%=Html.AttributeEncode(Url.Action("AddProperties", "Project", new {projectId=Model.ProjectId})) %>" >
+            <form method="post" action="<%=
+                   Html.AttributeEncode(Url.Action("AddProperties", "Project", new {projectId = Model.ProjectId})) %>" >
                 <input type="image" src="../../Resources/yellowPlus.png"  />
             </form>
         </div>
-        <div id="forBackButton">
+        <% } %>
+        <div id="forBackButton" style="margin-left: 50%">
             <form method="post" action="<%=Html.AttributeEncode(Url.Action("Index", "Projects")) %>" >
                 <input type="image" src="../../Resources/back.png" />
             </form>
         </div>
     </div>
 </div>
-</body>
-</html>
+</asp:Content>

@@ -2,28 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using anrControls;
 
 namespace ProjectWatcher.Helpers
 {
     public static class StringHelper
     {
-        private static anrControls.Markdown converter;
-
         /// <summary>
-        /// Restart helper.
+        /// Restart helper. Deprecated.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Always true.</returns>
         internal static bool Load()
         {
-            try
-            {
-                converter = new anrControls.Markdown();
-                return converter != null;
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
+            return true;
         }
 
         /// <summary>
@@ -33,6 +24,7 @@ namespace ProjectWatcher.Helpers
         /// <returns>Html to paste on page.</returns>
         internal static String FromMarkdownToHtml(this String markdown)
         {
+            Markdown converter = new Markdown();
             return converter.Transform(markdown);    
         }
 

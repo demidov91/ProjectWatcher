@@ -36,7 +36,7 @@ namespace DAL
 
         internal Value(IValue original)
         {
-            this.SetLike(original);
+            this.ConvertFromUserInput(original);
         }
 
         internal Value()
@@ -49,7 +49,7 @@ namespace DAL
 
         public void SetValue(Object value)
         {
-            this.Value1 = value.ToString();
+            this.Value1 = Helpers.EntityHelper.FormatForDB(value, new Property {Type = this.Property.Type}).ToString();
         }
 
         public IProperty GetProperty()
@@ -60,6 +60,21 @@ namespace DAL
         public void SetProperty(IProperty input)
         {
             Property = new Property(input);
+        }
+
+        public IProject GetProject()
+        {
+            return Project;
+        }
+
+        public IEnumerable<IHistory> GetHistories()
+        {
+            return Histories;
+        }
+
+        public IValue GetCopy()
+        {
+            return (Value)this.MemberwiseClone();
         }
 
         public override int GetHashCode()
@@ -79,16 +94,12 @@ namespace DAL
         }
 
 
-       
 
-
-
-
-        internal void SetLike(IValue original)
+        internal void ModifyItself(Value original)
         {
             this.Important = original.Important;
             this.SystemName = original.SystemName;
-            this.Value1 = original.GetValue().ToString();
+            this.Value1 = original.Value1;
             this.ProjectId = original.ProjectId;
             this.Id = original.Id;
             this.Visible = original.Visible;
@@ -96,16 +107,20 @@ namespace DAL
             this.Time = original.Time;
         }
 
-        internal void SetLike(IValue original)
+
+
+        internal void ConvertFromUserInput(IValue original)
         {
             this.Important = original.Important;
             this.SystemName = original.SystemName;
-            this.Value1 = original.GetValue().ToString();
+            this.Value1 = EntityHelper.FormatForDB(original).ToString();
             this.ProjectId = original.ProjectId;
             this.Id = original.Id;
             this.Visible = original.Visible;
             this.Author = original.Author;
             this.Time = original.Time;
         }
+
+
     }
 }

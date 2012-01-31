@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -106,12 +107,14 @@ namespace ProjectWatcher.Controllers
             return RedirectToAction("AddProperties", new { projectId = projectId });
         }
 
-        [HttpPost]
+
+        [HttpGet]
         public ActionResult CreationOfNewProperty(int projectId)
         {
             ViewData["projectId"] = projectId;
             HttpContextWarker cultureProvider = new HttpContextWarker(HttpContext);
             string culture = cultureProvider.GetCulture();
+            ViewData["projectId"] = projectId;
             ViewData["nameTitle"] = ResourcesHelper.GetText("Name", culture);
             ViewData["sysNameTitle"] = ResourcesHelper.GetText("SystemName", culture);
             ViewData["typeTitle"] = ResourcesHelper.GetText("Type", culture);
@@ -123,27 +126,24 @@ namespace ProjectWatcher.Controllers
             model.Type = "String";
             model.AvailableValues = "";
             ViewData["availableTypes"] = ProjectHelper.GetAvailableTypesForDropdown();
-            return View(model); 
+            return PartialView("CreateProperty", model);
         }
+
+
+
+
 
         [HttpPost]
         public ActionResult CreationOfNewPropertyClick(PropertyModel model, int projectId)
         {
-            if (Request.Form.AllKeys.Contains("accept.x"))
+            HttpContextWarker contexter = new HttpContextWarker(HttpContext);
+            String result = ProjectHelper.CreateNewProperty(projectId, model, true, contexter);
+            if (result != null)
             {
-                HttpContextWarker contexter = new HttpContextWarker(HttpContext);
-                String result = ProjectHelper.CreateNewProperty(projectId, model, true, contexter);
-                if (result == null)
-                {
-                    return RedirectToAction("AddProperties", new { projectId = projectId });
-                }
-                else
-                {
-                    TempData["errorMessage"] = result;
-                    return RedirectToAction("CreationOfNewProperty", new{projectId=projectId});
-                }
+                HttpContext.Response.StatusCode = 404;
+                return Json(new { error = result }, JsonRequestBehavior.AllowGet);
             }
-            return RedirectToAction("AddProperties", new { projectId = projectId });
+            return new EmptyResult();
         }
           
 
@@ -175,6 +175,64 @@ namespace ProjectWatcher.Controllers
                 return PartialView("ChangeImportance", new PropertyModel { IsImportant = toChange.Important, ProjectId = toChange.ProjectId, SystemName = toChange.SystemName});
             }
         }
+
+        [HttpGet]
+        public PartialViewResult EditValue(Int32 id)
+        {
+            ProjectsReader reader = new ProjectsReader();
+            IValue value = reader.GetValue(id);
+            IProject project = reader.GetProject(value.ProjectId);
+            HttpContextWarker contexter = new HttpContextWarker(HttpContext);
+            if(!contexter.CanModify(project))
+            {
+                throw new NotEnoughRightsException();
+            }
+            ValueModel model = new ValueModel(reader.GetValue(id), true);
+            ViewData["culture"] = contexter.GetCulture();
+            return PartialView("ValueEdit", model);
+        }
+
+       
+        public ActionResult AjaxValueOperation(int id, Object Value)
+        {
+            if(!HttpContext.Request.IsAjaxRequest())
+            {
+                return Badrequest();
+            }
+            try
+            {
+                ValueModel model;
+                ProjectsReader dal = new ProjectsReader();
+                IValue original = dal.GetValue(id);
+                HttpContextWarker contexter = new HttpContextWarker(HttpContext);
+                bool canModify = contexter.CanModify(original.GetProject());
+                if (contexter.Method.Equals(HttpVerbs.Post))
+                {
+                    original.SetValue(Value);
+                    original.Author = contexter.User.Name;
+                    original.Time = DateTime.Now;
+                    model = new ValueModel(original, canModify);
+                    if(!canModify)
+                    {
+                        throw new NotEnoughRightsException(ResourcesHelper.GetText("OnNotEnoughForModifyingValue", contexter.GetCulture()));
+                    }
+                    if(!ProjectHelper.Save(model))
+                    {
+                        throw new InvalidUserInputException();
+                    }
+                }
+                else
+                {
+                    model = new ValueModel(original, canModify);
+                }
+                return PartialView("JustLookValue", model);
+            }
+            catch(ProjectWatcher.Errors.ProjectWatcherException e)
+            {
+                return Json(new {error = e.Message}, JsonRequestBehavior.AllowGet);
+            }
+        }
+
 
         public ActionResult Badrequest()
         {

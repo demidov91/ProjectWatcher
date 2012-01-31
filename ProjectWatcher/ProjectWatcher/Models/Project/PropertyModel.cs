@@ -83,7 +83,7 @@ namespace ProjectWatcher.Models.Project
             {
                 if (localAvailableValues == null)
                 {
-                    return String.Concat(naturalProperty.GetAvailableValues().Select(x => x.GetValue().ToString() + '\n'));
+                    return String.Concat(naturalProperty.GetAvailableValues().Select(x => x.GetValue().GetValue().ToString() + '\n'));
                 }
                 return localAvailableValues;
             }
@@ -103,7 +103,7 @@ namespace ProjectWatcher.Models.Project
             {
                 if (localAvailableValues == null)
                 {
-                    return naturalProperty.GetAvailableValues().Select(x => x.GetValue().ToString()).ToArray();
+                    return naturalProperty.GetAvailableValues().Select(x => x.GetValue().GetValue().ToString()).ToArray();
                 }
                 return localAvailableValues.Split('\r', '\n');
             }

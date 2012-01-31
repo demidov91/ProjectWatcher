@@ -106,22 +106,15 @@ namespace DAL.Helpers
         /// <summary>
         /// 
         /// </summary>
-<<<<<<< HEAD
         /// <param name="id"></param>
         /// <returns>Null if there is no such history entity.</returns>
         /// <exception cref="ConnectionException" />
         internal static IHistory GetHistory(int id)
-=======
-        /// <param name="availableValues">Enumeration of available values.</param>
-        /// <param name="property">Entity of selectable property.</param>
-        internal static bool AddAvailableValues(IEnumerable<string> availableValues, Property property)
->>>>>>> master
         {
             ProjectPropertiesEntities db = new ProjectPropertiesEntities();
             if (db.Connection.State != System.Data.ConnectionState.Open)
             {
                 db.Connection.Open();
-<<<<<<< HEAD
             }
             try
             {
@@ -131,25 +124,6 @@ namespace DAL.Helpers
             catch (Exception e)
             {
                 throw new ConnectionException(e);
-=======
-            }
-            try
-            {
-                foreach (String availableValue in availableValues)
-                {
-                    db.AddToAvailableValues(new AvailableValue { Value = availableValue, Property = property.SystemName });
-                }
-                db.SaveChanges();
-                return true;
-            }
-            catch (Exception e)
-            {
-                return false;                
-            }
-            finally
-            {
-                 
->>>>>>> master
             }
         }
 
@@ -166,7 +140,6 @@ namespace DAL.Helpers
             if (db.Connection.State != System.Data.ConnectionState.Open)
             {
                 db.Connection.Open();
-<<<<<<< HEAD
             }
             try
             {
@@ -187,24 +160,27 @@ namespace DAL.Helpers
             finally
             {
 
-=======
+            }
+        }
+
+
+        internal static IValue GetValue(int valueId)
+        {
+            ProjectPropertiesEntities db = new ProjectPropertiesEntities();
+            if (db.Connection.State != System.Data.ConnectionState.Open)
+            {
+                db.Connection.Open();
             }
             try
             {
-                db.AddToProperties(creating);
-                db.SaveChanges();
-                return true;
+                return db.Values.FirstOrDefault(x => x.Id == valueId);
             }
-            catch (Exception e)
+            catch(Exception e)
             {
-                return false;
-            }
-            finally
-            {
-                 
->>>>>>> master
+                throw new ConnectionException(e);
             }
         }
+
 
         internal static Property GetProperty(string systemName)
         {
@@ -241,34 +217,16 @@ namespace DAL.Helpers
             }
             try
             {
-<<<<<<< HEAD
                 foreach (String availableValue in availableValues)
-=======
-                Project project = Project.CreateProject(dateTime, null);
-                db.AddToProjects(project);
-                IEnumerable<String> defaultPropertiesNames = DBDefinitionsHelper.GetDefaultProperties();
-                foreach (String name in defaultPropertiesNames)
->>>>>>> master
                 {
                     db.AddToAvailableValues(new AvailableValue { Value = availableValue, Property = property.SystemName });
                 }
-<<<<<<< HEAD
                 db.SaveChanges();
                 return true;
             }
             catch (Exception e)
             {
                 return false;                
-=======
-                Value ownerEntity = project.Values.First(x => x.SystemName == "owner");
-                ownerEntity.Value1 = owner;
-                db.Refresh(System.Data.Objects.RefreshMode.ClientWins, ownerEntity);
-                return project.Id;
-            }
-            catch (Exception e)
-            {
-                throw new ConnectionException(e);
->>>>>>> master
             }
             finally
             {
@@ -279,29 +237,19 @@ namespace DAL.Helpers
         /// <summary>
         /// Tryes to create specified property.
         /// </summary>
-<<<<<<< HEAD
         /// <param name="creating">Property to write to db.</param>
         /// <returns>If saving was successful.</returns>
         internal static bool CreateProperty(Property creating)
         {
             ProjectPropertiesEntities db = new ProjectPropertiesEntities();
-=======
-        /// <param name="toDelete"></param>
-        private static bool DeleteWithoutSumitting(EntityObject toDelete, ProjectPropertiesEntities db)
-        {
->>>>>>> master
             if (db.Connection.State != System.Data.ConnectionState.Open)
             {
                 db.Connection.Open();
             }
             try
             {
-<<<<<<< HEAD
                 db.AddToProperties(creating);
                 db.SaveChanges();
-=======
-                db.DeleteObject(toDelete);
->>>>>>> master
                 return true;
             }
             catch (Exception e)
@@ -317,15 +265,9 @@ namespace DAL.Helpers
         /// <summary>
         /// Creates project with specified owner, time of creation and properties that predefined in Validation settings
         /// </summary>
-<<<<<<< HEAD
         /// <param name="owner"></param>
         /// <param name="dateTime"></param>
         internal static int CreateProject(string owner)
-=======
-        /// <param name="toDelete"></param>
-        /// <exception cref="ConnectionException" />
-        internal static void Delete(EntityObject toDelete)
->>>>>>> master
         {
             ProjectPropertiesEntities db = new ProjectPropertiesEntities();
             if (db.Connection.State != System.Data.ConnectionState.Open)
@@ -334,7 +276,6 @@ namespace DAL.Helpers
             }
             try
             {
-<<<<<<< HEAD
                 Project project = Project.CreateProject(DateTime.Now, null);
                 DbTransaction transaction = db.Connection.BeginTransaction();
                 try
@@ -376,24 +317,18 @@ namespace DAL.Helpers
             {   
                 throw new IllegalDBOperationException(e);
             }
-=======
-                db.DeleteObject(toDelete);
-                db.SaveChanges();
-            }
->>>>>>> master
             catch (Exception e)
             {
                 throw new ConnectionException(e);
             }
             finally
             {
-<<<<<<< HEAD
                 db.Connection.Close();
                 
             }
         }
 
-        
+        //==================================================================================DELETE===========================================================================================//
 
         /// <summary>
         /// Deletes record from db.
@@ -402,21 +337,6 @@ namespace DAL.Helpers
         /// <exception cref="ConnectionException" />
         internal static void Delete(EntityObject toDelete)
         {
-=======
-                 
-            }
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="toDelete"></param>
-        /// <param name="visible"></param>
-        /// <exception cref="ConnectionException" />
-        internal static void SetVisability(Value toDelete, bool visible)
-        {
-            toDelete.Visible = visible;
->>>>>>> master
             ProjectPropertiesEntities db = new ProjectPropertiesEntities();
             if (db.Connection.State != System.Data.ConnectionState.Open)
             {
@@ -424,11 +344,7 @@ namespace DAL.Helpers
             }
             try
             {
-<<<<<<< HEAD
                 db.DeleteObject(toDelete);
-=======
-                db.Refresh(System.Data.Objects.RefreshMode.ClientWins, toDelete);
->>>>>>> master
                 db.SaveChanges();
             }
             catch (Exception e)
@@ -442,30 +358,17 @@ namespace DAL.Helpers
         }
 
         /// <summary>
-<<<<<<< HEAD
         /// Marks record for deleting.
         /// </summary>
         /// <param name="toDelete"></param>
         private static bool DeleteWithoutSubmitting(EntityObject toDelete, ProjectPropertiesEntities db)
         {
-=======
-        /// 
-        /// </summary>
-        /// <param name="project"></param>
-        /// <param name="systemName"></param>
-        /// <returns>Value of project property or what user gave method if project doesn't have such property.</returns>
-        /// <exception cref="ConnectionException" />
-        internal static string GetValue(Project project, String systemName)
-        {
-            ProjectPropertiesEntities db = new ProjectPropertiesEntities();
->>>>>>> master
             if (db.Connection.State != System.Data.ConnectionState.Open)
             {
                 db.Connection.Open();
             }
             try
             {
-<<<<<<< HEAD
                 db.DeleteObject(toDelete);
                 return true;
             }
@@ -476,25 +379,6 @@ namespace DAL.Helpers
             finally
             {
 
-=======
-                Value toReturn = project.Values.FirstOrDefault(x => x.SystemName == systemName);
-                if (toReturn == null)
-                {
-                    return systemName;
-                }
-                else
-                {
-                    return toReturn.Value1;
-                }
-            }
-            catch (Exception e)
-            {
-                throw new ConnectionException(e);
-            }
-            finally
-            {
-                 
->>>>>>> master
             }
         }
 
@@ -522,19 +406,11 @@ namespace DAL.Helpers
                     }
                 }
                 db.SaveChanges();
-<<<<<<< HEAD
             }
             catch(IllegalDBOperationException e)
             {
                 throw e;
             }
-=======
-            }
-            catch(IllegalDBOperationException e)
-            {
-                throw e;
-            }
->>>>>>> master
             catch (Exception e)
             {
                 throw new ConnectionException(e);
@@ -564,11 +440,7 @@ namespace DAL.Helpers
             {
                 foreach (AvailableValue value in property.AvailableValues)
                 {
-<<<<<<< HEAD
                     DeleteWithoutSubmitting(value, db);
-=======
-                    DeleteWithoutSumitting(value, db);
->>>>>>> master
                 }
                 foreach (String value in availablevalues)
                 {
@@ -578,48 +450,17 @@ namespace DAL.Helpers
                 db.SaveChanges();
             }
             catch (Exception e)
-<<<<<<< HEAD
             {
                 throw new ConnectionException(e);
             }
             finally
             {
-=======
-            {
-                throw new ConnectionException(e);
-            }
-            finally
-            {
->>>>>>> master
                  
             }
         }
 
 
-<<<<<<< HEAD
         
-=======
-        internal static Property GetProperty(string systemName)
-        {
-            ProjectPropertiesEntities db = new ProjectPropertiesEntities();
-            if (db.Connection.State != System.Data.ConnectionState.Open)
-            {
-                db.Connection.Open();
-            }
-            try
-            {
-                return db.Properties.FirstOrDefault(x => x.SystemName == systemName);
-            }
-            catch (Exception e)
-            {
-                throw new ConnectionException(e);
-            }
-            finally
-            {
-                 
-            }
-        }
->>>>>>> master
 
         /// <summary>
         /// Saves old version into History table and modifies existing value.
@@ -635,28 +476,21 @@ namespace DAL.Helpers
             {
                 db.Connection.Open();
             }
+            DbTransaction transaction = db.Connection.BeginTransaction();
             try
             {
+                
                 Value oldVersion = db.Values.FirstOrDefault(x => x.Id == entity.Id);
                 if (oldVersion == null)
                 {
                     throw new IllegalDBOperationException(entity);
                 }
-<<<<<<< HEAD
                 if (oldVersion.Value1.Equals(entity.Value1))
-=======
-                if (oldVersion.Equals(entity))
->>>>>>> master
                 {
                     return true;
                 }
                 History forOldVersion = new History(oldVersion);
                 db.AddToHistories(forOldVersion);
-<<<<<<< HEAD
-=======
-                oldVersion.SetLike(entity);
-                db.Refresh(RefreshMode.ClientWins, oldVersion);
->>>>>>> master
                 if (entity.Important)
                 {
                     Project currentProject = db.Projects.FirstOrDefault(x => x.Id == entity.ProjectId);
@@ -664,28 +498,27 @@ namespace DAL.Helpers
                     {
                         throw new IllegalDBOperationException(entity);
                     }
+                    db.SaveChanges();
                     currentProject.LastChanged = forOldVersion.Id;
                     db.Refresh(RefreshMode.ClientWins, currentProject);
                 }
-<<<<<<< HEAD
-                oldVersion.SetLike(entity);
+                oldVersion.ModifyItself(entity);
                 db.Refresh(RefreshMode.ClientWins, oldVersion);
-=======
->>>>>>> master
                 db.SaveChanges();
+                transaction.Commit();
                 operationSuccess = true;
             }
             catch(IllegalDBOperationException e)
             {
-                ///Write known exception to log
+                transaction.Rollback();
             }
             catch (Exception e)
             {
-                ///Write unknown exception to log
+                transaction.Rollback();
             }
             finally
             {
-                 
+                db.Connection.Close();
             }
             return operationSuccess;
         }
@@ -701,7 +534,6 @@ namespace DAL.Helpers
             throw new NotImplementedException();
         }
 
-<<<<<<< HEAD
 
         /// <summary>
         /// 
@@ -717,18 +549,6 @@ namespace DAL.Helpers
                 db.Connection.Open();
             }
             try
-=======
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns>Null if there is no such history entity.</returns>
-        /// <exception cref="ConnectionException" />
-        internal static IHistory GetHistory(int id)
-        {
-            ProjectPropertiesEntities db = new ProjectPropertiesEntities();
-            if (db.Connection.State != System.Data.ConnectionState.Open)
->>>>>>> master
             {
                 Value original = db.Values.FirstOrDefault(x => x.Id == external.Id);
                 original.Visible = visible;
@@ -753,7 +573,6 @@ namespace DAL.Helpers
                 db.Connection.Open();
             }
             try
-<<<<<<< HEAD
             {
                 Value original = db.Values.FirstOrDefault(x => x.Id == external.Id);
                 original.Important = external.Important;
@@ -767,22 +586,9 @@ namespace DAL.Helpers
             finally
             {
 
-=======
-            {
-                History history = db.Histories.FirstOrDefault(x => x.Id == id);
-                return history;
             }
-            catch (Exception e)
-            {
-                throw new ConnectionException(e);
->>>>>>> master
-            }
-            
         }
-<<<<<<< HEAD
 
         
-=======
->>>>>>> master
     }
 }

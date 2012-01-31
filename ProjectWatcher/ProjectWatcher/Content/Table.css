@@ -1,85 +1,56 @@
-﻿    table, caption, td, tr, th {
-	margin:0;
-	padding:0;
-	font-weight:normal;
-	}
+﻿/* 
+	Cusco Sky table styles
+	written by Braulio Soncco http://www.buayacorp.com
+*/
 
+table, th, td {
+	border: 1px solid #D4E0EE;
+	text-align: center;
+	border-collapse: collapse;
+	font-family: "Trebuchet MS", Arial, sans-serif;
+	color: #555;
+}
 
+caption {
+	font-size: 150%;
+	font-weight: bold;
+	margin: 5px;
+}
 
-table {
-	border-collapse:collapse;
-	margin-bottom:15px;
-	}
+td, th {
+	padding: 4px;
+}
 
-	caption {
-		text-align:left;
-		font-size:15px;
-		padding-bottom:10px;
-		}
-		
-		
-		table td,
-	table th {
-		padding:5px;
-		border:1px solid #fff;
-		border-width:0 1px 1px 0;
-		}
-		
-		
-		thead th {
-		background:#91c5d4;
-		}
+thead th {
+	text-align: center;
+	background: #E6EDF5;
+	color: #4F76A3;
+	font-size: 100% !important;
+}
 
-		thead th[colspan],
-		thead th[rowspan] {
-			background:#66a9bd;
-			}
+tbody th {
+	font-weight: bold;
+}
 
-	tbody th,
-	tfoot th {
-		text-align:left;
-		background:#91c5d4;
-		}
-		
-		thead th[colspan] { background:#66a9bd; }
-		
-		
-		tbody td,
-	tfoot td {
-		text-align:center;
-		background:#d5eaf0;
-		}
-		
-		
-		tfoot th {
-		background:#b0cc7f;
-		}
+tbody tr { background: #FCFDFE; }
 
-	tfoot td {
-		background:#d7e1c5;
-		font-weight:bold;
-		}
-		
-		
-		table#travel {
-	border-collapse:collapse;
-	margin-bottom:15px;
-	}
+tbody tr.odd { background: #F7F9FC; }
 
-	table#travel caption {
-		text-align:left;
-		font-size:15px;
-		padding-bottom:10px;
-		}
+table a:link {
+	color: #718ABE;
+	text-decoration: none;
+}
 
-	table#travel table td,
-	table#travel table th {
-		padding:5px;
-		border:1px solid #fff;
-		border-width:0 1px 1px 0;
-		}
+table a:visited {
+	color: #718ABE;
+	text-decoration: none;
+}
 
-	table#travel thead th {
-		background:#91c5d4;
-		}
-		
+table a:hover {
+	color: #718ABE;
+	text-decoration: underline !important;
+}
+
+tfoot th, tfoot td {
+	font-size: 85%;
+}

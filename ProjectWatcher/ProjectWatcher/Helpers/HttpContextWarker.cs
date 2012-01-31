@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Text.RegularExpressions;
 using System.Security.Principal;
+using System.Web.Mvc;
+using ProjectWatcher.Models.Shared;
 
 namespace ProjectWatcher.Helpers
 {
@@ -39,16 +41,33 @@ namespace ProjectWatcher.Helpers
         }
 
 
-        public IPrincipal User
+        public RolablePrincipal User
         {
-            get { return context.User; }
+            get 
+            {
+                return context.User as RolablePrincipal;
+            }
         }
 
 
 
         internal bool CanModify(DAL.Interface.IProject modifying)
         {
-            return modifying != null && context.User.IsInRole("administrator") || context.User.Identity.Name == modifying.GetValue("owner");
+            return (modifying != null) && (context.User.IsInRole("administrator") || context.User.Identity.Name == modifying.GetValue("owner"));
+        }
+
+        public HttpVerbs Method
+        {
+            get
+            {
+                HttpVerbs answer = HttpVerbs.Get;
+                if(context.Request.HttpMethod == "POST")
+                    answer = HttpVerbs.Post;
+                else if(context.Request.HttpMethod == "GET")
+                    answer = HttpVerbs.Get;
+                
+                return answer;
+            }
         }
     }
 }

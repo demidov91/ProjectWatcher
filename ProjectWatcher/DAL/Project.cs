@@ -87,23 +87,30 @@ namespace DAL
         {
             get
             {
-                if (LastChanged == null)
-                { 
-                    Value firstValue = Values.FirstOrDefault(x => x.SystemName == Properties.Settings.Default.FirstProperty);
-                    return (firstValue == null ? null : new History(firstValue));
-                }
-                else
+                try
                 {
-                    try
+                    if (LastChanged != null)
                     {
-                        return ConnectionHelper.GetHistory(LastChanged.Value);
+                        IHistory toReturn = ConnectionHelper.GetHistory(LastChanged.Value);
+                        if (toReturn != null)
+                        {
+                            return toReturn;
+                        }
                     }
-                    catch (ConnectionException e)
+                    Value firstValue =
+                        Values.FirstOrDefault(x => x.SystemName == Properties.Settings.Default.FirstProperty);
+                    if(firstValue == null)
                     {
-                        return null;
+                        throw new IllegalDBOperationException(this);
                     }
+                    return new History(firstValue);
+                }
+                catch (ConnectionException e)
+                {
+                    return null;
                 }
             }
+        
         }
     }
 }

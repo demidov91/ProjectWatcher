@@ -46,9 +46,27 @@ E:\информация\Проекты\поиск работы\itransition\Proje
 E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\Authorization\obj\Debug\ResolveAssemblyReference.cache
 E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\Authorization\obj\Debug\Authorization.dll
 E:\информация\Проекты\поиск работы\itransition\ProjectWatcher\Authorization\obj\Debug\Authorization.pdb
-D:\ProjectWatcher_28_01_2012_Demidov_1731\ProjectWatcher\Authorization\bin\Debug\Authorization.dll.config
-D:\ProjectWatcher_28_01_2012_Demidov_1731\ProjectWatcher\Authorization\bin\Debug\Authorization.dll
-D:\ProjectWatcher_28_01_2012_Demidov_1731\ProjectWatcher\Authorization\bin\Debug\Authorization.pdb
-D:\ProjectWatcher_28_01_2012_Demidov_1731\ProjectWatcher\Authorization\obj\Debug\ResolveAssemblyReference.cache
-D:\ProjectWatcher_28_01_2012_Demidov_1731\ProjectWatcher\Authorization\obj\Debug\Authorization.dll
-D:\ProjectWatcher_28_01_2012_Demidov_1731\ProjectWatcher\Authorization\obj\Debug\Authorization.pdb
+D:\work\Demidov\ProjectWatcher\ProjectWatcher\Authorization\bin\Debug\Authorization.dll.config
+D:\work\Demidov\ProjectWatcher\ProjectWatcher\Authorization\bin\Debug\Authorization.dll
+D:\work\Demidov\ProjectWatcher\ProjectWatcher\Authorization\bin\Debug\Authorization.pdb
+D:\work\Demidov\ProjectWatcher\ProjectWatcher\Authorization\obj\Debug\ResolveAssemblyReference.cache
+D:\work\Demidov\ProjectWatcher\ProjectWatcher\Authorization\obj\Debug\Authorization.dll
+D:\work\Demidov\ProjectWatcher\ProjectWatcher\Authorization\obj\Debug\Authorization.pdb
+D:\ProjectWatcher1\ProjectWatcher\Authorization\bin\Debug\Authorization.dll.config
+D:\ProjectWatcher1\ProjectWatcher\Authorization\bin\Debug\Authorization.dll
+D:\ProjectWatcher1\ProjectWatcher\Authorization\bin\Debug\Authorization.pdb
+D:\ProjectWatcher1\ProjectWatcher\Authorization\obj\Debug\ResolveAssemblyReference.cache
+D:\ProjectWatcher1\ProjectWatcher\Authorization\obj\Debug\Authorization.dll
+D:\ProjectWatcher1\ProjectWatcher\Authorization\obj\Debug\Authorization.pdb
+D:\work\Demidov\ProjectWatcher1\ProjectWatcher\Authorization\bin\Debug\Authorization.dll.config
+D:\work\Demidov\ProjectWatcher1\ProjectWatcher\Authorization\bin\Debug\Authorization.dll
+D:\work\Demidov\ProjectWatcher1\ProjectWatcher\Authorization\bin\Debug\Authorization.pdb
+D:\work\Demidov\ProjectWatcher1\ProjectWatcher\Authorization\obj\Debug\ResolveAssemblyReference.cache
+D:\work\Demidov\ProjectWatcher1\ProjectWatcher\Authorization\obj\Debug\Authorization.dll
+D:\work\Demidov\ProjectWatcher1\ProjectWatcher\Authorization\obj\Debug\Authorization.pdb
+D:\ProjectWatcherLast\ProjectWatcher\Authorization\bin\Debug\Authorization.dll.config
+D:\ProjectWatcherLast\ProjectWatcher\Authorization\bin\Debug\Authorization.dll
+D:\ProjectWatcherLast\ProjectWatcher\Authorization\bin\Debug\Authorization.pdb
+D:\ProjectWatcherLast\ProjectWatcher\Authorization\obj\Debug\ResolveAssemblyReference.cache
+D:\ProjectWatcherLast\ProjectWatcher\Authorization\obj\Debug\Authorization.dll
+D:\ProjectWatcherLast\ProjectWatcher\Authorization\obj\Debug\Authorization.pdb

@@ -140,7 +140,7 @@ namespace ProjectWatcher.Helpers
         /// For using in "ProjectsHelper.ParseForColumns"
         /// </summary>
         /// <param name="comaSeparatedProperties">One line of definition</param>
-        /// <returns>Model for each column</returns>
+        /// <returns>Model for column with "user-format exception in header"</returns>
         /// <exception cref="ArguementException"/>
         private static ColumnDefinition StringToColumn(string comaSeparatedProperties, HttpContextBase context)
         {
@@ -316,7 +316,6 @@ namespace ProjectWatcher.Helpers
         /// <param name="badProjects">Ids of bad formed projects.</param>
         /// <param name="culture">User language.</param>
         /// <returns>Message to show user.</returns>
-<<<<<<< HEAD
         internal static String FormUploadErrorMessage(List<int> badProjects, List<Int32> badRights, string culture)
         {
             StringBuilder message = new StringBuilder();
@@ -342,19 +341,6 @@ namespace ProjectWatcher.Helpers
                 }
                 message.Remove(message.Length - 2, 2);
             }
-=======
-        internal static String FormUploadErrorMessage(List<int> badProjects, string culture)
-        {
-            StringBuilder message = new StringBuilder();
-            message.Append(ResourcesHelper.GetText("BeginOfErrorInUploadingFiles", culture));
-            message.Append('\n');
-            foreach (int projectId in badProjects)
-            {
-                message.Append(projectId);
-                message.Append(", ");
-            }
-            message.Remove(message.Length - 2, 2);
->>>>>>> master
             return message.ToString();
         }
     }

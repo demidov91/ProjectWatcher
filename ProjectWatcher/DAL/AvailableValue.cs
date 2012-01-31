@@ -25,9 +25,9 @@ namespace DAL
  
         }
 
-        public Object GetValue()
+        public IValue GetValue()
         {
-            return this.Value;
+            return new Value {Value1 = Value};
         }
 
 

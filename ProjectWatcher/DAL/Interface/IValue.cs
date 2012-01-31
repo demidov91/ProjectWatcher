@@ -56,6 +56,12 @@ namespace DAL.Interface
         IProperty GetProperty();
 
         void SetProperty(IProperty value);
-        
+
+        IProject GetProject();
+
+        IEnumerable<IHistory> GetHistories();
+
+        IValue GetCopy();
+
     }
 }

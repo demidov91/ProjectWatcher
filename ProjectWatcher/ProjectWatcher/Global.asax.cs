@@ -22,6 +22,9 @@ namespace ProjectWatcher
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.MapRoute("GetEditorForOneValue", "ValueEditor/{id}", new { controller = "Project", action="EditValue" });
+            routes.MapRoute("GetOrSetValue", "Value/{id}", new { controller = "Project", action = "AjaxValueOperation" });
+            routes.MapRoute("ForPartials", "Part/{action}/{id}", new{controller="Project"}); ///deprecated
             routes.MapRoute("ForProjects", "Projects/{action}", new {controller = "Projects", action = "Index"});
             routes.MapRoute("EditProjectProperties", "Project{projectId}/{action}", new {controller="Project", action="Index" });
             routes.MapRoute("Default", "{controller}/{action}", new { controller = "Projects", action = "Index" });

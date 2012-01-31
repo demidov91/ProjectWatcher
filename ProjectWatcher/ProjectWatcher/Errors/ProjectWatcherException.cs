@@ -5,7 +5,20 @@ using System.Web;
 
 namespace ProjectWatcher.Errors
 {
-    public class ProjectWatcherException: Exception
+    public abstract class ProjectWatcherException: Exception
     {
+        protected String message;
+
+        public ProjectWatcherException(String message)
+        {
+            this.message = message;
+        }
+
+        protected ProjectWatcherException()
+            :this(ProjectWatcher.Helpers.ResourcesHelper.GetText("BaseError", ""))
+        {
+        }
+
+
     }
 }

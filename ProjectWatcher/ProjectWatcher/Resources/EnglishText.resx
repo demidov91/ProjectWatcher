@@ -213,10 +213,16 @@
   <data name="BeginOfErrorInUploadingFiles" xml:space="preserve">
     <value>Error in definitions of project with this ids:</value>
   </data>
-<<<<<<< HEAD
   <data name="NotEnoughRightsForModifying" xml:space="preserve">
     <value>Not enough rights for modifying projects with ids:</value>
   </data>
-=======
->>>>>>> master
+  <data name="at" xml:space="preserve">
+    <value>at</value>
+  </data>
+  <data name="ByWhom" xml:space="preserve">
+    <value>by</value>
+  </data>
+  <data name="PropertyName" xml:space="preserve">
+    <value>Property name:</value>
+  </data>
 </root>

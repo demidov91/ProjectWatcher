@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="63ec354e-7719-4cdf-b000-dc004536f779" name="d.demidov@SD-LABA-8 2012-01-30 10:33:20" runUser="ITRANSITION\d.demidov" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="744b2588-026e-462a-817a-acbe96aacba9">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="d.demidov_SD-LABA-8 2012-01-30 10_33_20">
+      <DeploymentItem filename="D:\work\Demidov\ProjectWatcher1\ProjectWatcher\Authorization\bin\Debug\Authorization.dll" />
+      <DeploymentItem filename="D:\work\Demidov\ProjectWatcher1\ProjectWatcher\Validation\bin\Debug\SystemSettings.dll" />
+      <DeploymentItem filename="D:\work\Demidov\ProjectWatcher1\ProjectWatcher\DAL\bin\Debug\DAL.dll" />
+      <DeploymentItem filename="D:\work\Demidov\ProjectWatcher1\ProjectWatcher\ProjectWatcher\bin\ProjectWatcher.dll" />
+      <DeploymentItem filename="D:\work\Demidov\ProjectWatcher1\ProjectWatcher\TestProject\bin\Debug\anrControls.Markdown.NET.dll" />
+      <DeploymentItem filename="D:\work\Demidov\ProjectWatcher1\ProjectWatcher\TestProject\bin\Debug\Rhino.Mocks.dll" />
+      <DeploymentItem filename="D:\work\Demidov\ProjectWatcher1\ProjectWatcher\ExternalLibs\NMock2.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-01-30T10:33:20.9879285+03:00" queuing="2012-01-30T10:33:21.1759473+03:00" start="2012-01-30T10:33:21.2139511+03:00" finish="2012-01-30T10:33:21.7590056+03:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="10" executed="10" passed="9" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="SetValuesIntoFormulasTest" storage="d:\work\demidov\projectwatcher1\projectwatcher\testproject\bin\debug\testproject.dll" id="15097f91-037d-e8d1-b5f3-56560dcfdece">
+      <Execution id="d94e10ac-54d1-4617-86f7-e26e71dcf8d2" />
+      <TestMethod codeBase="D:/work/Demidov/ProjectWatcher1/ProjectWatcher/TestProject/bin/Debug/TestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject.ProjectsHelperTest, TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="SetValuesIntoFormulasTest" />
+    </UnitTest>
+    <UnitTest name="GetVariablesTest" storage="d:\work\demidov\projectwatcher1\projectwatcher\testproject\bin\debug\testproject.dll" id="41a1eb7c-2590-e013-66f1-5e5b6213345a">
+      <Execution id="5f9ac92c-decb-429f-bce4-25af25430b1a" />
+      <TestMethod codeBase="D:/work/Demidov/ProjectWatcher1/ProjectWatcher/TestProject/bin/Debug/TestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject.ProjectsHelperTest, TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetVariablesTest" />
+    </UnitTest>
+    <UnitTest name="CreateExportDataTest" storage="d:\work\demidov\projectwatcher1\projectwatcher\testproject\bin\debug\testproject.dll" id="4cca512c-3df2-ed2f-b893-3ab183a0f8a1">
+      <Execution id="4d3f52d7-83f4-4123-be56-4cd4ff5d6515" />
+      <TestMethod codeBase="D:/work/Demidov/ProjectWatcher1/ProjectWatcher/TestProject/bin/Debug/TestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject.ProjectsHelperTest, TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="CreateExportDataTest" />
+    </UnitTest>
+    <UnitTest name="FormCSVFileTest" storage="d:\work\demidov\projectwatcher1\projectwatcher\testproject\bin\debug\testproject.dll" id="c073fbef-a541-181b-a5d4-d06f138e9cab">
+      <Execution id="2285f73c-7a0e-4435-9b03-c6551ecc72a6" />
+      <TestMethod codeBase="D:/work/Demidov/ProjectWatcher1/ProjectWatcher/TestProject/bin/Debug/TestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject.ProjectsHelperTest, TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="FormCSVFileTest" />
+    </UnitTest>
+    <UnitTest name="StringToColumnTest" storage="d:\work\demidov\projectwatcher1\projectwatcher\testproject\bin\debug\testproject.dll" id="5e6eb382-3c25-c34d-109c-e268ac443ad8">
+      <Execution id="fec0501d-780b-45b6-a217-b20a4c7defc8" />
+      <TestMethod codeBase="D:/work/Demidov/ProjectWatcher1/ProjectWatcher/TestProject/bin/Debug/TestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject.ProjectsHelperTest, TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="StringToColumnTest" />
+    </UnitTest>
+    <UnitTest name="GetFuncAndVarTest" storage="d:\work\demidov\projectwatcher1\projectwatcher\testproject\bin\debug\testproject.dll" id="e4ee5135-d52c-e831-1731-99027035f03a">
+      <Execution id="78aa2f35-82d1-4c18-88bb-5cc9527afde7" />
+      <TestMethod codeBase="D:/work/Demidov/ProjectWatcher1/ProjectWatcher/TestProject/bin/Debug/TestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject.ProjectsHelperTest, TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetFuncAndVarTest" />
+    </UnitTest>
+    <UnitTest name="DeleteFunctionsTest" storage="d:\work\demidov\projectwatcher1\projectwatcher\testproject\bin\debug\testproject.dll" id="19af2c87-2e28-0ae7-52ee-e6e5a46fbe1b">
+      <Execution id="aa3f4dcf-c70a-4357-b35f-f073a292cc5a" />
+      <TestMethod codeBase="D:/work/Demidov/ProjectWatcher1/ProjectWatcher/TestProject/bin/Debug/TestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject.ProjectsHelperTest, TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="DeleteFunctionsTest" />
+    </UnitTest>
+    <UnitTest name="GetFunctionsTest" storage="d:\work\demidov\projectwatcher1\projectwatcher\testproject\bin\debug\testproject.dll" id="067bc254-eb01-e54b-b1b0-617ef6ab44e1">
+      <Execution id="13a7b95e-e303-429e-b593-0cb523509ba1" />
+      <TestMethod codeBase="D:/work/Demidov/ProjectWatcher1/ProjectWatcher/TestProject/bin/Debug/TestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject.ProjectsHelperTest, TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetFunctionsTest" />
+    </UnitTest>
+    <UnitTest name="GetFunctionsAndVariablesTest" storage="d:\work\demidov\projectwatcher1\projectwatcher\testproject\bin\debug\testproject.dll" id="6b322db4-52bb-b761-35a2-88784156fad4">
+      <Execution id="35738aaf-b7f2-45d0-bac7-aaa694467aa3" />
+      <TestMethod codeBase="D:/work/Demidov/ProjectWatcher1/ProjectWatcher/TestProject/bin/Debug/TestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject.ProjectsHelperTest, TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetFunctionsAndVariablesTest" />
+    </UnitTest>
+    <UnitTest name="CreateFooterModelTest" storage="d:\work\demidov\projectwatcher1\projectwatcher\testproject\bin\debug\testproject.dll" id="b7f7d50f-7580-9f38-5947-a3a34adaf952">
+      <Execution id="efcac123-7abb-4314-ac91-ff696b28271e" />
+      <TestMethod codeBase="D:/work/Demidov/ProjectWatcher1/ProjectWatcher/TestProject/bin/Debug/TestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject.ProjectsHelperTest, TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="CreateFooterModelTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="e4ee5135-d52c-e831-1731-99027035f03a" executionId="78aa2f35-82d1-4c18-88bb-5cc9527afde7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b7f7d50f-7580-9f38-5947-a3a34adaf952" executionId="efcac123-7abb-4314-ac91-ff696b28271e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="19af2c87-2e28-0ae7-52ee-e6e5a46fbe1b" executionId="aa3f4dcf-c70a-4357-b35f-f073a292cc5a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="067bc254-eb01-e54b-b1b0-617ef6ab44e1" executionId="13a7b95e-e303-429e-b593-0cb523509ba1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6b322db4-52bb-b761-35a2-88784156fad4" executionId="35738aaf-b7f2-45d0-bac7-aaa694467aa3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="41a1eb7c-2590-e013-66f1-5e5b6213345a" executionId="5f9ac92c-decb-429f-bce4-25af25430b1a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="15097f91-037d-e8d1-b5f3-56560dcfdece" executionId="d94e10ac-54d1-4617-86f7-e26e71dcf8d2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5e6eb382-3c25-c34d-109c-e268ac443ad8" executionId="fec0501d-780b-45b6-a217-b20a4c7defc8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4cca512c-3df2-ed2f-b893-3ab183a0f8a1" executionId="4d3f52d7-83f4-4123-be56-4cd4ff5d6515" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c073fbef-a541-181b-a5d4-d06f138e9cab" executionId="2285f73c-7a0e-4435-9b03-c6551ecc72a6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="78aa2f35-82d1-4c18-88bb-5cc9527afde7" testId="e4ee5135-d52c-e831-1731-99027035f03a" testName="GetFuncAndVarTest" computerName="SD-LABA-8" duration="00:00:00.0177718" startTime="2012-01-30T10:33:21.2249522+03:00" endTime="2012-01-30T10:33:21.5269824+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="78aa2f35-82d1-4c18-88bb-5cc9527afde7">
+    </UnitTestResult>
+    <UnitTestResult executionId="efcac123-7abb-4314-ac91-ff696b28271e" testId="b7f7d50f-7580-9f38-5947-a3a34adaf952" testName="CreateFooterModelTest" computerName="SD-LABA-8" duration="00:00:00.0394802" startTime="2012-01-30T10:33:21.5279825+03:00" endTime="2012-01-30T10:33:21.5729870+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="efcac123-7abb-4314-ac91-ff696b28271e">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method TestProject.ProjectsHelperTest.CreateFooterModelTest threw exception: 
+System.TypeLoadException: Could not load type 'MultiInterface1' from assembly 'Mocks, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' because it attempts to implement a class as an interface.</Message>
+          <StackTrace>    at System.Reflection.Emit.TypeBuilder.TermCreateClass(RuntimeModule module, Int32 tk, ObjectHandleOnStack type)
+   at System.Reflection.Emit.TypeBuilder.CreateTypeNoLock()
+   at System.Reflection.Emit.TypeBuilder.CreateType()
+   at NMock2.Monitoring.MultiInterfaceFactory.CreateType(String typeName, Type[] baseInterfaces)
+   at NMock2.Monitoring.MultiInterfaceFactory.GetType(Type[] baseInterfaces)
+   at NMock2.Mockery.NewMock(Type mockedType, String name)
+   at NMock2.Mockery.NewMock(Type mockedType)
+   at NMock2.Mockery.NewMock[InterfaceOfMock]()
+   at TestProject.ProjectsHelperTest.CreateFooterModelTest() in D:\work\Demidov\ProjectWatcher1\ProjectWatcher\TestProject\ProjectsHelperTest.cs:line 105
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="aa3f4dcf-c70a-4357-b35f-f073a292cc5a" testId="19af2c87-2e28-0ae7-52ee-e6e5a46fbe1b" testName="DeleteFunctionsTest" computerName="SD-LABA-8" duration="00:00:00.0005286" startTime="2012-01-30T10:33:21.5739871+03:00" endTime="2012-01-30T10:33:21.5799877+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="aa3f4dcf-c70a-4357-b35f-f073a292cc5a">
+    </UnitTestResult>
+    <UnitTestResult executionId="13a7b95e-e303-429e-b593-0cb523509ba1" testId="067bc254-eb01-e54b-b1b0-617ef6ab44e1" testName="GetFunctionsTest" computerName="SD-LABA-8" duration="00:00:00.0007871" startTime="2012-01-30T10:33:21.5819879+03:00" endTime="2012-01-30T10:33:21.5899887+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="13a7b95e-e303-429e-b593-0cb523509ba1">
+    </UnitTestResult>
+    <UnitTestResult executionId="35738aaf-b7f2-45d0-bac7-aaa694467aa3" testId="6b322db4-52bb-b761-35a2-88784156fad4" testName="GetFunctionsAndVariablesTest" computerName="SD-LABA-8" duration="00:00:00.0006153" startTime="2012-01-30T10:33:21.5919889+03:00" endTime="2012-01-30T10:33:21.5979895+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="35738aaf-b7f2-45d0-bac7-aaa694467aa3">
+    </UnitTestResult>
+    <UnitTestResult executionId="5f9ac92c-decb-429f-bce4-25af25430b1a" testId="41a1eb7c-2590-e013-66f1-5e5b6213345a" testName="GetVariablesTest" computerName="SD-LABA-8" duration="00:00:00.0008175" startTime="2012-01-30T10:33:21.5999897+03:00" endTime="2012-01-30T10:33:21.6059903+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5f9ac92c-decb-429f-bce4-25af25430b1a">
+    </UnitTestResult>
+    <UnitTestResult executionId="d94e10ac-54d1-4617-86f7-e26e71dcf8d2" testId="15097f91-037d-e8d1-b5f3-56560dcfdece" testName="SetValuesIntoFormulasTest" computerName="SD-LABA-8" duration="00:00:00.0058843" startTime="2012-01-30T10:33:21.6079905+03:00" endTime="2012-01-30T10:33:21.6199917+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d94e10ac-54d1-4617-86f7-e26e71dcf8d2">
+    </UnitTestResult>
+    <UnitTestResult executionId="fec0501d-780b-45b6-a217-b20a4c7defc8" testId="5e6eb382-3c25-c34d-109c-e268ac443ad8" testName="StringToColumnTest" computerName="SD-LABA-8" duration="00:00:00.0043320" startTime="2012-01-30T10:33:21.6239921+03:00" endTime="2012-01-30T10:33:21.6329930+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fec0501d-780b-45b6-a217-b20a4c7defc8">
+    </UnitTestResult>
+    <UnitTestResult executionId="4d3f52d7-83f4-4123-be56-4cd4ff5d6515" testId="4cca512c-3df2-ed2f-b893-3ab183a0f8a1" testName="CreateExportDataTest" computerName="SD-LABA-8" duration="00:00:00.0019270" startTime="2012-01-30T10:33:21.6349932+03:00" endTime="2012-01-30T10:33:21.6419939+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4d3f52d7-83f4-4123-be56-4cd4ff5d6515">
+    </UnitTestResult>
+    <UnitTestResult executionId="2285f73c-7a0e-4435-9b03-c6551ecc72a6" testId="c073fbef-a541-181b-a5d4-d06f138e9cab" testName="FormCSVFileTest" computerName="SD-LABA-8" duration="00:00:00.0011279" startTime="2012-01-30T10:33:21.6439941+03:00" endTime="2012-01-30T10:33:21.6509948+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2285f73c-7a0e-4435-9b03-c6551ecc72a6">
+    </UnitTestResult>
+  </Results>
+</TestRun>

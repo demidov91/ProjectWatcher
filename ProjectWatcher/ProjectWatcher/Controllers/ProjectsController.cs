@@ -11,7 +11,6 @@ using DAL.Interface;
 using System.IO;
 using SystemSettings;
 using System.Text;
-using ProjectWatcher.Warkers;
 using ProjectWatcher.Models.Shared;
 
 namespace ProjectWatcher.Controllers
@@ -72,7 +71,6 @@ namespace ProjectWatcher.Controllers
                 return RedirectToAction("Index", new { filter = filter, tableDefinition = tableDefinition });
             }
             List<int> badProjects = new List<int>();
-<<<<<<< HEAD
             List<int> badRights = new List<int>();
             Modifier modifier = new Modifier();
             ProjectsReader reader = new ProjectsReader();
@@ -81,29 +79,17 @@ namespace ProjectWatcher.Controllers
                 IProject modifying = reader.GetProject(project.Key);
                 if(!contexter.CanModify(modifying))
                 {
-                    badRights.Add(modifying.Id);
+                    badRights.Add(project.Key);
                     continue;
                 }
                 if (!modifier.ModifyOrCreate(project.Key, project.Value.Values, (RolablePrincipal)HttpContext.User))
-=======
-            Modifier dal = new Modifier();
-            foreach (KeyValuePair<int, Evaluation> project in newRecords)
-            {
-                if (!dal.ModifyOrCreate(project.Key, project.Value.Values, (RolablePrincipal)HttpContext.User))
->>>>>>> master
                 {
                     badProjects.Add(project.Key);
                 }
             }
-<<<<<<< HEAD
             if (badProjects.Count > 0 || badRights.Count > 0)
             {
                 TempData["errorUpload"] = ProjectsHelper.FormUploadErrorMessage(badProjects, badRights, culture);
-=======
-            if (badProjects.Count > 0)
-            {
-                TempData["errorUpload"] = ProjectsHelper.FormUploadErrorMessage(badProjects, culture);
->>>>>>> master
             }
             else 
             {

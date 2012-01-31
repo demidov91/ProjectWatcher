@@ -40,7 +40,7 @@ namespace DAL.Interface
             {
                 if (owner == null)
                 {
-                    projects = projects.Where(x => x.GetValue("owner") == value);
+                    projects = projects.Where(x => x.GetValue("owner") == value).ToArray();
                     owner = value;
                 }
             }
@@ -59,7 +59,7 @@ namespace DAL.Interface
             {
                 if (filter == null)
                 {
-                    projects = projects.Where(x => SQLParser.IsSatisfying(x, value));
+                    projects = projects.Where(x => SQLParser.IsSatisfying(x, value)).ToArray();
                     filter = value;
                 }
             }

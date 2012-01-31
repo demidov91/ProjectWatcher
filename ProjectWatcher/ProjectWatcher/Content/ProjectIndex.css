@@ -2,8 +2,9 @@
 /*============================================*/
 /*Index*/
 #ProjectWithProperties{
-            font-family: Times New Roman;
-            margin: 25px;
+    font-family: Times New Roman;
+    margin: 25px;
+    width: 30%;
         }
         
 .header {
@@ -75,4 +76,25 @@
 .forOkCancelButton {
     text-align: right;
 }
+
+.stringEdit {
+    width: 400px;
+    height: 250px;
+}
+
+.numberEdit {
+    width: 400px;
+}
+
+.percentageEdit {
+    width: 100px;
+    float: left;
+    
+}
+
+.history {
+    width: 400px;
+    height: 400px;
+}
+
 /*============================================*/

@@ -7,7 +7,7 @@ namespace DAL.Interface
 {
     public interface IAvailableValue
     {
-        Object GetValue();
+        IValue GetValue();
         
     }
 }

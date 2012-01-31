@@ -20,5 +20,15 @@ namespace DAL
             :base()
         {
         }
+
+        public Object FormerValue
+        {
+            get { return Value; }
+
+        }
+
+
+
+
     }
 }

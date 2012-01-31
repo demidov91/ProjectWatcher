@@ -31,6 +31,7 @@ namespace ProjectWatcher.Helpers
                     return ((String)value).FromMarkdownToHtml();
                 case "Percentage":
                     return value.ToString() + "%";
+                 
                 default:
                     return value.ToString();
             }
@@ -43,7 +44,7 @@ namespace ProjectWatcher.Helpers
             return new MvcHtmlString(result);
         }
 
-        public static MvcHtmlString RenderModel(this HtmlHelper helper, ValueModel model)
+        public static MvcHtmlString RenderModel(this HtmlHelper helper, ValueModel model, bool forEditing = false)
         {
             return helper.RenderValue(model.Value, model.Type);
         }

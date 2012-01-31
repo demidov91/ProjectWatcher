@@ -48,7 +48,7 @@ namespace TestProject
             HttpContextBase contextMock = repository.CreateMock<HttpContextBase>();
             Expect.Call(contextMock.Request.Cookies).Return(cookies);
             context = contextMock;*/
-            ProjectWatcher.Starter.Start();      
+           
         }
         //
         //Use ClassCleanup to run code after all tests in a class have run
@@ -83,23 +83,7 @@ Header2,    $if(%ut_coverage% > 50\, %ut_coverage%, %false%), Enumeration, 20";
 
         
 
-        [TestMethod()]
-        public void StringToColumnExceptionTest()
-        {
-            string comaSeparatedProperties = @"Header,     *[some](formula)*,   String,  18, 15";
-            ArgumentException expected = new ArgumentException();
-            Object actual;
-            try
-            {                
-                actual = ProjectsHelper_Accessor.StringToColumn(comaSeparatedProperties, null);
-            }
-            catch(ArgumentException e)
-            {
-                actual = e; 
-            }
-            Assert.IsTrue(actual.GetType().Equals(expected.GetType()));
-        }
-
+       
         [TestMethod()]
         public void GetFuncAndVarTest()
         {
@@ -110,64 +94,9 @@ Header2,    $if(%ut_coverage% > 50\, %ut_coverage%, %false%), Enumeration, 20";
             Assert.IsTrue(functions.Count == 1 && variables.Count == 2);
         }
 
-        [TestMethod()]
-        public void RequestBuilderTest()
-        {
-            RequestBuilder builder = new RequestBuilder();
-            builder.Filter = @"%ut_coverage%<90 || %platform%=='.NET'";
-            builder.SqlFunctions = new string[] { @"if(%prop1%>1\, %prop2%\, 42)", @"min(%prop1%\,%prop2%)"};
-            builder.Variables = new string[] { "ut_coverage", "prop1"};
-            Evaluation[] values = new Evaluation[0];
-            try
-            {
-                values = builder.GetValues();
-            }
-            catch (Exception e)
-            {
-                if (!(e is ArgumentException))
-                {
-                    Assert.Fail();
-                }
-            }
-            foreach (Evaluation oneProjectVars in values)
-            {
-                Assert.IsNotNull(oneProjectVars.Formulas[@"if(%prop1%>1\, %prop2%\, 42)"]);
-                Assert.IsNotNull(oneProjectVars.Formulas[@"min(%prop1%\,%prop2%)"]);
-                Assert.IsNotNull(oneProjectVars.Values["prop1"]);
-                Assert.IsNotNull(oneProjectVars.Values["ut_coverage"]);
-                int coverage = 0;
-                Assert.IsTrue(Int32.TryParse(oneProjectVars.Values["ut_coverage"], out coverage));
-                Assert.IsTrue(coverage < 90);
-            }
-
-        }
+       
 
 
-        [TestMethod()]
-        public void CreateFilterModelTest()
-        {
-            string filter = "%ut_coverage%>80";
-            string tableDefinition = exampleTableDefinition;
-            string culture = "en-US";
-            Object result = ProjectsHelper.CreateFilterModel(filter, tableDefinition, culture);
-            Assert.IsNotNull(result as FilterModel);
-        }
-
-        [TestMethod()]
-        public void CreateFooterModelTest()
-        {
-            Mockery mockery = new NMock2.Mockery();
-            HttpContextWarker mockContext = mockery.NewMock<HttpContextWarker>();
-            IPrincipal mockUser = mockery.NewMock<IPrincipal>();
-            NMock2.Expect.Once.On(mockUser).Method(new NMock2.Matchers.MethodNameMatcher("IsInRole")).With(new String[] { "administrator" }).Will(NMock2.Return.Value(true));
-            NMock2.Expect.AtLeast(0).On(mockContext).GetProperty("User").Will(new ReturnAction(mockUser));
-            NMock2.Expect.AtLeast(0).On(mockContext).Method("GetCulture").Will(new ReturnAction("en-EN"));
-            string culture = engCulture;
-            String filter = "";
-            String tableDefinition = "";
-            FooterModel actual = ProjectsHelper.CreateFooterModel(filter, tableDefinition, mockContext);
-            Assert.IsNotNull(actual);
-        }
 
         
         [TestMethod()]

@@ -5,6 +5,7 @@ using System.Web;
 using System.Resources;
 using System.Drawing;
 using ProjectWatcher.Resources;
+using ProjectWatcher.Helpers;
 
 namespace ProjectWatcher.Helpers
 {
@@ -13,13 +14,11 @@ namespace ProjectWatcher.Helpers
         private static Dictionary<String, ResourceManager> localizedResourses;
 
 
-        private static ResourceManager commonResourses;
-
+        
         internal static bool LoadResourses()
         {
             try
             {
-                commonResourses = Common.ResourceManager;
                 localizedResourses = new Dictionary<String, ResourceManager>();
                 localizedResourses["ru-RU"] = RussianText.ResourceManager;
                 localizedResourses["en-US"] = EnglishText.ResourceManager;
@@ -42,17 +41,12 @@ namespace ProjectWatcher.Helpers
             String toReturn = specifiedLanguage.GetString(name);
             if (toReturn == null)
             {
-                return "Message" + name + "was not declared in resourses";
+                return "Message " + name + " was not declared in resourses";
             }
             return toReturn;
         }
 
-        public static Image GetImage(string name)
-        {
-
-            return (Image)commonResourses.GetObject(name);
-        }
-
+        
         private static ResourceManager GetLocalizedResourses(String culture)
         {
             if (localizedResourses.ContainsKey(culture))
@@ -61,7 +55,7 @@ namespace ProjectWatcher.Helpers
             }
             else
             {
-                return localizedResourses["en-US"];
+                return localizedResourses[SettingsHelper.Instance.DefaultCulture];
             }
         }
 
