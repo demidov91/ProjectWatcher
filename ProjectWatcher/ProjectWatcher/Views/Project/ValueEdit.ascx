@@ -21,7 +21,7 @@
                     Html.RenderPartial("SelectEdit", Model);
                     break;
                 case "Multyselect":
-                    Html.RenderPartial("MultySelectEdit", Model);
+                    Html.RenderPartial("MultyselectEdit", Model.GetMultyselectModel());
                     break;
             }
        %>

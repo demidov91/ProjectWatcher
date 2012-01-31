@@ -38,13 +38,26 @@ namespace ProjectWatcher.Helpers
  
         }
 
+        /// <summary>
+        /// Converts Value of typed ValueModel into html
+        /// </summary>
+        /// <param name="helper"></param>
+        /// <param name="value"></param>
+        /// <param name="type">One of the basic progrm types</param>
+        /// <returns>Html for illustration a value, not for editing.</returns>
         public static MvcHtmlString RenderValue(this HtmlHelper helper, Object value, String type)
         {
             String result = RenderValue(value, type);
             return new MvcHtmlString(result);
         }
 
-        public static MvcHtmlString RenderModel(this HtmlHelper helper, ValueModel model, bool forEditing = false)
+        /// <summary>
+        /// Converts model into html 
+        /// </summary>
+        /// <param name="helper"></param>
+        /// <param name="model"></param>
+        /// <returns>Html for illustration model on the page, not for editig.</returns>
+        public static MvcHtmlString RenderModel(this HtmlHelper helper, ValueModel model)
         {
             return helper.RenderValue(model.Value, model.Type);
         }

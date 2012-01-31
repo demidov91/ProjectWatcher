@@ -9,9 +9,12 @@ namespace ProjectWatcher.Models.Project.Index
 {
     public class ValueModel
     {
-        private IValue entity;
+        protected IValue entity;
 
-        public ValueModel()
+        /// <summary>
+        /// Very unsafe. Deprecated.
+        /// </summary>
+        private ValueModel()
         {
             entity = new Value();
         }
@@ -21,10 +24,21 @@ namespace ProjectWatcher.Models.Project.Index
         public ValueModel(IValue entity, bool isEditable)
         {
             this.entity = entity;
-            this.entity.SetProperty(entity.GetProperty());
             IsEditable = isEditable;
         }
 
+        /// <summary>
+        /// Specifies valueModel to multyselect model.
+        /// </summary>
+        /// <returns>Valid multyselect model or null if it was impossible</returns>
+        public object GetMultyselectModel()
+        {
+            if(Type != "Multyselect")
+            {
+                return null;
+            }
+            return new MultyselectModel(entity, IsVisible);
+        }
 
         public IValue DalValue
         {
@@ -59,7 +73,7 @@ namespace ProjectWatcher.Models.Project.Index
             }
         }
 
-        public String Value
+        public Object Value
         {
             get
             {
@@ -176,5 +190,7 @@ namespace ProjectWatcher.Models.Project.Index
                 return entity.GetProject();
             }
         }
+
+        
     }
 }

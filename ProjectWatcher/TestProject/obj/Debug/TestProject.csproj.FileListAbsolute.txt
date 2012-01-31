@@ -254,3 +254,4 @@ D:\ProjectWatcherLast\ProjectWatcher\TestProject\bin\Debug\ProjectWatcher_Access
 D:\ProjectWatcherLast\ProjectWatcher\TestProject\obj\Debug\ResolveAssemblyReference.cache
 D:\ProjectWatcherLast\ProjectWatcher\TestProject\obj\Debug\TestProject.dll
 D:\ProjectWatcherLast\ProjectWatcher\TestProject\obj\Debug\TestProject.pdb
+D:\work\Demidov\ProjectWatcher\ProjectWatcher\TestProject\bin\Debug\Rhino.Mocks.dll

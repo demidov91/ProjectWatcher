@@ -9,7 +9,7 @@ namespace ProjectWatcher.Helpers
         public static String FileFormatvalueIntoProgramFormat(this String fileFormat)
         {
             String[] multyselect = fileFormat.Split('|');
-            multyselect = Array.ConvertAll(multyselect, x => x.CutWhitespaces()).Where(x => x.Length > 0).ToArray();//.Where(x => x.Length > 0);
+            multyselect = Array.ConvertAll(multyselect, x => x.CutWhitespaces()).Where(x => x.Length > 0).ToArray();
             if (multyselect.Length == 1)
             {
                 return multyselect[0]; 

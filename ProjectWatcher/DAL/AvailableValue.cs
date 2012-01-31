@@ -25,12 +25,12 @@ namespace DAL
  
         }
 
-        public IValue GetValue()
+        public Object GetValue()
         {
-            return new Value {Value1 = Value};
+            return this.Value;
         }
 
+      
 
-        
     }
 }
